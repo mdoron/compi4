@@ -964,7 +964,7 @@ return BINOP;
 case 28:
 YY_RULE_SETUP
 #line 43 "scanner.lex"
-return ID;
+{yylval.name=yytext; return ID; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP

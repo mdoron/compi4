@@ -16,19 +16,19 @@ using namespace output;
 void 									return VOID;
 int										return INT;
 byte									return BYTE;
-b											return B;
+b										return B;
 bool 									return BOOL;
 and 									return AND;
 or 										return OR;
 not 									return NOT;
 true 									return TRUE;
-false 								return FALSE;
-return 								return RETURN;
+false 									return FALSE;
+return 									return RETURN;
 if										return IF;
 else									return ELSE;
 while									return WHILE;
-switch								return SWITCH;
-case						  		return CASE;
+switch									return SWITCH;
+case						  			return CASE;
 break									return BREAK;
 :								  		return COLON;  
 ;								  		return SC;
@@ -38,12 +38,12 @@ break									return BREAK;
 \{										return LBRACE;
 \}										return RBRACE;
 [=]										return ASSIGN;
-(==|!=|<|>|<=|>=)		  return RELOP;
-[+|-|\*|/]			      return BINOP;
-[a-zA-Z][a-zA-Z0-9]*	return ID;
-(0|[1-9][0-9]*)       return NUM;
-"([^\n\r\"\\]\\[rnt\"\\])+"   return STRING;
-\/\/[^\r\n]*[\r|\n|\r\n]?      {}
-[ \t\n\r]            {}
-.                    {errorLex(yylineno);}
+(==|!=|<|>|<=|>=)		  				return RELOP;
+[+|-|\*|/]			     				return BINOP;
+[a-zA-Z][a-zA-Z0-9]*					{yylval.name=yytext; return ID; }
+(0|[1-9][0-9]*)      					return NUM;
+"([^\n\r\"\\]\\[rnt\"\\])+" 			return STRING;
+\/\/[^\r\n]*[\r|\n|\r\n]?   			{}
+[ \t\n\r]           					{}
+.                  						{errorLex(yylineno);}
 %%
