@@ -1,0 +1,80 @@
+%{
+	#include "attributes.h"
+	#include "output.hpp"
+	#include <iostream>
+	#include <stdlib.h>
+	typedef enum { OP_AND, OP_OR } opType;
+
+	using namespace std;
+
+	extern int yylex();
+	extern int yylineno;
+	int yyerror(char * message);
+%}
+
+%token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP BINOP ID NUM STRING
+  
+
+%%
+
+Program : Funcs {}
+Funcs :	FuncDecl Funcs {}
+		| {}
+FuncDecl : RetType ID LPAREN Formals RPAREN LBRACE Stmt RBRACE {}
+RetType : Type {}
+		| VOID {}
+Formals : FormalsList {}
+		| {}
+FormalsList : FormalDecl {}
+  			| FormalDecl COMMA FormalsList {}
+FormalDecl : Type ID {}
+Stmts : Stmt {}
+  	  | Stmts Stmt {}
+Stmt : LBRACE Stmts RBRACE {}
+     | Type ID SC {}
+  	 | Type ID ASSIGN Exp SC {}
+  	 | ID ASSIGN Exp SC {}
+     | Call SC {}
+     | RETURN SC {}
+     | RETURN Exp SC {}
+     | IF LPAREN Exp RPAREN Stmt {}
+     | IF LPAREN Exp RPAREN Stmt ELSE Stmt {}
+     | WHILE LPAREN Exp RPAREN Stmt {}
+     | BREAK SC {}
+  | SWITCH LPAREN Exp RPAREN LBRACE CaseList RBRACE SC {}
+CaseList : CaseStat CaseList {}
+CaseList : CaseStat {}
+CaseStat : CASE NUM COLON Stmt BREAK SC {}
+		 | CASE NUM B COLON Stmt BREAK SC {}
+Call : ID LPAREN ExpList RPAREN {}
+	 | ID LPAREN RPAREN {}
+ExpList : Exp {}
+		| Exp COMMA ExpList {}
+Type : INT {}
+	 | BYTE {}
+	 | BOOL {}
+Exp : LPAREN Exp RPAREN {}
+	| Exp BINOP Exp {}
+	| ID {}
+	| Call {}
+	| NUM {}
+	| NUM B {}
+	| STRING {}
+	| TRUE {}
+	| FALSE {}
+	| NOT Exp {}
+	| Exp AND Exp {}
+	| Exp OR Exp {}
+	| Exp RELOP Exp {}
+%%
+
+int main()
+{
+	yyparse();
+}
+
+int yyerror(char * message)
+{
+	output::errorSyn(yylineno);
+	exit(0);
+}
