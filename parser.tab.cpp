@@ -475,8 +475,8 @@ static const yytype_uint8 yyrline[] =
       35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
       45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
       55,    56,    57,    58,    59,    60,    61,    62,    63,    64,
-      65,    66,    71,    72,    73,    74,    75,    76,    77,    78,
-      81,    85,    90
+      65,    66,    71,    72,    73,    74,    82,    83,    84,    85,
+      88,    92,    97
 };
 #endif
 
@@ -1766,34 +1766,41 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 74 "parser.ypp"
-    {(yyval).type = TYPE_BYTE;;}
+    { 
+			int val = atoi((yyvsp[(1) - (2)]).name);  
+			if (val < 0 || val > 255) {
+				char ret = val;
+				output::errorByteTooLarge(yylineno, &ret); 
+			}
+			(yyval).type = TYPE_BYTE;
+		;}
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 75 "parser.ypp"
+#line 82 "parser.ypp"
     {(yyval).type = TYPE_STRING;;}
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 76 "parser.ypp"
+#line 83 "parser.ypp"
     {(yyval).type = TYPE_BOOL;;}
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 77 "parser.ypp"
+#line 84 "parser.ypp"
     {(yyval).type = TYPE_BOOL;;}
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 78 "parser.ypp"
+#line 85 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (2)]).type, TYPE_BOOL);
 		;}
@@ -1802,7 +1809,7 @@ yyreduce:
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 81 "parser.ypp"
+#line 88 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (3)]).type, TYPE_BOOL);
 			assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL);
@@ -1812,7 +1819,7 @@ yyreduce:
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 85 "parser.ypp"
+#line 92 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (3)]).type, TYPE_BOOL);
 			assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL);
@@ -1823,7 +1830,7 @@ yyreduce:
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 90 "parser.ypp"
+#line 97 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (3)]).type, (yyvsp[(3) - (3)]).type);
 			assertNotNumber((yyvsp[(1) - (3)]).type);
@@ -1834,7 +1841,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1838 "parser.tab.cpp"
+#line 1845 "parser.tab.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2046,7 +2053,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 95 "parser.ypp"
+#line 102 "parser.ypp"
 
 
 int main()

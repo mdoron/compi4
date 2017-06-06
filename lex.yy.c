@@ -844,7 +844,7 @@ return BYTE;
 case 4:
 YY_RULE_SETUP
 #line 19 "scanner.lex"
-return B;
+{yylval.name=yytext; return B; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -969,7 +969,7 @@ YY_RULE_SETUP
 case 29:
 YY_RULE_SETUP
 #line 44 "scanner.lex"
-return NUM;
+{yylval.name=yytext; return NUM; }
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */

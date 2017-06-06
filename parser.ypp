@@ -71,7 +71,14 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 	| ID {/* needs dispatch */}
 	| Call {/* needs dispatch */}
 	| NUM {$$.type = TYPE_INT;}
-	| NUM B {$$.type = TYPE_BYTE;}
+	| NUM B { 
+			int val = atoi($1.name);  
+			if (val < 0 || val > 255) {
+				char ret = val;
+				output::errorByteTooLarge(yylineno, &ret); 
+			}
+			$$.type = TYPE_BYTE;
+		}
 	| STRING {$$.type = TYPE_STRING;}
 	| TRUE {$$.type = TYPE_BOOL;}
 	| FALSE {$$.type = TYPE_BOOL;}
