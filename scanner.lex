@@ -41,7 +41,7 @@ break									return BREAK;
 (==|!=|<|>|<=|>=)		  return RELOP;
 [+|-|\*|/]			      return BINOP;
 [a-zA-Z][a-zA-Z0-9]*	return ID;
-[0|[1-9][0-9]*]       return NUM;
+(0|[1-9][0-9]*)       return NUM;
 "([^\n\r\"\\]\\[rnt\"\\])+"   return STRING;
 \/\/[^\r\n]*[\r|\n|\r\n]?      {}
 [ \t\n\r]            {}
