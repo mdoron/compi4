@@ -20,7 +20,7 @@
 Program : Funcs {}
 Funcs :	FuncDecl Funcs {}
 		| {}
-FuncDecl : RetType ID LPAREN Formals RPAREN LBRACE Stmt RBRACE {}
+FuncDecl : RetType ID LPAREN Formals RPAREN LBRACE Stmts RBRACE {}
 RetType : Type {}
 		| VOID {}
 Formals : FormalsList {}
