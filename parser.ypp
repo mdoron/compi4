@@ -2,20 +2,38 @@
 	#include "attributes.h"
 	#include "output.hpp"
 	#include <iostream>
+	#include <ostream>
 	#include <stdlib.h>
-	typedef enum { OP_AND, OP_OR } opType;
-
+	#include <string.h>
+	#include <string>
+	#include <stack>
+	
+	
 	using namespace std;
 
 	extern int yylex();
 	extern int yylineno;
-	int yyerror(char* message);
+	int yyerror(string message);
 	void assertType(type_t t1, type_t t2);
 	void assertNotType(type_t t1, type_t t2);
-	void assertNotNumber(type_t t);
+	void assertNumber(type_t t);
+	void assertOneOfTypes(type_t t, type_t* ts, int len);
+	
+	bool findDef(char* name);
+	void insert(list<Row*>* rs, Row* r);
+	void assertDef(char* name);
+	void assertNotDef(char* name);
 	
 	int whileCounter = 0;
 	type_t functionType = TYPE_NON;
+	bool is_main = false;
+	int main_counter = 0;
+	
+	stack<Table*>* tables = new stack<Table*>();
+	stack<int>* offsets = new stack<int>();
+	
+	
+	
 %}
 
 %token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP BINOP ID NUM STRING
@@ -24,33 +42,102 @@
 
 %%
 
-Program : Funcs {}
+Program : Funcs { 
+			if ( main_counter == 0 ) {
+				output::errorMainMissing();
+				exit(0);
+			}
+		}
 Funcs :	FuncDecl Funcs {}
 		| {}
-FuncDecl : RetType ID LPAREN Formals RPAREN LBRACE Stmts RBRACE {functionType = TYPE_NON; }
-RetType : Type {$$.type = $1.type; functionType = $$.type; }
-		| VOID {$$.type = TYPE_VOID; functionType = $$.type; }
-Formals : FormalsList {}
-		| {}
+FuncDecl : RetType IdRule LPAREN Formals RPAREN LBRACE Slbrace Stmts Srbrace RBRACE {
+				functionType = TYPE_NON;
+				if (is_main) {
+					if ( main_counter > 0 )
+						yyerror(""); // TODO: Check if right
+					main_counter++;
+				}
+			}
+IdRule : ID {
+			is_main = strcmp($1.name, "main") == 0;
+		}
+Slbrace : {
+		if ( tables->empty() ) {
+			Table* t = new Table();
+			t->parent = NULL;
+			tables->push(t);
+			offsets->push(0);
+		} else {
+			Table* t = new Table();
+			t->parent = tables->top();
+			tables->push(t);
+			offsets->push(offsets->top());
+		}
+	}
+Srbrace : {
+		tables->pop();
+		offsets->pop();
+	}
+RetType : Type { $$.type = $1.type; functionType = $$.type; }
+		| VOID { $$.type = TYPE_VOID; functionType = $$.type; }
+Formals : FormalsList {  }
+		| { $$.type = TYPE_NON; }
 FormalsList : FormalDecl {}
   			| FormalDecl COMMA FormalsList {}
 FormalDecl : Type ID {$$.type = $1.type; $$.name = $2.name;}
 Stmts : Stmt {}
   	  | Stmts Stmt {}
-Stmt : LBRACE Stmts RBRACE {}
-     | Type ID SC {}
-  	 | Type ID ASSIGN Exp SC {}
-  	 | ID ASSIGN Exp SC {}
+Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
+     | Type ID SC {
+			Row* r = new Row();
+			r->name = $2.name;
+			r->type = $2.type;
+			r->offset = offsets->top();
+			Table* top = tables->top();
+			list<Row*>* rs = top->rows;
+			insert(rs, r);
+			offsets->pop();
+			offsets->push((r->offset) + 1);
+		}
+  	 | Type ID ASSIGN Exp SC {
+			assertNotDef($2.name);
+			if ($1.type == TYPE_INT) {
+				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
+				assertOneOfTypes($4.type, ts, 2);
+			}
+			
+			Row* r = new Row();
+			r->name = $2.name;
+			r->type = $2.type;
+			r->offset = offsets->top();
+			Table* top = tables->top();
+			list<Row*>* rs = top->rows;
+			insert(rs, r);
+			offsets->pop();
+			offsets->push((r->offset) + 1); 
+		}
+  	 | ID ASSIGN Exp SC {
+			assertDef($1.name);
+			if ($1.type == TYPE_INT) {
+				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
+				assertOneOfTypes($4.type, ts, 2);
+			}
+		}
      | Call SC {}
-     | RETURN SC {if (functionType != TYPE_VOID) output::errorMismatch(yylineno); }
-     | RETURN Exp SC {if (functionType != $2.type) output::errorMismatch(yylineno);}
+     | RETURN SC { assertType(functionType, TYPE_VOID); }
+     | RETURN Exp SC { assertType(functionType, $2.type); }
      | IF LPAREN Exp RPAREN Stmt {}
      | IF LPAREN Exp RPAREN Stmt ELSE Stmt {}
-     | WHILE LPAREN WLPAREN Exp WRPAREN RPAREN Stmt {}
-     | BREAK SC {if(whileCounter == 0) output::errorUnexpectedBreak(yylineno);}
-	 | SWITCH LPAREN Exp RPAREN LBRACE CaseList RBRACE SC {}
-WLPAREN : {whileCounter += 1;}
-WRPAREN : {whileCounter -= 1;}
+     | WHILE LPAREN Wlparen Exp Wrparen RPAREN Stmt {}
+     | BREAK SC { 
+			if(whileCounter == 0) {
+				output::errorUnexpectedBreak(yylineno);
+				exit(0);
+			}
+		}
+	 | SWITCH LPAREN Exp RPAREN LBRACE Slbrace CaseList Srbrace RBRACE SC {}
+Wlparen : {whileCounter += 1;}
+Wrparen : {whileCounter -= 1;}
 CaseList : CaseStat CaseList {}
 		 | CaseStat {}
 CaseStat : CASE NUM COLON Stmt BREAK SC {}
@@ -64,18 +151,19 @@ Type : INT {$$.type = TYPE_INT;}
 	 | BOOL {$$.type = TYPE_BOOL;}
 Exp : LPAREN Exp RPAREN {$$ = $2; }
 	| Exp BINOP Exp {
-			assertNotNumber($1.type);
-			assertNotNumber($3.type);
+			assertNumber($1.type);
+			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
 		}
-	| ID {/* needs dispatch */}
+	| ID {}
 	| Call {/* needs dispatch */}
 	| NUM {$$.type = TYPE_INT;}
 	| NUM B { 
 			int val = atoi($1.name);  
 			if (val < 0 || val > 255) {
 				char ret = val;
-				output::errorByteTooLarge(yylineno, &ret); 
+				output::errorByteTooLarge(yylineno, &ret);
+				exit(0);
 			}
 			$$.type = TYPE_BYTE;
 		}
@@ -88,6 +176,7 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 	| Exp AND Exp {
 			assertType($1.type, TYPE_BOOL);
 			assertType($3.type, TYPE_BOOL);
+			$$.type = TYPE_BOOL;
 		}
 	| Exp OR Exp {
 			assertType($1.type, TYPE_BOOL);
@@ -96,7 +185,7 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 		}
 	| Exp RELOP Exp {
 			assertType($1.type, $3.type);
-			assertNotNumber($1.type);
+			assertNumber($1.type);
 			$$.type = TYPE_BOOL;
 		}
 %%
@@ -106,25 +195,66 @@ int main()
 	yyparse();
 }
 
-int yyerror(char* message)
+int yyerror(string message)
 {
 	output::errorSyn(yylineno);
 	exit(0);
 }
 
 void assertType(type_t t1, type_t t2) {
-	if(t1 != t2)
+	if(t1 != t2) {
 		output::errorMismatch(yylineno);
+		exit(0);
+	}
 	return;
 }
 
 void assertNotType(type_t t1, type_t t2) {
-	if(t1 == t2)
+	if(t1 == t2) {
 		output::errorMismatch(yylineno);
+		exit(0);
+	}
 	return;
 }
 
-void assertNotNumber(type_t t) {
+void assertNumber(type_t t) {
 	assertNotType(t, TYPE_STRING);
 	assertNotType(t, TYPE_BOOL);
+}
+
+void assertOneOfTypes(type_t t, type_t* ts, int len) {
+	for (int i=0; i<len; i++)
+		if (t == ts[i])
+			return;
+		
+	output::errorMismatch(yylineno);
+	
+}
+
+bool findDef(char* name) {
+	Table* it = tables->top();
+	for (; it != NULL; it = it->parent) 
+		for (list<Row*>::iterator ir = it->rows->begin(); ir != it->rows->end(); ++ir)
+			if ( strcmp((*ir)->name, name) )
+				return true;
+	return false;
+}
+
+void assertNotDef(char* name) {
+	if (findDef(name)) {
+		output::errorDef(yylineno, name);
+		exit(0);
+	}
+}
+
+void assertDef(char* name) {
+	if (!findDef(name)) {
+		output::errorUndef(yylineno, name);
+		exit(0);
+	}
+}
+
+void insert(list<Row*>* rs, Row* r) {
+	assertNotDef(r->name);
+	rs->insert(rs->end(), r);
 }
