@@ -19,10 +19,12 @@
 	void assertNumber(type_t t);
 	void assertOneOfTypes(type_t t, type_t* ts, int len);
 	
-	bool findDef(char* name);
-	void insert(list<Row*>* rs, Row* r);
 	void assertDef(char* name);
 	void assertNotDef(char* name);
+	bool isDef(char* name);
+	Row* findDef(char* name);
+	void insert(list<Row*>* rs, Row* r);
+	void printList(list<Row*>* rs);
 	
 	int whileCounter = 0;
 	type_t functionType = TYPE_NON;
@@ -91,7 +93,8 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
      | Type ID SC {
 			Row* r = new Row();
 			r->name = $2.name;
-			r->type = $2.type;
+			cout << r -> name << endl;
+			r->type = $1.type;
 			r->offset = offsets->top();
 			Table* top = tables->top();
 			list<Row*>* rs = top->rows;
@@ -104,11 +107,14 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 			if ($1.type == TYPE_INT) {
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
 				assertOneOfTypes($4.type, ts, 2);
+			} else {
+				assertType($1.type, $4.type);
 			}
 			
 			Row* r = new Row();
 			r->name = $2.name;
-			r->type = $2.type;
+			cout << r -> name << endl;
+			r->type = $1.type;
 			r->offset = offsets->top();
 			Table* top = tables->top();
 			list<Row*>* rs = top->rows;
@@ -118,9 +124,12 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 		}
   	 | ID ASSIGN Exp SC {
 			assertDef($1.name);
-			if ($1.type == TYPE_INT) {
+			Row* def = findDef($1.name);
+			if (def->type == TYPE_INT) {
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
-				assertOneOfTypes($4.type, ts, 2);
+				assertOneOfTypes($3.type, ts, 2);
+			} else {
+				assertType(def->type, $3.type);
 			}
 		}
      | Call SC {}
@@ -228,33 +237,46 @@ void assertOneOfTypes(type_t t, type_t* ts, int len) {
 			return;
 		
 	output::errorMismatch(yylineno);
-	
+	exit(0);
 }
 
-bool findDef(char* name) {
+Row* findDef(char* name) {
 	Table* it = tables->top();
 	for (; it != NULL; it = it->parent) 
-		for (list<Row*>::iterator ir = it->rows->begin(); ir != it->rows->end(); ++ir)
-			if ( strcmp((*ir)->name, name) )
-				return true;
-	return false;
+		for (list<Row*>::iterator ir = it->rows->begin(); ir != it->rows->end(); ++ir) {
+			if ( strcmp((*ir)->name, name) == 0 )
+				return (*ir);
+		}
+	return NULL;
+}
+
+bool isDef(char* name) {
+	Row* r = findDef(name);
+	return r != NULL;
 }
 
 void assertNotDef(char* name) {
-	if (findDef(name)) {
+	if (isDef(name)) {
 		output::errorDef(yylineno, name);
 		exit(0);
 	}
 }
 
 void assertDef(char* name) {
-	if (!findDef(name)) {
+	if (!isDef(name)) {
 		output::errorUndef(yylineno, name);
 		exit(0);
 	}
 }
 
+void printList(list<Row*>* rs) {
+	cout << "MyList: " << endl;
+	for (list<Row*>::iterator it=rs->begin(); it!=rs->end(); ++it)
+		std::cout << ' ' << (*it)->name;
+	cout << "\nEnd" << endl;
+}
+
 void insert(list<Row*>* rs, Row* r) {
 	assertNotDef(r->name);
-	rs->insert(rs->end(), r);
+	rs->push_back(r);
 }
