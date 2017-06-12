@@ -60,13 +60,14 @@ FuncDecl : RetType IdRule LPAREN Formals RPAREN LBRACE Slbrace Stmts Srbrace RBR
 					main_counter++;
 				}
 			}
-IdRule : ID {
+IdBuilt : B {$$.name = "b"; } | ID {$$.name = $1.name;}
+IdRule : IdBuilt {
+			$$.name = $1.name;
 			is_main = ($1.name == "main");
 		}
 Slbrace : {
 		if ( tables->empty() ) {
 			Table* t = new Table();
-			t->parent = NULL;
 			tables->push(t);
 			offsets->push(0);
 		} else {
@@ -86,14 +87,14 @@ Formals : FormalsList {  }
 		| { $$.type = TYPE_NON; }
 FormalsList : FormalDecl {}
   			| FormalDecl COMMA FormalsList {}
-FormalDecl : Type ID {$$.type = $1.type; $$.name = $2.name;}
+FormalDecl : Type IdBuilt {$$.type = $1.type; $$.name = $2.name;}
 Stmts : Stmt {}
   	  | Stmts Stmt {}
 Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
-     | Type ID SC {
+     | Type IdBuilt SC {
+			cout << "\tName 1: " << $2.name << endl;
 			Row* r = new Row();
 			r->name = $2.name;
-			cout << r -> name << endl;
 			r->type = $1.type;
 			r->offset = offsets->top();
 			Table* top = tables->top();
@@ -102,18 +103,21 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 			offsets->pop();
 			offsets->push((r->offset) + 1);
 		}
-  	 | Type ID ASSIGN Exp SC {
+  	 | Type IdBuilt ASSIGN Exp SC {
+	 cout << "4" <<endl;
 			assertNotDef($2.name);
+			cout << "3" <<endl;
 			if ($1.type == TYPE_INT) {
+				cout << "1" <<endl;
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
 				assertOneOfTypes($4.type, ts, 2);
 			} else {
+			cout << "2" <<endl;
 				assertType($1.type, $4.type);
 			}
-			
+			cout << "\tName 2: " << $2.name << endl;
 			Row* r = new Row();
 			r->name = $2.name;
-			cout << r -> name << endl;
 			r->type = $1.type;
 			r->offset = offsets->top();
 			Table* top = tables->top();
@@ -122,7 +126,8 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 			offsets->pop();
 			offsets->push((r->offset) + 1); 
 		}
-  	 | ID ASSIGN Exp SC {
+  	 | IdBuilt ASSIGN Exp SC {
+			cout << "\tName 3: " << $1.name << endl;
 			assertDef($1.name);
 			Row* def = findDef($1.name);
 			if (def->type == TYPE_INT) {
@@ -151,8 +156,8 @@ CaseList : CaseStat CaseList {}
 		 | CaseStat {}
 CaseStat : CASE NUM COLON Stmt BREAK SC {}
 		 | CASE NUM B COLON Stmt BREAK SC {}
-Call : ID LPAREN ExpList RPAREN {}
-	 | ID LPAREN RPAREN {}
+Call : IdBuilt LPAREN ExpList RPAREN {}
+	 | IdBuilt LPAREN RPAREN {}
 ExpList : Exp {}
 		| Exp COMMA ExpList {}
 Type : INT {$$.type = TYPE_INT;}
@@ -164,7 +169,7 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
 		}
-	| ID {}
+	| IdBuilt {}
 	| Call {/* needs dispatch */}
 	| NUM {$$.type = TYPE_INT;}
 	| NUM B { 
@@ -242,10 +247,18 @@ void assertOneOfTypes(type_t t, type_t* ts, int len) {
 
 Row* findDef(string name) {
 	Table* it = tables->top();
-	for (; it != NULL; it = it->parent) 
-		for (list<Row*>::iterator ir = it->rows->begin(); ir != it->rows->end(); ++ir) {
-			if ( (*ir)->name == name )
+	if (it == NULL) {
+		return NULL;
+	}
+	cout << "7" << endl;
+	for (; it != NULL; it = it->parent)	
+		for (list<Row*>::iterator ir = (it->rows)->begin(); ir != (it->rows)->end(); ++ir) {
+			cout << "9" << endl; 
+			if ( (*ir)->name == name ) {
+				cout << "10" << endl; 
 				return (*ir);
+			}
+			cout << "11" << endl;
 		}
 	return NULL;
 }
@@ -257,9 +270,11 @@ bool isDef(string name) {
 
 void assertNotDef(string name) {
 	if (isDef(name)) {
+		cout << "5" << endl;
 		output::errorDef(yylineno, name.c_str());
 		exit(0);
 	}
+	cout << "6" << endl;
 }
 
 void assertDef(string name) {
@@ -270,9 +285,14 @@ void assertDef(string name) {
 }
 
 void printList(list<Row*>* rs) {
-	cout << "MyList: " << endl;
-	for (list<Row*>::iterator it=rs->begin(); it!=rs->end(); ++it)
-		std::cout << ' ' << (*it)->name;
+	if (rs == NULL)
+		return;
+	cout << "Rows: " << endl;
+	for (list<Row*>::iterator it=rs->begin(); it!=rs->end(); ++it) {
+		//if (it == NULL)
+			//continue;
+		//std::cout << ' ' << (*it)->name;
+	}
 	cout << "\nEnd" << endl;
 }
 
