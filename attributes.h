@@ -2,6 +2,7 @@
 #define __ATTRIBUTES_H
 
 #include <list>
+#include <string>
 using namespace std;
 
 typedef enum {
@@ -15,12 +16,12 @@ typedef enum {
 
 typedef struct {
   type_t type;  
-  char* name;
+  string name;
 } STYPE;
 
 typedef struct row_t {
-	char* name;
 	type_t type;
+  string name;
 	int offset; 
 	
 	~row_t(){}

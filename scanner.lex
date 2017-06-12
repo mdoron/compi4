@@ -16,7 +16,7 @@ using namespace output;
 void 									return VOID;
 int										return INT;
 byte									return BYTE;
-b										{yylval.name=yytext; return B; }
+b										return B;
 bool 									return BOOL;
 and 									return AND;
 or 										return OR;

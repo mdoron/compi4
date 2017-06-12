@@ -844,7 +844,7 @@ return BYTE;
 case 4:
 YY_RULE_SETUP
 #line 19 "scanner.lex"
-{yylval.name=yytext; return B; }
+return B;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP

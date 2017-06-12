@@ -75,7 +75,7 @@
 	#include <iostream>
 	#include <ostream>
 	#include <stdlib.h>
-	#include <string.h>
+	#include <string>
 	#include <string>
 	#include <stack>
 	
@@ -90,10 +90,10 @@
 	void assertNumber(type_t t);
 	void assertOneOfTypes(type_t t, type_t* ts, int len);
 	
-	void assertDef(char* name);
-	void assertNotDef(char* name);
-	bool isDef(char* name);
-	Row* findDef(char* name);
+	void assertDef(string name);
+	void assertNotDef(string name);
+	bool isDef(string name);
+	Row* findDef(string name);
 	void insert(list<Row*>* rs, Row* r);
 	void printList(list<Row*>* rs);
 	
@@ -1521,7 +1521,7 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 63 "parser.ypp"
     {
-			is_main = strcmp((yyvsp[(1) - (1)]).name, "main") == 0;
+			is_main = ((yyvsp[(1) - (1)]).name == "main");
 		;}
     break;
 
@@ -1880,7 +1880,7 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 170 "parser.ypp"
     { 
-			int val = atoi((yyvsp[(1) - (2)]).name);  
+			int val = atoi(((yyvsp[(1) - (2)]).name).c_str());
 			if (val < 0 || val > 255) {
 				char ret = val;
 				output::errorByteTooLarge(yylineno, &ret);
@@ -2212,32 +2212,31 @@ void assertOneOfTypes(type_t t, type_t* ts, int len) {
 	exit(0);
 }
 
-Row* findDef(char* name) {
+Row* findDef(string name) {
 	Table* it = tables->top();
 	for (; it != NULL; it = it->parent) 
 		for (list<Row*>::iterator ir = it->rows->begin(); ir != it->rows->end(); ++ir) {
-			if ( strcmp((*ir)->name, name) == 0 )
+			if ( (*ir)->name == name )
 				return (*ir);
 		}
 	return NULL;
 }
 
-bool isDef(char* name) {
+bool isDef(string name) {
 	Row* r = findDef(name);
-	cout << "What inside " << name << "? " <<  " " << r << endl;
 	return r != NULL;
 }
 
-void assertNotDef(char* name) {
+void assertNotDef(string name) {
 	if (isDef(name)) {
-		output::errorDef(yylineno, name);
+		output::errorDef(yylineno, name.c_str());
 		exit(0);
 	}
 }
 
-void assertDef(char* name) {
+void assertDef(string name) {
 	if (!isDef(name)) {
-		output::errorUndef(yylineno, name);
+		output::errorUndef(yylineno, name.c_str());
 		exit(0);
 	}
 }
@@ -2252,5 +2251,4 @@ void printList(list<Row*>* rs) {
 void insert(list<Row*>* rs, Row* r) {
 	assertNotDef(r->name);
 	rs->push_back(r);
-	printList(rs);
 }
