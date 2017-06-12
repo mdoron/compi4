@@ -21,9 +21,28 @@ typedef struct {
 
 typedef struct row_t {
 	type_t type;
-  string name;
-	int offset; 
+	list<type_t>* params;
+	string name;
+	int* offset; 
 	
+	row_t(type_t type, string name, int* offset) {
+		this->type = type;
+		this->params = new list<type_t>();
+		this->name = name;
+		if (offset == NULL) {
+			this->offset = NULL;
+		} else {
+			this->offset = new int();
+			*(this->offset) = *offset;
+		}
+	} 
+	
+	void setParams(list<type_t>* l) {
+		for (list<type_t>::iterator it = l->begin(); it != l->end(); ++it)
+			params->push_back((*it));
+		this->offset = NULL;
+	}
+
 	~row_t(){}
 } Row;
 
