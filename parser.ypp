@@ -28,7 +28,7 @@
 	Row* findFunction(string name);
 	bool isFunction(string name);
 	const char* typeName(type_t t);
-	std::vector<const char*>* castToStringVector(list<type_t>* l);
+	std::vector<const char*> castToStringVector(list<type_t>* l);
 	bool compare(list<type_t>* l1, list<type_t>* l2);
 	
 	int whileCounter = 0;
@@ -44,7 +44,8 @@
 	list<type_t>* formalTypes = new list<type_t>();
 	list<string>* formalNames = new list<string>();
 	
-	list<type_t>* callParams = new list<type_t>();
+	stack<list<type_t>* > callsStack;
+	list<type_t>* callParams;
 	
 %}
 
@@ -62,44 +63,57 @@ Program : Init Funcs {
 		}
 Init : {
 	bottomTable = new Table();
+	// Add lib functions
+	Row* print = new Row(TYPE_VOID, "print", NULL);
+	list<type_t>* params = new list<type_t>();
+	params->push_back(TYPE_STRING);
+	print->setParams(params);
+	(bottomTable->rows)->push_back(print);
+	Row* printi = new Row(TYPE_VOID, "printi", NULL);
+	list<type_t>* params2 = new list<type_t>();
+	params2->push_back(TYPE_INT);
+	printi->setParams(params2);
+	(bottomTable->rows)->push_back(printi);
+	
 	tables->push(bottomTable);
 	offsets->push(0);
 }
 Funcs :	FuncDecl Funcs {}
 		| {}
-FuncDecl : RetType IdRule LPAREN Formals RPAREN LBRACE Slbrace DoneSignature Stmts Srbrace RBRACE {
-				functionType = TYPE_NON;
+FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace InsertLocals Stmts Srbrace RBRACE {
 				if (is_main) {
 					if ( main_counter > 0 )
-						yyerror(""); // TODO: Check if right
+						yyerror(""); // TODO: Check if correct
 					main_counter++;
+					if ( functionType != TYPE_VOID ) {
+						output::errorMainMissing(); // TODO: Check if correct
+						exit(0);
+					}
 				}				
 				functionType = TYPE_NON;
 				functionName = "";
 			}
+InsertLocals : {
+	int i = -1;
+	list<string>::iterator itN = formalNames->begin();
+	list<type_t>::iterator itT = formalTypes->begin();
+	for (; itN != formalNames->end(); ++itN, ++itT) {
+		Row* r = new Row((*itT), (*itN), &(i));
+		insert((tables->top())->rows, r);
+		i--;
+	}
+	formalTypes->clear();
+	formalNames->clear();
+}	
 DoneSignature : {
 		Row* r = new Row(functionType, functionName, NULL);
 		r->setParams(formalTypes);
-		insert((tables->top())->rows, r);	
-		
-		Table* funcVars = new Table();
-		tables->push(funcVars);
-		int i = -1;
-		list<string>::iterator itN = formalNames->begin();
-		list<type_t>::iterator itT = formalTypes->begin();
-		for (; itN != formalNames->end(); ++itN, ++itT) {
-			Row* r = new Row((*itT), (*itN), &(i));
-			insert((tables->top())->rows, r);
-			i--;
-		}
-		
-		
-		formalTypes->clear();
-		formalNames->clear();
+		insert((tables->top())->rows, r);
 	}
 
-IdBuilt : B {$$.name = "b"; } | ID {$$.name = $1.name;}
-IdRule : IdBuilt {
+IdBuilt : B { $$.name = $1.name; } | ID { $$.name = $1.name;
+	}
+FuncName : IdBuilt {
 			$$.name = $1.name;
 			functionName = $1.name;
 			is_main = ($1.name == "main");
@@ -121,8 +135,8 @@ Formals : FormalsList {  }
 FormalsList : FormalDecl {}
   			| FormalDecl COMMA FormalsList {}
 FormalDecl : Type IdBuilt {
-				$$.type = $1.type; 
-				$$.name = $2.name; 
+				$$.type = $1.type;
+				$$.name = $2.name;
 				formalTypes->push_back($1.type);
 				formalNames->push_back($2.name);
 			}
@@ -162,18 +176,7 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 				assertType(def->type, $3.type);
 			}
 		}
-     | Call SC {
-		 Row* r = findFunction($1.name);
-		 if (r == NULL) {
-			 output::errorUndefFunc(yylineno, ($1.name).c_str());
-			 exit(0);
-		 }
-		 if (!compare(callParams, r->params)){
-			 cout<<"Call3"<< endl;
-				output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), *castToStringVector(r->params));
-		 }
-		 callParams->clear();
-	 }
+     | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
      | RETURN Exp SC { assertType(functionType, $2.type); }
      | IF LPAREN Exp RPAREN Stmt {}
@@ -192,17 +195,52 @@ CaseList : CaseStat CaseList {}
 		 | CaseStat {}
 CaseStat : CASE NUM COLON Stmt BREAK SC {}
 		 | CASE NUM B COLON Stmt BREAK SC {}
-Call : IdBuilt LPAREN ExpList RPAREN { $$.name = $1.name; }
+Call : IdBuilt LPAREN NewCall ExpList RPAREN {
+		Row* r = findFunction($1.name);
+		if (r == NULL) {
+			output::errorUndefFunc(yylineno, ($1.name).c_str());
+			exit(0);
+		}
+		
+		$$.type = r->type;
+		$$.name = r->name;
+			
+		list<type_t>::iterator it = callParams->begin();
+		
+		if (!compare(callParams, r->params)) {
+			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), castToStringVector(r->params));
+			exit(0);
+		}
+		callParams->clear();		
+		callsStack.pop();
+		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
+	 }
 	 | IdBuilt LPAREN RPAREN {
+		Row* r = findFunction($1.name);
+		$$.type = r->type;
 		$$.name = $1.name;
 		callParams->push_back(TYPE_VOID);
+		
+		if (r == NULL) {
+			output::errorUndefFunc(yylineno, ($1.name).c_str());
+			exit(0);
+		}
+		if (!compare(callParams, r->params)) {
+			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), castToStringVector(r->params));
+			exit(0);
+		}
+		callParams->clear();
+		callsStack.pop();
+		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
 	 }
+NewCall : {
+	callParams = new list<type_t>();
+	callsStack.push(callParams);
+}
 ExpList : Exp {
-			cout<<"1"<<endl;
 			callParams->push_back($1.type);
 		}
 		| Exp COMMA ExpList {
-			cout<<"2"<<endl;
 			callParams->push_back($1.type);
 		}
 Type : INT {$$.type = TYPE_INT;}
@@ -214,17 +252,12 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
 		}
-	| IdBuilt {}
-	| Call {
-		cout<<"4"<<endl;
+	| IdBuilt { 
+		assertDef($1.name); 
 		Row* r = findDef($1.name);
-		cout<<"5"<<endl;
-		if (r == NULL)
-			output::errorUndefFunc(yylineno, ($1.name).c_str());
-		
-		if (!compare(callParams, r->params))
-			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), *castToStringVector(r->params));
+		$$.type = r->type;
 	}
+	| Call { }
 	| NUM {$$.type = TYPE_INT;}
 	| NUM B { 
 			int val = atoi(($1.name).c_str());
@@ -380,8 +413,6 @@ bool compare(list<type_t>* l1, list<type_t>* l2) {
 	if (l1 == NULL || l2 == NULL) {
 		return false;
 	}
-	cout << "sdfsdfSDF" << endl;
-	cout << "l1 size: " << l1->size() << " l2 size: " << l2->size() << endl;
 	
 	list<type_t>::iterator itN = l1->begin();
 	list<type_t>::iterator itT = l2->begin();
@@ -389,24 +420,25 @@ bool compare(list<type_t>* l1, list<type_t>* l2) {
 	if(l1->size() != l2->size()){
 		return false;
 	}
-	cout << "10" << endl;
 	for (; itN != l1->end(); ++itN, ++itT) {
-		cout << "11" << endl;
-		if (*itN != *itT) {
-			cout << "12" << endl;
+		
+		if(*itT==TYPE_INT){
+			if((*itN!=*itT)&&(*itN!=TYPE_BYTE))
+				return false;
+		} else if (*itN != *itT) {
 			return false;
 		}
 	}	
 	return true;
 }
 
-std::vector<const char*>* castToStringVector(list<type_t>* l) {
+std::vector<const char*> castToStringVector(list<type_t>* l) {
+	std::vector<const char*> ret;// = new std::vector<const char*>();
 	if (l == NULL) {
-		return NULL;
+		return ret;
 	}
-	std::vector<const char*>* ret = new std::vector<const char*>();
 	list<type_t>::iterator it = l->begin();
 	for (; it != l->end(); ++it) {
-		ret->push_back(typeName(*it));
-	}	
+		ret.push_back(typeName(*it));
+	}
 }
