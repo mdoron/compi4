@@ -13,6 +13,8 @@
 
 	extern int yylex();
 	extern int yylineno;
+	extern string saveyy;
+	
 	int yyerror(string message);
 	void assertType(type_t t1, type_t t2);
 	void assertNotType(type_t t1, type_t t2);
@@ -27,7 +29,6 @@
 	void printList(list<Row*>* rs);
 	Row* findFunction(string name);
 	bool isFunction(string name);
-	const char* typeName(type_t t);
 	std::vector<const char*> castToStringVector(list<type_t>* l);
 	bool compare(list<type_t>* l1, list<type_t>* l2);
 	
@@ -47,18 +48,27 @@
 	stack<list<type_t>* > callsStack;
 	list<type_t>* callParams;
 	
+	const char* typeNames[6] = {"NON", "BOOL", "INT", "BYTE", "STRING", "VOID"};
 %}
 
 %token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP BINOP ID NUM STRING
-%right ELSE RPAREN ASSIGN NOT
-%left RELOP BINOP AND OR
+%right ELSE RPAREN ASSIGN NOT AND OR
+%left RELOP BINOP 
 
 %%
 
-Program : Init Funcs { 
+Program : Init Funcs {
 			if ( main_counter == 0 ) {
 				output::errorMainMissing();
 				exit(0);
+			}
+			output::endScope();
+			list<Row*>::iterator it = (tables->top()->rows)->begin();
+			++it;
+			++it;
+			for(; it!=(tables->top()->rows)->end();it++) {
+				string functionType = output::makeFunctionType((typeNames[(*it)->type]),castToStringVector((*it)->params));
+				output::printID(((*it)->name).c_str(),0,functionType.c_str());
 			}
 		}
 Init : {
@@ -79,7 +89,7 @@ Init : {
 	offsets->push(0);
 }
 Funcs :	FuncDecl Funcs {}
-		| {}
+		| {if (saveyy != "") yyerror(""); }
 FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace InsertLocals Stmts Srbrace RBRACE {
 				if (is_main) {
 					if ( main_counter > 0 )
@@ -111,8 +121,7 @@ DoneSignature : {
 		insert((tables->top())->rows, r);
 	}
 
-IdBuilt : B { $$.name = $1.name; } | ID { $$.name = $1.name;
-	}
+IdBuilt : ID { $$.name = $1.name; }
 FuncName : IdBuilt {
 			$$.name = $1.name;
 			functionName = $1.name;
@@ -125,9 +134,16 @@ Slbrace : {
 		offsets->push(offsets->top());
 	}
 Srbrace : {
-		tables->pop();
-		offsets->pop();
-	}
+	output::endScope();
+	list<Row*>::iterator it = (tables->top()->rows)->begin();
+	for(; it!=(tables->top()->rows)->end();it++)
+		output::printID(((*it)->name).c_str(),*((*it)->offset),(typeNames[(*it)->type]));
+	
+	tables->pop();
+	offsets->pop();
+	
+	saveyy = "";
+}
 RetType : Type { $$.type = $1.type; functionType = $$.type; }
 		| VOID { $$.type = TYPE_VOID; functionType = $$.type; }
 Formals : FormalsList {  }
@@ -142,8 +158,12 @@ FormalDecl : Type IdBuilt {
 			}
 Stmts : Stmt {}
   	  | Stmts Stmt {}
-Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
-     | Type IdBuilt SC {
+
+Stmt : SingleStmt | BlockStmt
+
+BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
+	  
+SingleStmt : Type IdBuilt SC {
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
 			Table* top = tables->top();
 			list<Row*>* rs = top->rows;
@@ -178,11 +198,12 @@ Stmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 		}
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
-     | RETURN Exp SC { assertType(functionType, $2.type); }
+     | RETURN Exp SC { assertNotType(functionType, TYPE_VOID); assertType(functionType, $2.type); }
      | IF LPAREN Exp RPAREN Stmt {}
      | IF LPAREN Exp RPAREN Stmt ELSE Stmt {}
-     | WHILE LPAREN Wlparen Exp Wrparen RPAREN Stmt {}
-     | BREAK SC { 
+     | WHILE LPAREN Exp RPAREN Wlparen Slbrace SingleStmt Srbrace Wrparen {}
+	 | WHILE LPAREN Exp RPAREN Wlparen BlockStmt Wrparen {}
+     | BREAK SC {
 			if(whileCounter == 0) {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
@@ -215,12 +236,11 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
 	 }
-	 | IdBuilt LPAREN RPAREN {
+	 | IdBuilt LPAREN NewCall RPAREN {
 		Row* r = findFunction($1.name);
 		$$.type = r->type;
 		$$.name = $1.name;
 		callParams->push_back(TYPE_VOID);
-		
 		if (r == NULL) {
 			output::errorUndefFunc(yylineno, ($1.name).c_str());
 			exit(0);
@@ -229,19 +249,20 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), castToStringVector(r->params));
 			exit(0);
 		}
+
 		callParams->clear();
 		callsStack.pop();
-		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
+		callParams = callsStack.size() > 0 ? callsStack.top(): new list<type_t>();
 	 }
 NewCall : {
 	callParams = new list<type_t>();
 	callsStack.push(callParams);
 }
 ExpList : Exp {
-			callParams->push_back($1.type);
+			callParams->push_front($1.type);
 		}
 		| Exp COMMA ExpList {
-			callParams->push_back($1.type);
+			callParams->push_front($1.type);
 		}
 Type : INT {$$.type = TYPE_INT;}
 	 | BYTE {$$.type = TYPE_BYTE;}
@@ -263,7 +284,7 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 			int val = atoi(($1.name).c_str());
 			if (val < 0 || val > 255) {
 				char ret = val;
-				output::errorByteTooLarge(yylineno, &ret);
+				output::errorByteTooLarge(yylineno, ($1.name).c_str());
 				exit(0);
 			}
 			$$.type = TYPE_BYTE;
@@ -272,7 +293,8 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 	| TRUE {$$.type = TYPE_BOOL;}
 	| FALSE {$$.type = TYPE_BOOL;}
 	| NOT Exp {
-			assertType($1.type, TYPE_BOOL);
+			assertType($2.type, TYPE_BOOL);
+			$$.type = TYPE_BOOL;
 		}
 	| Exp AND Exp {
 			assertType($1.type, TYPE_BOOL);
@@ -396,36 +418,24 @@ void insert(list<Row*>* rs, Row* r) {
 	rs->push_back(r);
 }
 
-const char* typeName(type_t t) {
-	string ret = "";
-	switch( t ) {
-		case TYPE_BOOL: ret = "bool"; break;
-		case TYPE_INT: ret = "int"; break;
-		case TYPE_BYTE: ret = "byte"; break;
-		case TYPE_STRING: ret = "string"; break;
-		case TYPE_VOID: ret = "void"; break;
-		default: ret = "non"; break;
-	}
-	return ret.c_str();
-}
-
 bool compare(list<type_t>* l1, list<type_t>* l2) {
 	if (l1 == NULL || l2 == NULL) {
 		return false;
 	}
-	
-	list<type_t>::iterator itN = l1->begin();
-	list<type_t>::iterator itT = l2->begin();
-	
+		
 	if(l1->size() != l2->size()){
 		return false;
 	}
-	for (; itN != l1->end(); ++itN, ++itT) {
+	
+	list<type_t>::iterator itLeft = l1->begin();
+	list<type_t>::iterator itRight = l2->begin();
+
+	for (; itLeft != l1->end(); ++itLeft, ++itRight) {
 		
-		if(*itT==TYPE_INT){
-			if((*itN!=*itT)&&(*itN!=TYPE_BYTE))
+		if(*itRight == TYPE_INT){
+			if ( !(*itLeft == TYPE_INT || *itLeft == TYPE_BYTE) ) 
 				return false;
-		} else if (*itN != *itT) {
+		} else if (*itLeft != *itRight) {
 			return false;
 		}
 	}	
@@ -433,12 +443,15 @@ bool compare(list<type_t>* l1, list<type_t>* l2) {
 }
 
 std::vector<const char*> castToStringVector(list<type_t>* l) {
-	std::vector<const char*> ret;// = new std::vector<const char*>();
-	if (l == NULL) {
-		return ret;
+	std::vector<const char*> vec(l->size());
+	if(*(l->begin()) == TYPE_VOID)
+		return std::vector<const char*>();
+	
+	int i=0;
+	for (list<type_t>::iterator it = l->begin(); it != l->end(); ++it, ++i) {
+		vec[i] = typeNames[*it];
 	}
-	list<type_t>::iterator it = l->begin();
-	for (; it != l->end(); ++it) {
-		ret.push_back(typeName(*it));
-	}
+	
+	return vec;
+	
 }

@@ -7,6 +7,8 @@
 #include <stdlib.h>
 
 using namespace output;
+
+string saveyy;
 %}
 
 %option yylineno
@@ -39,9 +41,9 @@ break									return BREAK;
 \}										return RBRACE;
 [=]										return ASSIGN;
 (==|!=|<|>|<=|>=)		  				return RELOP;
-[+|-|\*|/]			     				return BINOP;
+[\+|\-|\*|/]			     			return BINOP;
 \"[^"]*\" 								return STRING;
-[a-zA-Z][a-zA-Z0-9]*					{ yylval.name=yytext; return ID; }
+[a-zA-Z][a-zA-Z0-9]*					{ saveyy=yytext; yylval.name=yytext; return ID; }
 (0|[1-9][0-9]*)      					{ yylval.name=yytext; return NUM; }
 \/\/[^\r\n]*[\r|\n|\r\n]?   			{}
 [ \t\n\r]           					{}
