@@ -57,7 +57,7 @@
 
 %%
 
-Program : Init Funcs {
+Program : Init Funcs { 
 			if ( main_counter == 0 ) {
 				output::errorMainMissing();
 				exit(0);
@@ -67,8 +67,8 @@ Program : Init Funcs {
 			++it;
 			++it;
 			for(; it!=(tables->top()->rows)->end();it++) {
-				string functionType = output::makeFunctionType((typeNames[(*it)->type]),castToStringVector((*it)->params));
-				output::printID(((*it)->name).c_str(),0,functionType.c_str());
+				string fType = output::makeFunctionType((typeNames[(*it)->type]),castToStringVector((*it)->params));
+				output::printID(((*it)->name).c_str(),0,fType.c_str());
 			}
 		}
 Init : {
@@ -89,11 +89,12 @@ Init : {
 	offsets->push(0);
 }
 Funcs :	FuncDecl Funcs {}
-		| {if (saveyy != "") yyerror(""); }
+		| { if (saveyy != "") yyerror(""); }
 FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace InsertLocals Stmts Srbrace RBRACE {
 				if (is_main) {
-					if ( main_counter > 0 )
+					if ( main_counter > 0 ) {
 						yyerror(""); // TODO: Check if correct
+					}
 					main_counter++;
 					if ( functionType != TYPE_VOID ) {
 						output::errorMainMissing(); // TODO: Check if correct
@@ -107,13 +108,13 @@ InsertLocals : {
 	int i = -1;
 	list<string>::iterator itN = formalNames->begin();
 	list<type_t>::iterator itT = formalTypes->begin();
+	
 	for (; itN != formalNames->end(); ++itN, ++itT) {
 		Row* r = new Row((*itT), (*itN), &(i));
 		insert((tables->top())->rows, r);
 		i--;
 	}
-	formalTypes->clear();
-	formalNames->clear();
+
 }	
 DoneSignature : {
 		Row* r = new Row(functionType, functionName, NULL);
@@ -143,6 +144,17 @@ Srbrace : {
 	offsets->pop();
 	
 	saveyy = "";
+	
+			
+	if(is_main) {
+		if( formalTypes->size()>0 && (*(formalTypes->begin())) != TYPE_VOID ) {
+			output::errorMainMissing();
+			exit(0);
+		}
+	}
+	
+	formalTypes->clear();
+	formalNames->clear();
 }
 RetType : Type { $$.type = $1.type; functionType = $$.type; }
 		| VOID { $$.type = TYPE_VOID; functionType = $$.type; }
@@ -199,17 +211,24 @@ SingleStmt : Type IdBuilt SC {
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
      | RETURN Exp SC { assertNotType(functionType, TYPE_VOID); assertType(functionType, $2.type); }
-     | IF LPAREN Exp RPAREN Stmt {}
-     | IF LPAREN Exp RPAREN Stmt ELSE Stmt {}
-     | WHILE LPAREN Exp RPAREN Wlparen Slbrace SingleStmt Srbrace Wrparen {}
-	 | WHILE LPAREN Exp RPAREN Wlparen BlockStmt Wrparen {}
+     | IfStmt RPAREN Slbrace SingleStmt Srbrace { }
+     | IfStmt RPAREN BlockStmt { }
+	 | IfStmt RPAREN BlockStmt ELSE BlockStmt { }
+	 | IfStmt RPAREN BlockStmt ELSE Slbrace SingleStmt Srbrace { }
+	 | IfStmt RPAREN Slbrace SingleStmt Srbrace ELSE Slbrace SingleStmt Srbrace { }
+	 | IfStmt RPAREN Slbrace SingleStmt Srbrace ELSE BlockStmt { }
+     | WhileStmt RPAREN Wlparen Slbrace SingleStmt Srbrace Wrparen { }
+	 | WhileStmt RPAREN Wlparen BlockStmt Wrparen { }
      | BREAK SC {
 			if(whileCounter == 0) {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
 		}
-	 | SWITCH LPAREN Exp RPAREN LBRACE Slbrace CaseList Srbrace RBRACE SC {}
+	 | SwitchStmt RPAREN LBRACE CaseList RBRACE SC 
+SwitchStmt : SWITCH LPAREN Exp {assertNumber($3.type);}
+IfStmt : IF LPAREN Exp  { assertType($3.type, TYPE_BOOL); }
+WhileStmt : WHILE LPAREN Exp { assertType($3.type, TYPE_BOOL); }
 Wlparen : {whileCounter += 1;}
 Wrparen : {whileCounter -= 1;}
 CaseList : CaseStat CaseList {}
@@ -279,16 +298,8 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 		$$.type = r->type;
 	}
 	| Call { }
-	| NUM {$$.type = TYPE_INT;}
-	| NUM B { 
-			int val = atoi(($1.name).c_str());
-			if (val < 0 || val > 255) {
-				char ret = val;
-				output::errorByteTooLarge(yylineno, ($1.name).c_str());
-				exit(0);
-			}
-			$$.type = TYPE_BYTE;
-		}
+	| NUM {}
+	| NumByte {}
 	| STRING {$$.type = TYPE_STRING;}
 	| TRUE {$$.type = TYPE_BOOL;}
 	| FALSE {$$.type = TYPE_BOOL;}
@@ -307,9 +318,18 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 			$$.type = TYPE_BOOL;
 		}
 	| Exp RELOP Exp {
-			assertType($1.type, $3.type);
 			assertNumber($1.type);
+			assertNumber($3.type);
 			$$.type = TYPE_BOOL;
+		}
+NumByte : NUM B { 
+			int val = atoi(($1.name).c_str());
+			if (val < 0 || val > 255) {
+				char ret = val;
+				output::errorByteTooLarge(yylineno, ($1.name).c_str());
+				exit(0);
+			}
+			$$.type = TYPE_BYTE;
 		}
 %%
 
