@@ -114,7 +114,6 @@ InsertLocals : {
 		insert((tables->top())->rows, r);
 		i--;
 	}
-
 }	
 DoneSignature : {
 		Row* r = new Row(functionType, functionName, NULL);
@@ -145,7 +144,6 @@ Srbrace : {
 	
 	saveyy = "";
 	
-			
 	if(is_main) {
 		if( formalTypes->size()>0 && (*(formalTypes->begin())) != TYPE_VOID ) {
 			output::errorMainMissing();
@@ -175,7 +173,7 @@ Stmt : SingleStmt | BlockStmt
 
 BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
 	  
-SingleStmt : Type IdBuilt SC {
+VarDefStmt : Type IdBuilt SC {
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
 			Table* top = tables->top();
 			list<Row*>* rs = top->rows;
@@ -198,7 +196,16 @@ SingleStmt : Type IdBuilt SC {
 			offsets->pop();
 			offsets->push(*(r->offset) + 1); 
 		}
-  	 | IdBuilt ASSIGN Exp SC {
+		
+SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace
+
+SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow | ControlFlowStmt
+
+StmtOfControlFlow : SingleStmtOfControlFlow | BlockStmt
+
+SingleStmt : VarDefStmt | ControlFlowStmt
+
+ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			assertDef($1.name);
 			Row* def = findDef($1.name);
 			if (def->type == TYPE_INT) {
@@ -211,14 +218,9 @@ SingleStmt : Type IdBuilt SC {
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
      | RETURN Exp SC { assertNotType(functionType, TYPE_VOID); assertType(functionType, $2.type); }
-     | IfStmt RPAREN Slbrace SingleStmt Srbrace { }
-     | IfStmt RPAREN BlockStmt { }
-	 | IfStmt RPAREN BlockStmt ELSE BlockStmt { }
-	 | IfStmt RPAREN BlockStmt ELSE Slbrace SingleStmt Srbrace { }
-	 | IfStmt RPAREN Slbrace SingleStmt Srbrace ELSE Slbrace SingleStmt Srbrace { }
-	 | IfStmt RPAREN Slbrace SingleStmt Srbrace ELSE BlockStmt { }
-     | WhileStmt RPAREN Wlparen Slbrace SingleStmt Srbrace Wrparen { }
-	 | WhileStmt RPAREN Wlparen BlockStmt Wrparen { }
+     | IfStmt RPAREN StmtOfControlFlow {}
+	 | IfStmt RPAREN StmtOfControlFlow ELSE StmtOfControlFlow { }
+	 | WhileStmt RPAREN Wlparen StmtOfControlFlow Wrparen { }
      | BREAK SC {
 			if(whileCounter == 0) {
 				output::errorUnexpectedBreak(yylineno);
@@ -233,8 +235,8 @@ Wlparen : {whileCounter += 1;}
 Wrparen : {whileCounter -= 1;}
 CaseList : CaseStat CaseList {}
 		 | CaseStat {}
-CaseStat : CASE NUM COLON Stmt BREAK SC {}
-		 | CASE NUM B COLON Stmt BREAK SC {}
+CaseStat : CASE NUM COLON StmtOfControlFlow BREAK SC {}
+		 | CASE NUM B COLON StmtOfControlFlow BREAK SC {}
 Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		Row* r = findFunction($1.name);
 		if (r == NULL) {
@@ -257,18 +259,18 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 	 }
 	 | IdBuilt LPAREN NewCall RPAREN {
 		Row* r = findFunction($1.name);
-		$$.type = r->type;
-		$$.name = $1.name;
-		callParams->push_back(TYPE_VOID);
 		if (r == NULL) {
 			output::errorUndefFunc(yylineno, ($1.name).c_str());
 			exit(0);
 		}
+		$$.type = r->type;
+		$$.name = $1.name;
+		callParams->push_back(TYPE_VOID);
 		if (!compare(callParams, r->params)) {
 			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), castToStringVector(r->params));
 			exit(0);
 		}
-
+		
 		callParams->clear();
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top(): new list<type_t>();
