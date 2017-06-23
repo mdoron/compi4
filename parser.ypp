@@ -31,6 +31,7 @@
 	bool isFunction(string name);
 	std::vector<const char*> castToStringVector(list<type_t>* l);
 	bool compare(list<type_t>* l1, list<type_t>* l2);
+	bool isVar(Row* r);
 	
 	int whileCounter = 0;
 	type_t functionType = TYPE_NON;
@@ -62,6 +63,10 @@ Program : Init Funcs {
 				output::errorMainMissing();
 				exit(0);
 			}
+			
+		//while(stack<Table*>::iterator it = tables->begin();it!=tables->end();it++) {	
+		//	}
+			
 			output::endScope();
 			list<Row*>::iterator it = (tables->top()->rows)->begin();
 			++it;
@@ -135,10 +140,10 @@ Slbrace : {
 	}
 Srbrace : {
 	output::endScope();
-	list<Row*>::iterator it = (tables->top()->rows)->begin();
-	for(; it!=(tables->top()->rows)->end();it++)
-		output::printID(((*it)->name).c_str(),*((*it)->offset),(typeNames[(*it)->type]));
-	
+	list<Row*>::iterator ir = ((tables->top()->rows)->begin());
+	for(; ir!=(tables->top()->rows)->end();ir++)
+		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
+
 	tables->pop();
 	offsets->pop();
 	
@@ -208,6 +213,10 @@ SingleStmt : VarDefStmt | ControlFlowStmt
 ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			assertDef($1.name);
 			Row* def = findDef($1.name);
+			if (!isVar(def)) {
+				output::errorUndef(yylineno, ($1.name).c_str());
+				exit(0);
+			}
 			if (def->type == TYPE_INT) {
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
 				assertOneOfTypes($3.type, ts, 2);
@@ -217,7 +226,14 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 		}
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
-     | RETURN Exp SC { assertNotType(functionType, TYPE_VOID); assertType(functionType, $2.type); }
+     | RETURN Exp SC { 
+			assertNotType(functionType, TYPE_VOID); 
+			if (functionType == TYPE_INT)
+				assertNumber($2.type);
+			else 
+				assertType(functionType, $2.type); 
+			
+		}
      | IfStmt RPAREN StmtOfControlFlow {}
 	 | IfStmt RPAREN StmtOfControlFlow ELSE StmtOfControlFlow { }
 	 | WhileStmt RPAREN Wlparen StmtOfControlFlow Wrparen { }
@@ -421,6 +437,10 @@ void assertDef(string name) {
 		output::errorUndef(yylineno, name.c_str());
 		exit(0);
 	}
+}
+
+bool isVar(Row* r) {
+	return (r->offset != NULL); 
 }
 
 void printList(list<Row*>* rs) {

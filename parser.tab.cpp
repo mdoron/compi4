@@ -102,6 +102,7 @@
 	bool isFunction(string name);
 	std::vector<const char*> castToStringVector(list<type_t>* l);
 	bool compare(list<type_t>* l1, list<type_t>* l2);
+	bool isVar(Row* r);
 	
 	int whileCounter = 0;
 	type_t functionType = TYPE_NON;
@@ -123,7 +124,7 @@
 
 
 /* Line 189 of yacc.c  */
-#line 127 "parser.tab.cpp"
+#line 128 "parser.tab.cpp"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -197,7 +198,7 @@ typedef int YYSTYPE;
 
 
 /* Line 264 of yacc.c  */
-#line 201 "parser.tab.cpp"
+#line 202 "parser.tab.cpp"
 
 #ifdef short
 # undef short
@@ -510,14 +511,14 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    60,    60,    74,    91,    92,    93,   107,   118,   124,
-     125,   130,   136,   157,   158,   159,   160,   161,   162,   163,
-     169,   170,   172,   172,   174,   176,   184,   200,   202,   202,
-     204,   204,   206,   206,   208,   218,   219,   220,   221,   222,
-     223,   224,   230,   231,   232,   233,   234,   235,   236,   237,
-     238,   239,   240,   260,   278,   282,   285,   288,   289,   290,
-     291,   292,   297,   302,   303,   304,   305,   306,   307,   308,
-     312,   317,   322,   327
+       0,    61,    61,    79,    96,    97,    98,   112,   123,   129,
+     130,   135,   141,   162,   163,   164,   165,   166,   167,   168,
+     174,   175,   177,   177,   179,   181,   189,   205,   207,   207,
+     209,   209,   211,   211,   213,   227,   228,   229,   237,   238,
+     239,   240,   246,   247,   248,   249,   250,   251,   252,   253,
+     254,   255,   256,   276,   294,   298,   301,   304,   305,   306,
+     307,   308,   313,   318,   319,   320,   321,   322,   323,   324,
+     328,   333,   338,   343
 };
 #endif
 
@@ -1522,12 +1523,16 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 60 "parser.ypp"
+#line 61 "parser.ypp"
     { 
 			if ( main_counter == 0 ) {
 				output::errorMainMissing();
 				exit(0);
 			}
+			
+		//while(stack<Table*>::iterator it = tables->begin();it!=tables->end();it++) {	
+		//	}
+			
 			output::endScope();
 			list<Row*>::iterator it = (tables->top()->rows)->begin();
 			++it;
@@ -1542,7 +1547,7 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 74 "parser.ypp"
+#line 79 "parser.ypp"
     {
 	bottomTable = new Table();
 	// Add lib functions
@@ -1565,21 +1570,21 @@ yyreduce:
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 91 "parser.ypp"
+#line 96 "parser.ypp"
     {;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 92 "parser.ypp"
+#line 97 "parser.ypp"
     { if (saveyy != "") yyerror(""); ;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 93 "parser.ypp"
+#line 98 "parser.ypp"
     {
 				if (is_main) {
 					if ( main_counter > 0 ) {
@@ -1599,7 +1604,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 107 "parser.ypp"
+#line 112 "parser.ypp"
     {
 	int i = -1;
 	list<string>::iterator itN = formalNames->begin();
@@ -1616,7 +1621,7 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 118 "parser.ypp"
+#line 123 "parser.ypp"
     {
 		Row* r = new Row(functionType, functionName, NULL);
 		r->setParams(formalTypes);
@@ -1627,14 +1632,14 @@ yyreduce:
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 124 "parser.ypp"
+#line 129 "parser.ypp"
     { (yyval).name = (yyvsp[(1) - (1)]).name; ;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 125 "parser.ypp"
+#line 130 "parser.ypp"
     {
 			(yyval).name = (yyvsp[(1) - (1)]).name;
 			functionName = (yyvsp[(1) - (1)]).name;
@@ -1645,7 +1650,7 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 130 "parser.ypp"
+#line 135 "parser.ypp"
     {
 		Table* t = new Table();
 		t->parent = tables->top();
@@ -1657,13 +1662,13 @@ yyreduce:
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 136 "parser.ypp"
+#line 141 "parser.ypp"
     {
 	output::endScope();
-	list<Row*>::iterator it = (tables->top()->rows)->begin();
-	for(; it!=(tables->top()->rows)->end();it++)
-		output::printID(((*it)->name).c_str(),*((*it)->offset),(typeNames[(*it)->type]));
-	
+	list<Row*>::iterator ir = ((tables->top()->rows)->begin());
+	for(; ir!=(tables->top()->rows)->end();ir++)
+		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
+
 	tables->pop();
 	offsets->pop();
 	
@@ -1684,49 +1689,49 @@ yyreduce:
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 157 "parser.ypp"
+#line 162 "parser.ypp"
     { (yyval).type = (yyvsp[(1) - (1)]).type; functionType = (yyval).type; ;}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 158 "parser.ypp"
+#line 163 "parser.ypp"
     { (yyval).type = TYPE_VOID; functionType = (yyval).type; ;}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 159 "parser.ypp"
+#line 164 "parser.ypp"
     {  ;}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 160 "parser.ypp"
+#line 165 "parser.ypp"
     { formalTypes->push_back(TYPE_VOID); ;}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 161 "parser.ypp"
+#line 166 "parser.ypp"
     {;}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 162 "parser.ypp"
+#line 167 "parser.ypp"
     {;}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 163 "parser.ypp"
+#line 168 "parser.ypp"
     {
 				(yyval).type = (yyvsp[(1) - (2)]).type;
 				(yyval).name = (yyvsp[(2) - (2)]).name;
@@ -1738,28 +1743,28 @@ yyreduce:
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 169 "parser.ypp"
+#line 174 "parser.ypp"
     {;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 170 "parser.ypp"
+#line 175 "parser.ypp"
     {;}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 174 "parser.ypp"
+#line 179 "parser.ypp"
     {;}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 176 "parser.ypp"
+#line 181 "parser.ypp"
     {
 			Row* r = new Row((yyvsp[(1) - (3)]).type, (yyvsp[(2) - (3)]).name, &(offsets->top()));
 			Table* top = tables->top();
@@ -1773,7 +1778,7 @@ yyreduce:
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 184 "parser.ypp"
+#line 189 "parser.ypp"
     {
 			assertNotDef((yyvsp[(2) - (5)]).name);
 			if ((yyvsp[(1) - (5)]).type == TYPE_INT) {
@@ -1794,10 +1799,14 @@ yyreduce:
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 208 "parser.ypp"
+#line 213 "parser.ypp"
     {
 			assertDef((yyvsp[(1) - (4)]).name);
 			Row* def = findDef((yyvsp[(1) - (4)]).name);
+			if (!isVar(def)) {
+				output::errorUndef(yylineno, ((yyvsp[(1) - (4)]).name).c_str());
+				exit(0);
+			}
 			if (def->type == TYPE_INT) {
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
 				assertOneOfTypes((yyvsp[(3) - (4)]).type, ts, 2);
@@ -1810,49 +1819,56 @@ yyreduce:
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 218 "parser.ypp"
+#line 227 "parser.ypp"
     { ;}
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 219 "parser.ypp"
+#line 228 "parser.ypp"
     { assertType(functionType, TYPE_VOID); ;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 220 "parser.ypp"
-    { assertNotType(functionType, TYPE_VOID); assertType(functionType, (yyvsp[(2) - (3)]).type); ;}
+#line 229 "parser.ypp"
+    { 
+			assertNotType(functionType, TYPE_VOID); 
+			if (functionType == TYPE_INT)
+				assertNumber((yyvsp[(2) - (3)]).type);
+			else 
+				assertType(functionType, (yyvsp[(2) - (3)]).type); 
+			
+		;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 221 "parser.ypp"
+#line 237 "parser.ypp"
     {;}
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 222 "parser.ypp"
+#line 238 "parser.ypp"
     { ;}
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 223 "parser.ypp"
+#line 239 "parser.ypp"
     { ;}
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 224 "parser.ypp"
+#line 240 "parser.ypp"
     {
 			if(whileCounter == 0) {
 				output::errorUnexpectedBreak(yylineno);
@@ -1864,70 +1880,70 @@ yyreduce:
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 231 "parser.ypp"
+#line 247 "parser.ypp"
     {assertNumber((yyvsp[(3) - (3)]).type);;}
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 232 "parser.ypp"
+#line 248 "parser.ypp"
     { assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL); ;}
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 233 "parser.ypp"
+#line 249 "parser.ypp"
     { assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL); ;}
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 234 "parser.ypp"
+#line 250 "parser.ypp"
     {whileCounter += 1;;}
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 235 "parser.ypp"
+#line 251 "parser.ypp"
     {whileCounter -= 1;;}
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 236 "parser.ypp"
+#line 252 "parser.ypp"
     {;}
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 237 "parser.ypp"
+#line 253 "parser.ypp"
     {;}
     break;
 
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 238 "parser.ypp"
+#line 254 "parser.ypp"
     {;}
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 239 "parser.ypp"
+#line 255 "parser.ypp"
     {;}
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 240 "parser.ypp"
+#line 256 "parser.ypp"
     {
 		Row* r = findFunction((yyvsp[(1) - (5)]).name);
 		if (r == NULL) {
@@ -1953,7 +1969,7 @@ yyreduce:
   case 53:
 
 /* Line 1455 of yacc.c  */
-#line 260 "parser.ypp"
+#line 276 "parser.ypp"
     {
 		Row* r = findFunction((yyvsp[(1) - (4)]).name);
 		if (r == NULL) {
@@ -1977,7 +1993,7 @@ yyreduce:
   case 54:
 
 /* Line 1455 of yacc.c  */
-#line 278 "parser.ypp"
+#line 294 "parser.ypp"
     {
 	callParams = new list<type_t>();
 	callsStack.push(callParams);
@@ -1987,7 +2003,7 @@ yyreduce:
   case 55:
 
 /* Line 1455 of yacc.c  */
-#line 282 "parser.ypp"
+#line 298 "parser.ypp"
     {
 			callParams->push_front((yyvsp[(1) - (1)]).type);
 		;}
@@ -1996,7 +2012,7 @@ yyreduce:
   case 56:
 
 /* Line 1455 of yacc.c  */
-#line 285 "parser.ypp"
+#line 301 "parser.ypp"
     {
 			callParams->push_front((yyvsp[(1) - (3)]).type);
 		;}
@@ -2005,35 +2021,35 @@ yyreduce:
   case 57:
 
 /* Line 1455 of yacc.c  */
-#line 288 "parser.ypp"
+#line 304 "parser.ypp"
     {(yyval).type = TYPE_INT;;}
     break;
 
   case 58:
 
 /* Line 1455 of yacc.c  */
-#line 289 "parser.ypp"
+#line 305 "parser.ypp"
     {(yyval).type = TYPE_BYTE;;}
     break;
 
   case 59:
 
 /* Line 1455 of yacc.c  */
-#line 290 "parser.ypp"
+#line 306 "parser.ypp"
     {(yyval).type = TYPE_BOOL;;}
     break;
 
   case 60:
 
 /* Line 1455 of yacc.c  */
-#line 291 "parser.ypp"
+#line 307 "parser.ypp"
     {(yyval) = (yyvsp[(2) - (3)]); ;}
     break;
 
   case 61:
 
 /* Line 1455 of yacc.c  */
-#line 292 "parser.ypp"
+#line 308 "parser.ypp"
     {
 			assertNumber((yyvsp[(1) - (3)]).type);
 			assertNumber((yyvsp[(3) - (3)]).type);
@@ -2044,7 +2060,7 @@ yyreduce:
   case 62:
 
 /* Line 1455 of yacc.c  */
-#line 297 "parser.ypp"
+#line 313 "parser.ypp"
     { 
 		assertDef((yyvsp[(1) - (1)]).name); 
 		Row* r = findDef((yyvsp[(1) - (1)]).name);
@@ -2055,49 +2071,49 @@ yyreduce:
   case 63:
 
 /* Line 1455 of yacc.c  */
-#line 302 "parser.ypp"
+#line 318 "parser.ypp"
     { ;}
     break;
 
   case 64:
 
 /* Line 1455 of yacc.c  */
-#line 303 "parser.ypp"
+#line 319 "parser.ypp"
     {;}
     break;
 
   case 65:
 
 /* Line 1455 of yacc.c  */
-#line 304 "parser.ypp"
+#line 320 "parser.ypp"
     {;}
     break;
 
   case 66:
 
 /* Line 1455 of yacc.c  */
-#line 305 "parser.ypp"
+#line 321 "parser.ypp"
     {(yyval).type = TYPE_STRING;;}
     break;
 
   case 67:
 
 /* Line 1455 of yacc.c  */
-#line 306 "parser.ypp"
+#line 322 "parser.ypp"
     {(yyval).type = TYPE_BOOL;;}
     break;
 
   case 68:
 
 /* Line 1455 of yacc.c  */
-#line 307 "parser.ypp"
+#line 323 "parser.ypp"
     {(yyval).type = TYPE_BOOL;;}
     break;
 
   case 69:
 
 /* Line 1455 of yacc.c  */
-#line 308 "parser.ypp"
+#line 324 "parser.ypp"
     {
 			assertType((yyvsp[(2) - (2)]).type, TYPE_BOOL);
 			(yyval).type = TYPE_BOOL;
@@ -2107,7 +2123,7 @@ yyreduce:
   case 70:
 
 /* Line 1455 of yacc.c  */
-#line 312 "parser.ypp"
+#line 328 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (3)]).type, TYPE_BOOL);
 			assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL);
@@ -2118,7 +2134,7 @@ yyreduce:
   case 71:
 
 /* Line 1455 of yacc.c  */
-#line 317 "parser.ypp"
+#line 333 "parser.ypp"
     {
 			assertType((yyvsp[(1) - (3)]).type, TYPE_BOOL);
 			assertType((yyvsp[(3) - (3)]).type, TYPE_BOOL);
@@ -2129,7 +2145,7 @@ yyreduce:
   case 72:
 
 /* Line 1455 of yacc.c  */
-#line 322 "parser.ypp"
+#line 338 "parser.ypp"
     {
 			assertNumber((yyvsp[(1) - (3)]).type);
 			assertNumber((yyvsp[(3) - (3)]).type);
@@ -2140,7 +2156,7 @@ yyreduce:
   case 73:
 
 /* Line 1455 of yacc.c  */
-#line 327 "parser.ypp"
+#line 343 "parser.ypp"
     { 
 			int val = atoi(((yyvsp[(1) - (2)]).name).c_str());
 			if (val < 0 || val > 255) {
@@ -2155,7 +2171,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 2159 "parser.tab.cpp"
+#line 2175 "parser.tab.cpp"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2367,7 +2383,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 336 "parser.ypp"
+#line 352 "parser.ypp"
 
 
 int main()
@@ -2456,6 +2472,10 @@ void assertDef(string name) {
 		output::errorUndef(yylineno, name.c_str());
 		exit(0);
 	}
+}
+
+bool isVar(Row* r) {
+	return (r->offset != NULL); 
 }
 
 void printList(list<Row*>* rs) {
