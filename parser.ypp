@@ -1,13 +1,17 @@
 %{
-	#include "attributes.h"
+	#include "attributes.hpp"
 	#include "output.hpp"
 	#include <iostream>
 	#include <ostream>
+	#include <sstream>
 	#include <stdlib.h>
 	#include <string>
-	#include <string>
+	#include <set>
 	#include <stack>
+	#include <assert.h>
+	#include "bp.hpp"
 	
+	#define STOI(x) atoi(x.c_str())
 	
 	using namespace std;
 
@@ -50,6 +54,66 @@
 	list<type_t>* callParams;
 	
 	const char* typeNames[6] = {"NON", "BOOL", "INT", "BYTE", "STRING", "VOID"};
+	
+	// ************************ hw5 ***************************** //
+	string addu (unsigned int num1, unsigned int num2);
+	string subu (unsigned int num1, unsigned int num2);
+	string mulo (unsigned int num1, unsigned int num2);
+	string divu (unsigned int src1, unsigned int src2);
+	string move (unsigned int src, unsigned int dest);
+	
+	string emitBinop(string binop, string s1, string s2);
+	
+	
+	class Registers {
+		set<string> registersSet;
+		
+		public:
+
+		Registers(){
+			//registersSet;
+			int i=0;
+			string a="0123456789";
+			while(i!=8){
+				registersSet.insert("$t"+a[i]);
+				registersSet.insert("$s"+a[i]);
+				i++;
+			}
+			registersSet.insert("$t"+a[i]);
+			i++;
+			registersSet.insert("$t"+a[i]);
+		}
+
+		~Registers(){}
+		
+		
+		set<string> getRegistersSet(){
+		  return registersSet;
+		}
+
+		string allocate(){
+			assert(registersSet.size()!=18);
+			string reg = *(registersSet.begin());
+			registersSet.erase(reg);
+			return reg;
+		}
+
+		void release(string reg){
+			assert(registersSet.find(reg)==registersSet.end());
+			registersSet.insert(reg);
+		}
+
+		unsigned long long int numOfValidRegisters(){
+			return registersSet.size();
+		}
+
+	};
+	
+	
+	int tempCounter;
+	Registers registersPool;
+	CodeBuffer& codebuffer = CodeBuffer::instance();
+
 %}
 
 %token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP BINOP ID NUM STRING
@@ -75,6 +139,8 @@ Program : Init Funcs {
 				string fType = output::makeFunctionType((typeNames[(*it)->type]),castToStringVector((*it)->params));
 				output::printID(((*it)->name).c_str(),0,fType.c_str());
 			}
+			
+			codebuffer.printCodeBuffer();
 		}
 Init : {
 	bottomTable = new Table();
@@ -309,6 +375,7 @@ Exp : LPAREN Exp RPAREN {$$ = $2; }
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
+			$$.reg = emitBinop($2.name, $1.name, $3.name);
 		}
 	| IdBuilt { 
 		assertDef($1.name); 
@@ -497,3 +564,67 @@ std::vector<const char*> castToStringVector(list<type_t>* l) {
 	return vec;
 	
 }
+
+/***********************HW5***************************/
+string newtemp() {
+	ostringstream tName;
+	tName << "__temp" << tempCounter;
+	tempCounter++;
+	return tName.str();
+}
+
+/*****************8ARITMETIC CALCULATION**************/
+
+string addu (string Rdest, string Rsrc, string num2){
+    return "addu" + Rdest + "," + Rsrc + "," + num2;
+    
+}
+
+string subu (string Rdest, string Rsrc, string num2){
+    return "subu" + Rdest + "," + Rsrc + "," + num2;
+}
+
+string mulo (string Rdest, string Rsrc, string num2){
+    return "mulo" + Rdest + "," + Rsrc + "," + num2;
+}
+
+string divu (string Rdest, string Rsrc, string src2){
+    if(STOI(src2)==0) {
+        cout<<"Error division by zero"<<endl;
+        exit(0);
+    }
+    return "divu" + Rdest + "," + Rsrc + "," + src2;
+
+}
+
+string move (string Rsrc, string Rdest){
+    return "move" + Rdest + "," + Rsrc;
+}
+
+string loadint (string Rdest, string num) {
+	return "li " + Rdest + ", " + num;
+}
+
+string emitBinop(string binop, string s1, string s2) {
+	
+    string Rdest = registersPool.allocate();
+	string Rsrc = registersPool.allocate();
+	string command = loadint(Rsrc, s1) + "\n";
+	switch(binop[0]) {
+		case '+': command += addu(Rdest, Rsrc, s2); break;
+		case '-': command += subu(Rdest, Rsrc, s2); break;
+		case '*': command += mulo(Rdest, Rsrc, s2); break;
+		case '/': command += divu(Rdest, Rsrc, s2); break;
+	}
+	codebuffer.emit(command);
+	registersPool.release(Rsrc);
+	return Rdest;
+}
+
+/**************BOOLEAN CALCULATION************/
+
+void calculateBool(){
+  
+}
+
+

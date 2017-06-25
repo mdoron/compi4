@@ -1,5 +1,5 @@
 %{
-#include "attributes.h"
+#include "attributes.hpp"
 #include "parser.tab.hpp"
 #include "output.hpp"
 #include <stdio.h>
@@ -13,6 +13,7 @@ string saveyy;
 
 %option yylineno
 %option noyywrap
+
 
 %%
 void 									return VOID;
@@ -41,7 +42,7 @@ break									return BREAK;
 \}										return RBRACE;
 [=]										return ASSIGN;
 (==|!=|<|>|<=|>=)		  				return RELOP;
-[\+|\-|\*|/]			     			return BINOP;
+[\+|\-|\*|/]			     			{yylval.name=yytext; return BINOP;}
 \"[^"]*\" 								return STRING;
 [a-zA-Z][a-zA-Z0-9]*					{ saveyy=yytext; yylval.name=yytext; return ID; }
 (0|[1-9][0-9]*)      					{ yylval.type = TYPE_INT; yylval.name=yytext; return NUM; }
