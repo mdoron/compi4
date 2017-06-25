@@ -1,7 +1,8 @@
-#include <iostream>
+/*#include <iostream>
 #include <set>
 #include <assert.h>
 #include "bp.hpp"
+#include <string>
 
 
 using namespace std;
@@ -9,43 +10,49 @@ using namespace std;
 //Pool of registers
 
 class Registers{
-    set<string>* registersSet;
+    set<string> registersSet;
 
     Registers(){
-        registersSet = new set<string>();
+        registersSet;
         int i=0;
         while(i!=8){
-            registersSet->insert("$t"+to_string(i));
-            registersSet->insert("$s"+to_string(i));
+            registersSet.insert("$t"+to_string(i));
+            registersSet.insert("$s"+to_string(i));
             i++;
         }
-        registersSet->insert("$t"+to_string(8));
-        registersSet->insert("$t"+to_string(9));
+        registersSet.insert("$t"+to_string(8));
+        registersSet.insert("$t"+to_string(9));
     }
 
     ~Registers(){}
+    
+    public:
+    
+    set<string> getRegistersSet(){
+      return registersSet;
+    }
 
     string allocate(){
-        assert(registersSet->size()!=18);
-        string reg = *(registersSet->begin());
-        registersSet->erase(reg);
+        assert(registersSet.size()!=18);
+        string reg = *(registersSet.begin());
+        registersSet.erase(reg);
         return reg;
     }
 
     void release(string reg){
-        assert(registersSet->find(reg)==registersSet->end());
-        registersSet->insert(reg);
+        assert(registersSet.find(reg)==registersSet.end());
+        registersSet.insert(reg);
     }
 
     unsigned long long int numOfValidRegisters(){
-        return registersSet->size();
+        return registersSet.size();
     }
 
-};
+};*/
 
 /***************Aritmetics calculations*****************/
 
-
+/*
 void addu (unsigned int num1, unsigned int num2){
     string Rsrc = registersSet.allocate();
     string Rdest = registersSet.allocate();
@@ -85,12 +92,5 @@ void move (unsigned int src, unsigned int dest){
     string Rdest = registersSet.allocate();
     string command = "move" + Rdest + "," + Rsrc;
     //add emit
-}
+}*/
 
-
-
-
-int main() {
-    cout << "Hello, World!" << endl;
-    return 0;
-}
