@@ -37,6 +37,7 @@
 	std::vector<const char*> castToStringVector(list<type_t>* l);
 	bool compare(list<type_t>* l1, list<type_t>* l2);
 	bool isVar(Row* r);
+	bool isBool(string name);
 	
 	int whileCounter = 0;
 	type_t functionType = TYPE_NON;
@@ -57,15 +58,19 @@
 	const char* typeNames[6] = {"NON", "BOOL", "INT", "BYTE", "STRING", "VOID"};
 	
 	// ************************ hw5 ***************************** //
-	string addu (unsigned int num1, unsigned int num2);
-	string subu (unsigned int num1, unsigned int num2);
-	string mulo (unsigned int num1, unsigned int num2);
-	string divu (unsigned int src1, unsigned int src2);
-	string move (unsigned int src, unsigned int dest);
+	string getAddu (string Rdest, string Rsrc, string num2);
+	string getSubu (string Rdest, string Rsrc, string num2);
+	string getMulo (string Rdest, string Rsrc, string num2);
+	string getDivu (string Rdest, string Rsrc, string num2);
+	string getMove (string Rdest, string Rsrc);
+	string getLoadint (string Rdest, string num);
 	string emitBinop(string binop, string s1, string s2);
-	string emitAnd(string s1, string s2);
-	string emitOr(string s1, string s2);
-	string f();
+	string getRelop(string op);
+	string getIf(string relop, string reg, string val, string label);
+	string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> falseList);
+	string getSw(string Rsrc, string Rdest);
+	string emitLeaf(string name);
+	string getLw(string Rdest, string offset, string Rsrc);
 	
 	class Registers {
 		set<string> registersSet;
@@ -97,7 +102,6 @@
 
 		~Registers(){}
 		
-		
 		set<string> getRegistersSet(){
 		  return registersSet;
 		}
@@ -111,6 +115,8 @@
 		}
 
 		void release(string reg){
+			if (reg == "")
+				return;
 			assert(registersSet.find(reg)==registersSet.end());
 			registersSet.insert(reg);
 		}
@@ -123,8 +129,8 @@
 	
 	
 	int labelCounter;
-	Registers registersPool;
-	CodeBuffer& codebuffer = CodeBuffer::instance();
+	Registers regsPool;
+	CodeBuffer& cb = CodeBuffer::instance();
 
 %}
 
@@ -143,7 +149,7 @@ Program : Init Funcs {
 		//while(stack<Table*>::iterator it = tables->begin();it!=tables->end();it++) {	
 		//	}
 			
-			output::endScope();
+			/*output::endScope();
 			list<Row*>::iterator it = (tables->top()->rows)->begin();
 			++it;
 			++it;
@@ -151,8 +157,8 @@ Program : Init Funcs {
 				string fType = output::makeFunctionType((typeNames[(*it)->type]),castToStringVector((*it)->params));
 				output::printID(((*it)->name).c_str(),0,fType.c_str());
 			}
-			
-			codebuffer.printCodeBuffer();
+			*/
+			cb.printCodeBuffer();
 		}
 Init : {
 	bottomTable = new Table();
@@ -209,6 +215,12 @@ FuncName : IdBuilt {
 			$$.name = $1.name;
 			functionName = $1.name;
 			is_main = ($1.name == "main");
+			
+			if($$.name == "main")
+				cb.emit(".globl main");
+			cb.emit($$.name + ":");
+			cb.emit(getMove("$fp", "$sp"));
+			cb.emit(getSubu("$fp", "$fp", "4"));
 		}
 Slbrace : {
 		Table* t = new Table();
@@ -217,11 +229,11 @@ Slbrace : {
 		offsets->push(offsets->top());
 	}
 Srbrace : {
-	output::endScope();
+	/*output::endScope();
 	list<Row*>::iterator ir = ((tables->top()->rows)->begin());
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
-
+	*/
 	tables->pop();
 	offsets->pop();
 	
@@ -263,6 +275,8 @@ VarDefStmt : Type IdBuilt SC {
 			insert(rs, r);
 			offsets->pop();
 			offsets->push(*(r->offset) + 1);
+			
+			cb.emit(getSubu("$sp", "$sp", "4"));
 		}
   	 | Type IdBuilt ASSIGN Exp SC {
 			assertNotDef($2.name);
@@ -272,6 +286,16 @@ VarDefStmt : Type IdBuilt SC {
 			} else {
 				assertType($1.type, $4.type);
 			}
+			string Rdest = ""; 
+			if($1.type == TYPE_BOOL)
+				Rdest = emitBooleanAssignment($4.trueList, $4.falseList);
+			else
+				Rdest = $4.place;
+				
+			cb.emit(getSubu("$sp", "$sp", "4"));
+			cb.emit(getSw(Rdest, "$sp"));
+			regsPool.release(Rdest);
+			
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
 			Table* top = tables->top();
 			list<Row*>* rs = top->rows;
@@ -301,6 +325,8 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			} else {
 				assertType(def->type, $3.type);
 			}
+			if(isBool($1.name))
+				emitBooleanAssignment($3.trueList, $3.falseList);
 		}
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
@@ -382,45 +408,102 @@ ExpList : Exp {
 Type : INT {$$.type = TYPE_INT;}
 	 | BYTE {$$.type = TYPE_BYTE;}
 	 | BOOL {$$.type = TYPE_BOOL;}
-Exp : LPAREN Exp RPAREN {$$ = $2; }
+Exp : LPAREN Exp RPAREN {
+			$$ = $2;
+			
+			$$.falseList = $2.falseList;
+			$$.trueList = $2.trueList;
+			
+			$$.place = $2.place;
+		}
 	| Exp BINOP Exp {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
-			$$.reg = emitBinop($2.name, $1.name, $3.name);
+			$$.place = emitBinop($2.name, $1.name, $3.name);
+			regsPool.release($1.place);
+			regsPool.release($3.place);
 		}
 	| IdBuilt { 
 		assertDef($1.name); 
 		Row* r = findDef($1.name);
 		$$.type = r->type;
+		
+		string Rdest = regsPool.allocate();
+		ostringstream offset;
+		offset << 4*(*(r->offset));
+		cb.emit(getLw(Rdest, offset.str(), "$fp"));
+		$$.place = Rdest;
+		$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+		$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+		regsPool.release(Rdest);
 	}
-	| Call { }
-	| NUM {}
-	| NumByte {}
-	| STRING {$$.type = TYPE_STRING;}
-	| TRUE {$$.name = "1"; $$.type = TYPE_BOOL;}
-	| FALSE {$$.name = "0"; $$.type = TYPE_BOOL;}
+	| Call {}
+	| NUM {
+		$$.place = emitLeaf($1.name);
+	}
+	| NumByte {
+		$$.place = emitLeaf($1.name);
+	}
+	| STRING {
+		$$.type = TYPE_STRING;
+		$$.place = emitLeaf($1.name);
+	}
+	| TRUE {
+			$$.name = "1"; 
+			$$.type = TYPE_BOOL;
+			$$.trueList = cb.makelist(cb.emit("j "));
+		}
+	| FALSE {
+			$$.name = "0"; 
+			$$.type = TYPE_BOOL;
+			$$.falseList = cb.makelist(cb.emit("j "));
+		}
 	| NOT Exp {
 			assertType($2.type, TYPE_BOOL);
 			$$.type = TYPE_BOOL;
+			
+			$$.place = $2.place;
+			$$.falseList = $2.trueList;
+			$$.trueList = $2.falseList;
 		}
-	| Exp AND Exp {
+	| Exp AND M Exp {
 			assertType($1.type, TYPE_BOOL);
-			assertType($3.type, TYPE_BOOL);
+			assertType($4.type, TYPE_BOOL);
 			$$.type = TYPE_BOOL;
-			emitAnd($1.name, $3.name);
+			
+			cb.bpatch($1.trueList, $3.quad);
+			$$.trueList = $4.trueList;
+			$$.falseList = cb.merge($1.falseList,$4.falseList);
+			
+			
 		}
-	| Exp OR Exp {
+	| Exp OR M Exp {
 			assertType($1.type, TYPE_BOOL);
-			assertType($3.type, TYPE_BOOL);
+			assertType($4.type, TYPE_BOOL);
 			$$.type = TYPE_BOOL;
-			emitOr($1.name, $3.name);
+			
+			cb.bpatch($1.falseList, $3.quad);
+			$$.trueList = cb.merge($1.trueList,$4.trueList);
+			$$.falseList = $4.falseList;			
 		}
 	| Exp RELOP Exp {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = TYPE_BOOL;
+			
+			string Rdest = regsPool.allocate();
+			cb.emit(getLoadint(Rdest, $1.name));
+			$$.trueList = cb.makelist(cb.emit(getIf(getRelop($2.name), Rdest, $3.name, "")));
+			$$.falseList = cb.makelist(cb.emit("j "));
+			$$.place = Rdest;
+			regsPool.release(Rdest);
+			regsPool.release($1.place);
+			regsPool.release($3.place);
 		}
+M : {
+	$$.quad = cb.next();
+}
 NumByte : NUM B { 
 			int val = atoi(($1.name).c_str());
 			if (val < 0 || val > 255) {
@@ -445,79 +528,96 @@ int yyerror(string message)
 
 
 /***********************HW5***************************/
-string newlabel() {
-	ostringstream lName;
-	lName << "__L" << labelCounter;
-	labelCounter++;
-	return lName.str();
+
+string getAddu (string Rdest, string Rsrc, string num2){
+    return "addu " + Rdest + ", " + Rsrc + ", " + num2;
 }
 
-/******************ARITMETIC CALCULATION**************/
-
-string addu (string Rdest, string Rsrc, string num2){
-    return "addu " + Rdest + "," + Rsrc + "," + num2;
+string getSubu (string Rdest, string Rsrc, string num2){
+    return "subu " + Rdest + ", " + Rsrc + ", " + num2;
 }
 
-string subu (string Rdest, string Rsrc, string num2){
-    return "subu " + Rdest + "," + Rsrc + "," + num2;
+string getMulo (string Rdest, string Rsrc, string num2){
+    return "mulo " + Rdest + ", " + Rsrc + ", " + num2;
 }
 
-string mulo (string Rdest, string Rsrc, string num2){
-    return "mulo " + Rdest + "," + Rsrc + "," + num2;
-}
-
-string divu (string Rdest, string Rsrc, string src2){
+string getDivu (string Rdest, string Rsrc, string src2){
 	// TODO: implement division by zero exception
-    return "divu " + Rdest + "," + Rsrc + "," + src2;
+    return "divu " + Rdest + ", " + Rsrc + ", " + src2;
 }
 
-string move (string Rsrc, string Rdest){
-    return "move " + Rdest + "," + Rsrc;
+string getMove (string Rdest, string Rsrc){
+    return "move " + Rdest + ", " + Rsrc;
 }
 
-string loadint (string Rdest, string num) {
+string getLoadint (string Rdest, string num) {
 	return "li " + Rdest + ", " + num;
 }
 
+string getSw(string Rsrc, string Rdest) {
+	return "sw " + Rsrc + ", " + "(" + Rdest + ")";
+}
+
+string getLw(string Rdest, string offset, string Rsrc) {
+	return "lw " + Rdest + ", " + offset + "(" + Rsrc + ")";
+}
+
 string emitBinop(string binop, string s1, string s2) {
-    string Rdest = registersPool.allocate();
-	string Rsrc = registersPool.allocate();
-	string command = loadint(Rsrc, s1) + "\n";
+    string Rdest = regsPool.allocate();
+	string Rsrc = regsPool.allocate();
+	string command = getLoadint(Rsrc, s1) + "\n";
 	switch(binop[0]) {
-		case '+': command += addu(Rdest, Rsrc, s2); break;
-		case '-': command += subu(Rdest, Rsrc, s2); break;
-		case '*': command += mulo(Rdest, Rsrc, s2); break;
-		case '/': command += divu(Rdest, Rsrc, s2); break;
+		case '+': command += getAddu(Rdest, Rsrc, s2); break;
+		case '-': command += getSubu(Rdest, Rsrc, s2); break;
+		case '*': command += getMulo(Rdest, Rsrc, s2); break;
+		case '/': command += getDivu(Rdest, Rsrc, s2); break;
 	}
-	codebuffer.emit(command);
-	registersPool.release(Rsrc);
+	cb.emit(command);
+	regsPool.release(Rsrc);
 	return Rdest;
 }
 
-/**************BOOLEAN CALCULATION************/
-
-string emitOr(string s1, string s2){
-	string label = newlabel();
-	string Rdest = registersPool.allocate();
-	string command = loadint(Rdest, s1) + "\n";
-	command += "beq " + Rdest + ", 1, " + label + "\n";
-	command += label + ": " + loadint(Rdest, s2);
-	codebuffer.emit(command);
-	return command;
+string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> falseList) {
+	string trueLabel = cb.next();
+	string Rdest = regsPool.allocate();
+	cb.emit(getLoadint(Rdest, "1"));
+	vector<address_t> saveToStackList = cb.makelist(cb.emit("j "));
+	cb.bpatch(trueList, trueLabel);
+	string falseLabel = cb.next();
+	cb.emit(getLoadint(Rdest, "0"));
+	cb.bpatch(falseList, falseLabel);
+	string saveToStackLabel = cb.next();
+	cb.bpatch(saveToStackList, saveToStackLabel);
+	return Rdest;
 }
 
-string emitAnd(string s1, string s2){
-	string label = newlabel();
-	string Rdest = registersPool.allocate();
-	string command = loadint(Rdest, s1) + "\n";
-	command += "beq " + Rdest + ", 0, " + label + "\n";
-	command += label + ": " + loadint(Rdest, s2);
-	codebuffer.emit(command);
-	return command;
+string getIf(string relop, string reg, string val, string label) {
+	return relop + " " + reg + ", " + val + ", " + label;
+}
+
+string getRelop(string op) {
+	if (op == "<")
+		return "blt";
+	if (op == "<=")
+		return "ble";
+	if (op == "==")
+		return "beq";
+	if (op == ">=")
+		return "bge";
+	if (op == ">")
+		return "bgt";
+	if (op == "!=")
+		return "bne";
+	return "";
+}
+
+string emitLeaf(string name) {
+	string Rdest = regsPool.allocate();
+	cb.emit(getLoadint(Rdest, name));
+	return Rdest;
 }
 
 /* ********************************************************* */
-
 
 void assertType(type_t t1, type_t t2) {
 	if(t1 != t2) {
@@ -580,6 +680,12 @@ bool isFunction(string name) {
 bool isDef(string name) {
 	Row* r = findDef(name);
 	return r != NULL;
+}
+
+
+bool isBool(string name) {
+	Row* r = findDef(name);
+	return isVar(r) && (r->type == TYPE_BOOL);
 }
 
 void assertNotDef(string name) {

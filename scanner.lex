@@ -41,7 +41,7 @@ break									return BREAK;
 \{										return LBRACE;
 \}										return RBRACE;
 [=]										return ASSIGN;
-(==|!=|<|>|<=|>=)		  				return RELOP;
+(==|!=|<|>|<=|>=)		  				{yylval.name = yytext; return RELOP;}
 [\+|\-|\*|/]			     			{yylval.name=yytext; return BINOP;}
 \"[^"]*\" 								return STRING;
 [a-zA-Z][a-zA-Z0-9]*					{ saveyy=yytext; yylval.name=yytext; return ID; }
