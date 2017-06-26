@@ -64,7 +64,7 @@
 	string getDivu (string Rdest, string Rsrc, string num2);
 	string getMove (string Rdest, string Rsrc);
 	string getLoadint (string Rdest, string num);
-	string emitBinop(string binop, string s1, string s2);
+	string emitBinop(string binop, string R1, string R2);
 	string getRelop(string op);
 	string getIf(string relop, string reg, string val, string label);
 	string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> falseList);
@@ -420,23 +420,26 @@ Exp : LPAREN Exp RPAREN {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
-			$$.place = emitBinop($2.name, $1.name, $3.name);
-			regsPool.release($1.place);
+			$$.place = emitBinop($2.name, $1.place, $3.place);
+			//regsPool.release($1.place);
 			regsPool.release($3.place);
 		}
 	| IdBuilt { 
 		assertDef($1.name); 
 		Row* r = findDef($1.name);
 		$$.type = r->type;
+		$$.name = $1.name;
 		
 		string Rdest = regsPool.allocate();
 		ostringstream offset;
 		offset << 4*(*(r->offset));
 		cb.emit(getLw(Rdest, offset.str(), "$fp"));
 		$$.place = Rdest;
-		$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
-		$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
-		regsPool.release(Rdest);
+		if (isBool($$.name)) {
+			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+			regsPool.release(Rdest);
+		}
 	}
 	| Call {}
 	| NUM {
@@ -492,12 +495,8 @@ Exp : LPAREN Exp RPAREN {
 			assertNumber($3.type);
 			$$.type = TYPE_BOOL;
 			
-			string Rdest = regsPool.allocate();
-			cb.emit(getLoadint(Rdest, $1.name));
-			$$.trueList = cb.makelist(cb.emit(getIf(getRelop($2.name), Rdest, $3.name, "")));
+			$$.trueList = cb.makelist(cb.emit(getIf(getRelop($2.name), $1.place, $3.place, "")));
 			$$.falseList = cb.makelist(cb.emit("j "));
-			$$.place = Rdest;
-			regsPool.release(Rdest);
 			regsPool.release($1.place);
 			regsPool.release($3.place);
 		}
@@ -562,19 +561,16 @@ string getLw(string Rdest, string offset, string Rsrc) {
 	return "lw " + Rdest + ", " + offset + "(" + Rsrc + ")";
 }
 
-string emitBinop(string binop, string s1, string s2) {
-    string Rdest = regsPool.allocate();
-	string Rsrc = regsPool.allocate();
-	string command = getLoadint(Rsrc, s1) + "\n";
+string emitBinop(string binop, string R1, string R2) {
+	string command = "";
 	switch(binop[0]) {
-		case '+': command += getAddu(Rdest, Rsrc, s2); break;
-		case '-': command += getSubu(Rdest, Rsrc, s2); break;
-		case '*': command += getMulo(Rdest, Rsrc, s2); break;
-		case '/': command += getDivu(Rdest, Rsrc, s2); break;
+		case '+': command += getAddu(R1, R1, R2); break;
+		case '-': command += getSubu(R1, R1, R2); break;
+		case '*': command += getMulo(R1, R1, R2); break;
+		case '/': command += getDivu(R1, R1, R2); break;
 	}
 	cb.emit(command);
-	regsPool.release(Rsrc);
-	return Rdest;
+	return R1;
 }
 
 string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> falseList) {
