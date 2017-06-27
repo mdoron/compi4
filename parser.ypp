@@ -68,9 +68,11 @@
 	string getRelop(string op);
 	string getIf(string relop, string reg, string val, string label);
 	string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> falseList);
-	string getSw(string Rsrc, string Rdest);
+	string getSw(string Rsrc, string offset, string Rdest);
 	string emitLeaf(string name);
 	string getLw(string Rdest, string offset, string Rsrc);
+	string loadVar(string name, STYPE* S);
+	void storeVar(string name, string value);
 	
 	class Registers {
 		set<string> registersSet;
@@ -189,7 +191,9 @@ FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace I
 						output::errorMainMissing(); // TODO: Check if correct
 						exit(0);
 					}
-				}				
+				}
+				cb.emit($2.name + "_end:");
+				cb.bpatch($10.nextList, $2.name+"_end");
 				functionType = TYPE_NON;
 				functionName = "";
 			}
@@ -211,6 +215,10 @@ DoneSignature : {
 	}
 
 IdBuilt : ID { $$.name = $1.name; }
+
+/*IdBuiltLoad : ID { $$.name = $1.name; }
+IdBuiltStore : ID { $$.name = $1.name; }*/
+
 FuncName : IdBuilt {
 			$$.name = $1.name;
 			functionName = $1.name;
@@ -261,12 +269,17 @@ FormalDecl : Type IdBuilt {
 				formalTypes->push_back($1.type);
 				formalNames->push_back($2.name);
 			}
-Stmts : Stmt {}
-  	  | Stmts Stmt {}
+Stmts : Stmt {$$.nextList = $1.nextList;}
+  	  | Stmts M Stmt {
+		  cb.bpatch($1.nextList, $2.quad);
+		  $$.nextList = $3.nextList;
+		}
 
-Stmt : SingleStmt | BlockStmt
+Stmt : SingleStmt {$$.nextList = $1.nextList;} | BlockStmt {$$.nextList = $1.nextList;}
 
-BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {}
+BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {
+	$$.nextList = $3.nextList;
+}
 	  
 VarDefStmt : Type IdBuilt SC {
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
@@ -277,8 +290,10 @@ VarDefStmt : Type IdBuilt SC {
 			offsets->push(*(r->offset) + 1);
 			
 			cb.emit(getSubu("$sp", "$sp", "4"));
+			
+			//$$.nextList = NULL;
 		}
-  	 | Type IdBuilt ASSIGN Exp SC {
+		| Type IdBuilt ASSIGN Exp SC {
 			assertNotDef($2.name);
 			if ($1.type == TYPE_INT) {
 				type_t ts[2] = {TYPE_INT, TYPE_BYTE};
@@ -293,7 +308,7 @@ VarDefStmt : Type IdBuilt SC {
 				Rdest = $4.place;
 				
 			cb.emit(getSubu("$sp", "$sp", "4"));
-			cb.emit(getSw(Rdest, "$sp"));
+			cb.emit(getSw(Rdest, "0",  "$sp"));
 			regsPool.release(Rdest);
 			
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
@@ -302,15 +317,22 @@ VarDefStmt : Type IdBuilt SC {
 			insert(rs, r);
 			offsets->pop();
 			offsets->push(*(r->offset) + 1); 
+			
+			//$$.nextList = NULL;
 		}
 		
-SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace
+SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace {
+	$$.nextList = $2.nextList;
+}
 
-SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow | ControlFlowStmt
+SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow {$$.nextList = $1.nextList;} 
+						| ControlFlowStmt {$$.nextList = $1.nextList;}
 
-StmtOfControlFlow : SingleStmtOfControlFlow | BlockStmt
+StmtOfControlFlow : SingleStmtOfControlFlow {$$.nextList = $1.nextList;} 
+				  | BlockStmt {$$.nextList = $1.nextList;}
 
-SingleStmt : VarDefStmt | ControlFlowStmt
+SingleStmt : VarDefStmt {$$.nextList = $1.nextList;} 
+		   | ControlFlowStmt {$$.nextList = $1.nextList;}
 
 ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			assertDef($1.name);
@@ -325,8 +347,19 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			} else {
 				assertType(def->type, $3.type);
 			}
+
+			string Rdest = ""; 
 			if(isBool($1.name))
-				emitBooleanAssignment($3.trueList, $3.falseList);
+				Rdest = emitBooleanAssignment($3.trueList, $3.falseList);
+			else
+				Rdest = $3.place;
+				
+			storeVar($1.name, Rdest);
+			//cb.emit(getSubu("$sp", "$sp", "4"));
+			//cb.emit(getSw(Rdest, "0", "$sp"));
+			regsPool.release(Rdest);
+			
+			//$$.nextList = NULL;
 		}
      | Call SC { }
      | RETURN SC { assertType(functionType, TYPE_VOID); }
@@ -338,25 +371,83 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				assertType(functionType, $2.type); 
 			
 		}
-     | IfStmt RPAREN StmtOfControlFlow {}
-	 | IfStmt RPAREN StmtOfControlFlow ELSE StmtOfControlFlow { }
-	 | WhileStmt RPAREN Wlparen StmtOfControlFlow Wrparen { }
+     | IfStmt M RPAREN StmtOfControlFlow {
+		cb.bpatch($1.trueList,$2.quad);
+		$4.nextList = cb.merge($1.falseList,$4.nextList);
+	 }
+	 | IfStmt M RPAREN StmtOfControlFlow ELSE N M StmtOfControlFlow { 
+		cb.bpatch($1.trueList,$2.quad);
+		cb.bpatch($1.falseList,$7.quad);
+		$$.nextList = cb.merge(cb.merge($4.nextList, $6.nextList), $8.nextList);
+	 }
+	 | M WhileStmt RPAREN M Wlparen StmtOfControlFlow Wrparen {
+		cb.bpatch($6.nextList, $1.quad);
+		cb.bpatch($2.trueList, $4.quad);
+		$$.nextList = $2.falseList;
+		cb.emit("j " + $1.quad);
+	 }
      | BREAK SC {
 			if(whileCounter == 0) {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
 		}
-	 | SwitchStmt RPAREN LBRACE CaseList RBRACE SC 
-SwitchStmt : SWITCH LPAREN Exp {assertNumber($3.type);}
-IfStmt : IF LPAREN Exp  { assertType($3.type, TYPE_BOOL); }
-WhileStmt : WHILE LPAREN Exp { assertType($3.type, TYPE_BOOL); }
+	 | SwitchStmt N RPAREN LBRACE CaseList RBRACE SC {
+			cb.bpatch($2.nextList, cb.next());
+			
+			while(!$5.valueList.empty()){
+				int value = $5.valueList.top();
+				$5.valueList.pop();
+				string quad = $5.quadList.top();
+				$5.quadList.pop();
+				ostringstream temp;
+				temp << value;
+				cb.emit("beq " + $1.place + ", " + temp.str() + ", " + quad);
+			}
+			cb.next();
+			$$.nextList = cb.merge($5.nextList, cb.makelist(cb.emit("j ")));
+
+	 }
+SwitchStmt : SWITCH LPAREN Exp {
+			assertNumber($3.type);
+			$$.place = $3.place;
+			$$.trueList = $3.trueList;
+			$$.falseList = $3.falseList;
+}
+IfStmt : IF LPAREN Exp  {
+			assertType($3.type, TYPE_BOOL);
+			$$.trueList = $3.trueList;
+			$$.falseList = $3.falseList;
+		}
+WhileStmt : WHILE LPAREN Exp { 
+			assertType($3.type, TYPE_BOOL); 
+			$$.trueList = $3.trueList;
+			$$.falseList = $3.falseList;
+		}
 Wlparen : {whileCounter += 1;}
 Wrparen : {whileCounter -= 1;}
-CaseList : CaseStat CaseList {}
-		 | CaseStat {}
-CaseStat : CASE NUM COLON StmtOfControlFlow BREAK SC {}
-		 | CASE NUM B COLON StmtOfControlFlow BREAK SC {}
+CaseList : CaseStat CaseList {
+			$$.quadList = $2.quadList;
+			$$.quadList.push($1.quad);
+			$$.valueList = $2.valueList;
+			$$.valueList.push($1.value);
+			$$.nextList = cb.merge($2.nextList,$1.nextList);
+}
+		 | CaseStat {
+			 $$.quadList.push($1.quad);
+			 $$.valueList.push($1.value);
+			 $$.nextList = $1.nextList; 
+		 }
+CaseStat : CASE NUM COLON M StmtOfControlFlow BREAK SC {
+			$$.quad = $4.quad;
+			$$.value = atoi(($2.name).c_str());
+			$$.nextList = cb.merge($5.nextList, cb.makelist(cb.emit("j "))) ;
+		}
+		 | CASE NUM B COLON M StmtOfControlFlow BREAK SC {
+			$$.quad = $5.quad;
+			$$.value = atoi(($2.name).c_str());
+			$$.nextList = cb.merge($6.nextList, cb.makelist(cb.emit("j "))) ;
+		 }
 Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		Row* r = findFunction($1.name);
 		if (r == NULL) {
@@ -430,16 +521,7 @@ Exp : LPAREN Exp RPAREN {
 		$$.type = r->type;
 		$$.name = $1.name;
 		
-		string Rdest = regsPool.allocate();
-		ostringstream offset;
-		offset << 4*(*(r->offset));
-		cb.emit(getLw(Rdest, offset.str(), "$fp"));
-		$$.place = Rdest;
-		if (isBool($$.name)) {
-			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
-			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
-			regsPool.release(Rdest);
-		}
+		$$.place = loadVar($1.name, &$$);
 	}
 	| Call {}
 	| NUM {
@@ -503,6 +585,10 @@ Exp : LPAREN Exp RPAREN {
 M : {
 	$$.quad = cb.next();
 }
+N : {
+	cb.next();
+	$$.nextList = cb.makelist(cb.emit("j "));
+}
 NumByte : NUM B { 
 			int val = atoi(($1.name).c_str());
 			if (val < 0 || val > 255) {
@@ -553,8 +639,8 @@ string getLoadint (string Rdest, string num) {
 	return "li " + Rdest + ", " + num;
 }
 
-string getSw(string Rsrc, string Rdest) {
-	return "sw " + Rsrc + ", " + "(" + Rdest + ")";
+string getSw(string Rsrc, string offset, string Rdest) {
+	return "sw " + Rsrc + ", " + offset + "(" + Rdest + ")";
 }
 
 string getLw(string Rdest, string offset, string Rsrc) {
@@ -611,6 +697,27 @@ string emitLeaf(string name) {
 	string Rdest = regsPool.allocate();
 	cb.emit(getLoadint(Rdest, name));
 	return Rdest;
+}
+
+string loadVar(string name, STYPE* S) {
+	Row* r = findDef(name);
+	string Rdest = regsPool.allocate();
+	ostringstream offset;
+	offset << 4*(*(r->offset));
+	cb.emit(getLw(Rdest, offset.str(), "$fp"));
+	if (isBool(name)) {
+		S->trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+		S->falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+		regsPool.release(Rdest);
+	}
+	return Rdest;
+}
+
+void storeVar(string name, string value) {
+	Row* r = findDef(name);
+	ostringstream offset;
+	offset << 4*(*(r->offset));
+	cb.emit(getSw(value, offset.str(), "$fp"));
 }
 
 /* ********************************************************* */
