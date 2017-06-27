@@ -75,6 +75,8 @@
 	void storeVar(string name, string value);
 	string popVars();
 	void handleReturn();
+	void emitPrint();
+	void emitPrinti();
 	
 	class Registers {
 		set<string> releasedRegs;
@@ -177,6 +179,9 @@ Program : Init Funcs {
 			cb.printCodeBuffer();
 		}
 Init : {
+	emitPrint();
+	emitPrinti();
+	
 	bottomTable = new Table();
 	// Add lib functions
 	Row* print = new Row(TYPE_VOID, "print", NULL);
@@ -820,8 +825,20 @@ string popVars()  {
 	return getAddu("$sp", "$sp", tmp.str());
 }
 
-void handleReturn() {
-	
+void emitPrint() {
+	cb.emit("print:");
+	cb.emit("lw $a0, 0($sp)");
+	cb.emit("li $v0, 1");
+	cb.emit("syscall");
+	cb.emit("jr $ra");
+}
+
+void emitPrinti() {
+	cb.emit("printi:");
+	cb.emit("lw $a0, 0($sp)");
+	cb.emit("li $v0, 4");
+	cb.emit("syscall");
+	cb.emit("jr $ra");
 }
 /* ********************************************************* */
 
