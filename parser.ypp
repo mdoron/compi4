@@ -208,7 +208,7 @@ FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace I
 				}
 				cb.emit($2.name + "_end:");
 				cb.bpatch($10.nextList, $2.name+"_end");
-				if($1.type == TYPE_VOID) {
+				if($1.type == TYPE_VOID) { 
 					cb.emit("jr $ra");
 				}
 				functionType = TYPE_NON;
