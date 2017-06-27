@@ -73,9 +73,12 @@
 	string getLw(string Rdest, string offset, string Rsrc);
 	string loadVar(string name, STYPE* S);
 	void storeVar(string name, string value);
+	string popVars();
+	void handleReturn();
 	
 	class Registers {
-		set<string> registersSet;
+		set<string> releasedRegs;
+		set<string> allocatedRegs;
 		
 		public:
 
@@ -87,44 +90,55 @@
 			while(i!=8){
 				string tmp = t;
 				tmp.append(&a[i],0, 1);
-				registersSet.insert(tmp);
+				releasedRegs.insert(tmp);
 				tmp = s;
 				tmp.append(&a[i], 0, 1);
-				registersSet.insert(tmp);
+				releasedRegs.insert(tmp);
 				i++;
 			}
 			string tmp = t;
 			tmp.append(&a[i],0, 1);
-			registersSet.insert(tmp);
+			releasedRegs.insert(tmp);
 			i++;
 			tmp = t;
 			tmp.append(&a[i],0, 1);
-			registersSet.insert(tmp);
+			releasedRegs.insert(tmp);
 		}
-
-		~Registers(){}
 		
-		set<string> getRegistersSet(){
-		  return registersSet;
+		~Registers(){}
+
+		set<string> getReleasedRegs() {
+			return releasedRegs;
 		}
 
+		set<string> getAllocatedRegs() {
+			return allocatedRegs;
+		}		
+		
 		string allocate(){
-			assert(registersSet.size()!=0);
-			set<string>::iterator it = registersSet.begin();
+			assert(releasedRegs.size()!=0);
+			set<string>::iterator it = releasedRegs.begin();
 			string reg = *it;
-			registersSet.erase(reg);
+			allocatedRegs.insert(reg);
+			releasedRegs.erase(reg);
 			return reg;
 		}
 
 		void release(string reg){
 			if (reg == "")
 				return;
-			assert(registersSet.find(reg)==registersSet.end());
-			registersSet.insert(reg);
+			assert(releasedRegs.find(reg)==releasedRegs.end());
+			releasedRegs.insert(reg);
+			allocatedRegs.erase(reg);	
+		}
+		
+		void releaseAll() {
+			for(set<string>::iterator it = allocatedRegs.begin(); it != allocatedRegs.end(); ++it)
+				release(*it);
 		}
 
 		unsigned long long int numOfValidRegisters(){
-			return registersSet.size();
+			return releasedRegs.size();
 		}
 
 	};
@@ -194,6 +208,9 @@ FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace I
 				}
 				cb.emit($2.name + "_end:");
 				cb.bpatch($10.nextList, $2.name+"_end");
+				if($1.type == TYPE_VOID) {
+					cb.emit("jr $ra");
+				}
 				functionType = TYPE_NON;
 				functionName = "";
 			}
@@ -220,6 +237,8 @@ IdBuilt : ID { $$.name = $1.name; }
 IdBuiltStore : ID { $$.name = $1.name; }*/
 
 FuncName : IdBuilt {
+			regsPool.releaseAll();
+			
 			$$.name = $1.name;
 			functionName = $1.name;
 			is_main = ($1.name == "main");
@@ -242,6 +261,7 @@ Srbrace : {
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
 	*/
+	cb.emit(popVars());
 	tables->pop();
 	offsets->pop();
 	
@@ -269,16 +289,18 @@ FormalDecl : Type IdBuilt {
 				formalTypes->push_back($1.type);
 				formalNames->push_back($2.name);
 			}
-Stmts : Stmt {$$.nextList = $1.nextList;}
+Stmts : Stmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
   	  | Stmts M Stmt {
 		  cb.bpatch($1.nextList, $2.quad);
 		  $$.nextList = $3.nextList;
+		  $$.breakList = cb.merge($1.breakList, $3.breakList); 
 		}
 
-Stmt : SingleStmt {$$.nextList = $1.nextList;} | BlockStmt {$$.nextList = $1.nextList;}
+Stmt : SingleStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; } | BlockStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
 BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {
 	$$.nextList = $3.nextList;
+	$$.breakList = $3.breakList; 
 }
 	  
 VarDefStmt : Type IdBuilt SC {
@@ -326,13 +348,13 @@ SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace {
 }
 
 SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow {$$.nextList = $1.nextList;} 
-						| ControlFlowStmt {$$.nextList = $1.nextList;}
+						| ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
-StmtOfControlFlow : SingleStmtOfControlFlow {$$.nextList = $1.nextList;} 
-				  | BlockStmt {$$.nextList = $1.nextList;}
+StmtOfControlFlow : SingleStmtOfControlFlow {$$.nextList = $1.nextList; $$.breakList = $1.breakList; } 
+				  | BlockStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
 SingleStmt : VarDefStmt {$$.nextList = $1.nextList;} 
-		   | ControlFlowStmt {$$.nextList = $1.nextList;}
+		   | ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
 ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			assertDef($1.name);
@@ -362,28 +384,37 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			//$$.nextList = NULL;
 		}
      | Call SC { }
-     | RETURN SC { assertType(functionType, TYPE_VOID); }
+     | RETURN SC { 
+			assertType(functionType, TYPE_VOID); 
+			cb.emit(popVars());
+			cb.emit("jr $ra");
+		}
      | RETURN Exp SC { 
 			assertNotType(functionType, TYPE_VOID); 
 			if (functionType == TYPE_INT)
 				assertNumber($2.type);
 			else 
 				assertType(functionType, $2.type); 
-			
+			cb.emit(getMove("$v0", $2.place));
+			cb.emit(popVars());
+			cb.emit("jr $ra");
 		}
      | IfStmt M RPAREN StmtOfControlFlow {
-		cb.bpatch($1.trueList,$2.quad);
-		$4.nextList = cb.merge($1.falseList,$4.nextList);
+		cb.bpatch($1.trueList, $2.quad);
+		$$.nextList = cb.merge($1.falseList, $4.nextList);
+		$$.breakList = $4.breakList; 
 	 }
 	 | IfStmt M RPAREN StmtOfControlFlow ELSE N M StmtOfControlFlow { 
 		cb.bpatch($1.trueList,$2.quad);
 		cb.bpatch($1.falseList,$7.quad);
 		$$.nextList = cb.merge(cb.merge($4.nextList, $6.nextList), $8.nextList);
+		$$.breakList = cb.merge($4.breakList, $8.breakList); 
 	 }
 	 | M WhileStmt RPAREN M Wlparen StmtOfControlFlow Wrparen {
 		cb.bpatch($6.nextList, $1.quad);
 		cb.bpatch($2.trueList, $4.quad);
-		$$.nextList = $2.falseList;
+		$$.nextList = cb.merge($6.breakList, $2.falseList);
+		$$.breakList = $6.breakList; 
 		cb.emit("j " + $1.quad);
 	 }
      | BREAK SC {
@@ -391,6 +422,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
+			$$.breakList = cb.makelist(cb.emit("j "));
 		}
 	 | SwitchStmt N RPAREN LBRACE CaseList RBRACE SC {
 			cb.bpatch($2.nextList, cb.next());
@@ -467,6 +499,48 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callParams->clear();		
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
+		
+		// push allocated registers
+		for( list<string>::iterator it = $$.allocatedRegsList.begin(); it != $$.allocatedRegsList.end(); ++it ) {
+			cb.emit(getSubu("$sp", "$sp", "4"));
+			cb.emit(getSw(*it, "0", "$sp"));
+		}
+		// push ra
+		cb.emit(getSubu("$sp", "$sp", "4"));
+		cb.emit(getSw("$ra", "0", "$sp"));
+		
+		// push params backwards
+		for( list<string>::reverse_iterator rit = $4.paramPlaceList.rbegin(); rit != $4.paramPlaceList.rend(); ++rit ) {
+			cb.emit(getSubu("$sp", "$sp", "4"));
+			cb.emit(getSw(*rit, "0", "$sp"));
+		}
+		// call
+		cb.emit("jal " + $1.name);
+		// get value
+		string Rdest = regsPool.allocate();
+		cb.emit(getMove(Rdest, "$v0"));
+		$$.place = Rdest;
+		// pop params - I decided that the function will remove the locals
+		/*for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
+			cb.emit(getLw(*it, "0", "$sp"));
+			cb.emit(getAddu("$sp", "$sp", "4"));
+		}*/
+		
+		// pop ra
+		cb.emit(getLw("$ra", "0", "$sp"));
+		cb.emit(getAddu("$sp", "$sp", "4"));		
+		
+		// pop allocated registers
+		for( list<string>::reverse_iterator rit = $$.allocatedRegsList.rbegin(); rit != $$.allocatedRegsList.rend(); ++rit ) {
+			cb.emit(getLw(*rit, "0", "$sp"));
+			cb.emit(getAddu("$sp", "$sp", "4"));
+		}
+		
+		// release ExpList registers
+		for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
+			regsPool.release(*it);
+		}
+		
 	 }
 	 | IdBuilt LPAREN NewCall RPAREN {
 		Row* r = findFunction($1.name);
@@ -485,23 +559,43 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callParams->clear();
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top(): new list<type_t>();
+		
+		for( list<string>::iterator it = $$.allocatedRegsList.begin(); it != $$.allocatedRegsList.end(); ++it ) {
+			cb.emit(getSubu("$sp", "$sp", "4"));
+			cb.emit(getSw(*it, "0", "$sp"));
+		}
+		
+		string Rdest = regsPool.allocate();
+		cb.emit(getMove(Rdest, "$v0"));
+		$$.place = Rdest;
+		
+		for( list<string>::reverse_iterator rit = $$.allocatedRegsList.rbegin(); rit != $$.allocatedRegsList.rend(); ++rit ) {
+			cb.emit(getLw(*rit, "0", "$sp"));
+			cb.emit(getAddu("$sp", "$sp", "4"));
+		}
 	 }
 NewCall : {
 	callParams = new list<type_t>();
 	callsStack.push(callParams);
+	set<string> temp = regsPool.getAllocatedRegs();
+	for( set<string>::iterator it = temp.begin(); it != temp.end(); ++it ) {
+		$$.allocatedRegsList.push_back(*it);
+	}
 }
 ExpList : Exp {
 			callParams->push_front($1.type);
+			$$.paramPlaceList.push_front($1.place);
 		}
 		| Exp COMMA ExpList {
 			callParams->push_front($1.type);
+			$$.paramPlaceList = $3.paramPlaceList;
+			$$.paramPlaceList.push_front($1.place);
 		}
 Type : INT {$$.type = TYPE_INT;}
 	 | BYTE {$$.type = TYPE_BYTE;}
 	 | BOOL {$$.type = TYPE_BOOL;}
 Exp : LPAREN Exp RPAREN {
 			$$ = $2;
-			
 			$$.falseList = $2.falseList;
 			$$.trueList = $2.trueList;
 			
@@ -703,7 +797,7 @@ string loadVar(string name, STYPE* S) {
 	Row* r = findDef(name);
 	string Rdest = regsPool.allocate();
 	ostringstream offset;
-	offset << 4*(*(r->offset));
+	offset << 4*(-*(r->offset));
 	cb.emit(getLw(Rdest, offset.str(), "$fp"));
 	if (isBool(name)) {
 		S->trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
@@ -720,6 +814,15 @@ void storeVar(string name, string value) {
 	cb.emit(getSw(value, offset.str(), "$fp"));
 }
 
+string popVars()  {
+	ostringstream tmp;	
+	tmp << 4*(tables->top()->rows->size());
+	return getAddu("$sp", "$sp", tmp.str());
+}
+
+void handleReturn() {
+	
+}
 /* ********************************************************* */
 
 void assertType(type_t t1, type_t t2) {
