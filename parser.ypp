@@ -57,6 +57,8 @@
 	
 	const char* typeNames[6] = {"NON", "BOOL", "INT", "BYTE", "STRING", "VOID"};
 	
+	int stringLabelIdx = 0;
+	
 	// ************************ hw5 ***************************** //
 	string getAddu (string Rdest, string Rsrc, string num2);
 	string getSubu (string Rdest, string Rsrc, string num2);
@@ -177,6 +179,7 @@ Program : Init Funcs {
 			}
 			*/
 			cb.printCodeBuffer();
+			cb.printDataBuffer();
 		}
 Init : {
 	emitPrint();
@@ -647,8 +650,14 @@ Exp : LPAREN Exp RPAREN {
 	}
 	| STRING {
 		$$.type = TYPE_STRING;
-		$$.place = emitLeaf($1.name);
-		
+		//$$.place = emitLeaf($1.name);
+		ostringstream stringLabel;
+		stringLabel << "STR" << stringLabelIdx;
+		cb.emitData(stringLabel.str() + ": " + $1.name);
+		stringLabelIdx++;
+		string Rdest = regsPool.allocate();
+		cb.emit("la " + Rdest + ", " + stringLabel.str());
+		$$.place = Rdest;
 	}
 	| TRUE {
 			$$.name = "1"; 
