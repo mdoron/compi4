@@ -522,9 +522,11 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// call
 		cb.emit("jal " + $1.name);
 		// get value
-		string Rdest = regsPool.allocate();
-		cb.emit(getMove(Rdest, "$v0"));
-		$$.place = Rdest;
+		if (findFunction($1.name)->type != TYPE_VOID) {
+			string Rdest = regsPool.allocate();
+			cb.emit(getMove(Rdest, "$v0"));
+			$$.place = Rdest;
+		}
 		// pop params - I decided that the function will remove the locals
 		/*for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
 			cb.emit(getLw(*it, "0", "$sp"));
@@ -565,15 +567,29 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top(): new list<type_t>();
 		
+		// push allocated registers
 		for( list<string>::iterator it = $$.allocatedRegsList.begin(); it != $$.allocatedRegsList.end(); ++it ) {
 			cb.emit(getSubu("$sp", "$sp", "4"));
 			cb.emit(getSw(*it, "0", "$sp"));
 		}
+		// push ra
+		cb.emit(getSubu("$sp", "$sp", "4"));
+		cb.emit(getSw("$ra", "0", "$sp"));
+
+		// call
+		cb.emit("jal " + $1.name);
+		// get value
+		if (findFunction($1.name)->type != TYPE_VOID) {
+			string Rdest = regsPool.allocate();
+			cb.emit(getMove(Rdest, "$v0"));
+			$$.place = Rdest;
+		}
+
+		// pop ra
+		cb.emit(getLw("$ra", "0", "$sp"));
+		cb.emit(getAddu("$sp", "$sp", "4"));		
 		
-		string Rdest = regsPool.allocate();
-		cb.emit(getMove(Rdest, "$v0"));
-		$$.place = Rdest;
-		
+		// pop allocated registers
 		for( list<string>::reverse_iterator rit = $$.allocatedRegsList.rbegin(); rit != $$.allocatedRegsList.rend(); ++rit ) {
 			cb.emit(getLw(*rit, "0", "$sp"));
 			cb.emit(getAddu("$sp", "$sp", "4"));
@@ -632,6 +648,7 @@ Exp : LPAREN Exp RPAREN {
 	| STRING {
 		$$.type = TYPE_STRING;
 		$$.place = emitLeaf($1.name);
+		
 	}
 	| TRUE {
 			$$.name = "1"; 
