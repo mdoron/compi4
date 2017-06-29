@@ -1,0 +1,347 @@
+%{
+	#include <iostream>
+	#include <sstream>
+	#include <stdlib.h>
+	#include <math.h>
+	#include <string>
+	#include <map>
+	#include <stack>
+	#include "hw4.hpp"
+	#include "output.hpp"
+	
+	using namespace std;
+	using namespace output;
+
+	#define YYERROR_VERBOSE 1
+	#define YYDEBUG 1
+
+	extern int yylex();
+	extern int yylineno;
+	extern char* yytext;
+
+	int yyerror(const char* err);
+	void handleUnexpectedBreak();
+
+	typedef map<string, yystype> table_t;
+	stack<table_t> symbols;
+	stack<int> offsets;
+	int inWhile = 0;
+	
+	void enterScope();
+	void exitScope();
+	void insertId(string name, type_t type);
+	yystype findId(string id);
+	int timeType(type_t type);
+	void typeCheck(string lvalName, type_t rvalType);
+	void validateIntOrTime(string idName){
+		yystype id = findId(idName); 
+		if (!timeType(id.type) && id.type!=INT_TYPE){
+			errorMismatch(yylineno); 
+			exit(1);
+		}	
+	}
+	void validateType(type_t expected,type_t actual, int decrementLine){
+		if (expected!=actual){
+			int line = decrementLine ? yylineno -1 : yylineno;
+			errorMismatch(line);
+			exit(1);
+		}
+	}
+	type_t handlePlusMinus(type_t t1,type_t t2);
+	type_t handleMult(type_t t1,type_t t2);
+	type_t handleDiv(type_t t1,type_t t2);
+	type_t handleRelationalOp(type_t t1,type_t t2);
+	type_t handleEqualityOp(type_t t1,type_t t2);
+%}
+
+
+%token LP LC RC SC SECOND MINUTE HOUR DAY WEEK INT PRINT INPUT ID STRING TRUE FALSE IF WHILE BREAK BOOL NUM SWITCH CASE COLON
+
+%right ASSIGN
+%left OR
+%left AND
+%left REL_OP_EQ
+%left REL_OP
+%left PLUS MINUS
+%left MULT DIV
+%right NOT
+
+%right RP ELSE
+
+//higher presedence is down in the list...
+%%
+Prog		: M Statements {exitScope();}
+		;
+
+M		:{enterScope();}
+		;
+
+Statements	: Statements Statement
+		| Statement
+		;
+
+Statement	: NonDeclerState
+		| DeclerationState
+		;
+
+DeclerationState: Type ID SC { cout << $2.name << endl; insertId($2.name,$1.type);}
+		| Type ID ASSIGN Exp SC {insertId($2.name,$1.type); typeCheck($2.name,$4.type);}
+		;
+
+NonDeclerState	: LC M Statements RC {exitScope();}
+		| ID ASSIGN Exp SC {typeCheck($1.name,$3.type)}
+		| PRINT ID SC {validateIntOrTime($2.name);}
+		| PRINT STRING SC
+		| INPUT ID SC {validateIntOrTime($2.name);}
+		| IF LP Exp RP ScopedStatement {validateType(BOOL_TYPE,$3.type,1);}
+		| IF LP Exp RP ScopedStatement ELSE ScopedStatement {validateType(BOOL_TYPE,$3.type,0);}
+		| WHILE InWhile LP Exp RP ScopedStatement OutWhile {validateType(BOOL_TYPE,$4.type,0);}
+		| BREAK SC {if (!inWhile) {handleUnexpectedBreak();}}
+		| SWITCH LP Exp RP LC CasesList RC { if (!timeType($3.type)) {errorMismatch(yylineno-1); exit(1);}}
+		;
+
+ScopedStatement : {enterScope();} DeclerationState {exitScope();}
+		| NonDeclerState
+		;
+
+InWhile		: {inWhile++;}
+		;
+OutWhile	: {inWhile--;}
+		;
+CasesList	: CaseStat CasesList
+		| CaseStat
+		;
+
+CaseStat	: CASE NUM TimeUnit COLON ScopedStatement BREAK SC
+
+TimeUnit	: SECOND{$$.type = SECOND_TYPE;}
+		| MINUTE{$$.type = MINUTE_TYPE;}
+		| HOUR  {$$.type = HOUR_TYPE;}
+		| DAY	{$$.type = DAY_TYPE;}
+		| WEEK	{$$.type = WEEK_TYPE;}
+		;
+
+Type		: TimeUnit 	{$$.type = $1.type;}
+		| INT		{$$.type = INT_TYPE}
+		| BOOL		{$$.type = BOOL_TYPE}
+		;
+
+Exp		: LP Exp RP {$$.type = $2.type;}
+		| Exp PLUS Exp {$$.type = handlePlusMinus($1.type,$3.type);}
+		| Exp MINUS Exp {$$.type = handlePlusMinus($1.type,$3.type);}
+		| Exp MULT Exp {$$.type = handleMult($1.type,$3.type);}
+		| Exp DIV Exp {$$.type = handleDiv($1.type,$3.type);}
+		| ID {$$.type = findId($1.name).type;}
+		| NUM {$$.type = INT_TYPE;}
+		| NUM TimeUnit {$$.type = $2.type;}
+		| TRUE {$$.type = BOOL_TYPE;}
+		| FALSE {$$.type = BOOL_TYPE;}
+		| NOT Exp {$$.type = BOOL_TYPE; validateType(BOOL_TYPE,$2.type,0);}
+		| Exp OR Exp {$$.type = BOOL_TYPE; validateType(BOOL_TYPE,$1.type,0); validateType(BOOL_TYPE,$3.type,0);}
+		| Exp AND Exp {$$.type = BOOL_TYPE; validateType(BOOL_TYPE,$1.type,0); validateType(BOOL_TYPE,$3.type,0);}
+		| Exp REL_OP Exp { $$.type = handleRelationalOp($1.type,$3.type);}
+		| Exp REL_OP_EQ Exp { $$.type = handleEqualityOp($1.type,$3.type);}
+		;
+%%
+void handleUnexpectedBreak(){
+	errorUnexpectedBreak(yylineno);
+	exit(1);
+}
+void enterScope(){
+	int next;
+	if (offsets.empty()){
+		next = 0;
+	}
+	else{
+		next = offsets.top();
+	}
+	table_t table; 
+	symbols.push(table);
+	offsets.push(next);
+}
+
+string toString(type_t t){
+	switch(t){
+	case INT_TYPE:
+		return "INT";
+	case BOOL_TYPE:
+		return "BOOL";
+	case SECOND_TYPE:
+		return "SECOND";
+	case MINUTE_TYPE:
+		return "MINUTE";
+	case HOUR_TYPE:
+		return "HOUR";
+	case DAY_TYPE:
+		return "DAY";
+	case WEEK_TYPE:
+		return "WEEK";
+	}
+	return "";
+}
+
+void exitScope(){
+	
+	table_t t= symbols.top();
+	int offset = offsets.top();
+	endScope();
+
+	//printVar(const char* id, int offset, const char* type);
+	for (int i=0;i<t.size();i++){
+		for (table_t::iterator it = t.begin(); it!= t.end(); it++){
+			string id = it->first;
+			yystype val = it->second;
+			if (i == val.declerationIndex){
+				printVar(val.name.c_str(), val.offset, toString(val.type).c_str());
+			}
+		}
+	}
+	symbols.pop();
+	offsets.pop();
+}
+
+int idDeclaredInTable(table_t table, string id){
+	return table.find(id)!=table.end();
+}
+
+int idDeclared(string name){
+	stack<table_t> temp;
+	table_t t = symbols.top();
+	symbols.pop();
+	temp.push(t);
+	while (!idDeclaredInTable(t,name) && !symbols.empty()){
+		t = symbols.top();
+		symbols.pop();	
+		temp.push(t);
+	}
+	while(!temp.empty()){
+		symbols.push(temp.top());
+		temp.pop();
+	}
+	return idDeclaredInTable(t,name);
+}
+
+void insertId(string name, type_t type){
+	int offset = offsets.top();
+	yystype stype;
+	stype.name = name;
+	stype.offset = offset;
+	stype.type = type;
+	table_t t = symbols.top();
+	if (idDeclared(name)){
+		errorDef(yylineno,name.c_str());
+		exit(1);
+	}
+	stype.declerationIndex = t.size();
+	t[name] = stype;
+	offset = offset + 1;
+
+	offsets.pop();
+	symbols.pop();
+	symbols.push(t);
+	offsets.push(offset);
+}
+
+yystype findId(string id){
+	if (!idDeclared(id)){
+		errorUndef(yylineno,id.c_str());
+		exit(1);
+		yystype dummy;
+		return dummy;
+	}
+	stack<table_t> temp;
+	table_t t = symbols.top();
+	symbols.pop();
+	temp.push(t);
+	while (!idDeclaredInTable(t,id) && !symbols.empty()){
+		t = symbols.top();
+		symbols.pop();		
+		temp.push(t);
+	}
+	while(!temp.empty()){
+		symbols.push(temp.top());
+		temp.pop();
+	}
+	return t[id];
+}
+int timeType(type_t type){
+	return type == SECOND_TYPE || type == MINUTE_TYPE || type == HOUR_TYPE || type == DAY_TYPE || type == WEEK_TYPE;
+}
+int sameTypeClass(type_t t1, type_t t2){
+	if (t1==t2){
+		return 1;
+	}
+	return timeType(t1) && timeType(t2);
+}
+void typeCheck(string lvalName, type_t rvalType){
+	type_t lvalType = findId(lvalName).type;
+	if (sameTypeClass(lvalType,rvalType)){
+		return;
+	}
+	errorMismatch(yylineno);
+	exit(1);
+}
+
+int yyerror(const char* err){
+	errorSyn(yylineno);
+	exit(1);
+}
+
+type_t handlePlusMinus(type_t t1,type_t t2){
+	if (!sameTypeClass(t1,t2) || t1==BOOL_TYPE){
+		errorMismatch(yylineno);
+		exit(1);
+	}
+	return t1;
+}
+int atLeastOneTime(type_t t1, type_t t2){
+	return timeType(t1) || timeType(t2);
+}
+int atLeastOneInt(type_t t1, type_t t2){
+	return t1 == INT_TYPE || t2 == INT_TYPE;
+}
+type_t handleMult(type_t t1,type_t t2){
+	if (t1==t2 && t1==INT_TYPE){
+		return t1;
+	}
+	if (atLeastOneInt(t1,t2) && atLeastOneTime(t1,t2)){
+		if (timeType(t1)){
+			return t1;
+		}
+		if (timeType(t2)){
+			return t2;
+		}
+	}
+	errorMismatch(yylineno);
+	exit(1);
+}
+type_t handleDiv(type_t t1,type_t t2){
+	if (sameTypeClass(t1,t2) && t1==INT_TYPE){
+		return t1;
+	}
+	if (timeType(t1) && timeType(t2)){
+		return INT_TYPE;
+	}
+	if (timeType(t1) && t2 == INT_TYPE){
+		return t1;
+	}
+	errorMismatch(yylineno);
+	exit(1);	
+}
+type_t handleRelationalOp(type_t t1,type_t t2){
+	if (sameTypeClass(t1,t2) && t1!=BOOL_TYPE ){
+		return BOOL_TYPE;
+	}
+	errorMismatch(yylineno);
+	exit(1);	
+}
+type_t handleEqualityOp(type_t t1,type_t t2){
+	if (sameTypeClass(t1,t2)){
+		return BOOL_TYPE;
+	}
+	errorMismatch(yylineno);
+	exit(1);
+}
+int main(){
+	return yyparse();
+}

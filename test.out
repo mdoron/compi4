@@ -1,0 +1,62 @@
+.text
+print:
+li $v0, 4
+syscall
+addu $sp, $sp, 4
+jr $ra
+printi:
+lw $a0, 0($sp)
+li $v0, 1
+syscall
+addu $sp, $sp, 4
+jr $ra
+f:
+move $fp, $sp
+subu $fp, $fp, 4
+j label_18
+label_15:
+li $v0, 1
+j label_20
+label_18:
+li $v0, 0
+label_20:
+addu $sp, $sp, 0
+jr $ra
+addu $sp, $sp, 0
+f_end:
+.globl main
+main:
+move $fp, $sp
+subu $fp, $fp, 4
+j label_33
+label_30:
+li $s0, 1
+j label_35
+label_33:
+li $s0, 0
+label_35:
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+label_38:
+lw $s0, 0($fp)
+beq $s0, 1, label_46
+beq $s0, 0, label_42
+label_42:
+lw $s0, 0($fp)
+beq $s0, 1, main_end
+beq $s0, 0, label_46
+label_46:
+j label_48
+label_48:
+li $s0, 1
+j label_53
+label_51:
+li $s0, 0
+label_53:
+sw $s0, 0($fp)
+addu $sp, $sp, 0
+addu $sp, $sp, 4
+main_end:
+jr $ra
+.data
+aErrorZeroDivision: .ascii "Error division by zero"

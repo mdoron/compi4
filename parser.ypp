@@ -58,6 +58,7 @@
 	const char* typeNames[6] = {"NON", "BOOL", "INT", "BYTE", "STRING", "VOID"};
 	
 	int stringLabelIdx = 0;
+	int divLabelIdx = 0;
 	
 	// ************************ hw5 ***************************** //
 	string getAddu (string Rdest, string Rsrc, string num2);
@@ -184,6 +185,9 @@ Program : Init Funcs {
 Init : {
 	emitPrint();
 	emitPrinti();
+	ostringstream stringLabel;
+	stringLabel << "aErrorZeroDivision";
+	cb.emitData(stringLabel.str() + ": .ascii " + "\"Error division by zero\"");
 	
 	bottomTable = new Table();
 	// Add lib functions
@@ -402,8 +406,19 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			if (functionType == TYPE_INT)
 				assertNumber($2.type);
 			else 
-				assertType(functionType, $2.type); 
-			cb.emit(getMove("$v0", $2.place));
+				assertType(functionType, $2.type);
+			if($2.type != TYPE_BOOL)
+				cb.emit(getMove("$v0", $2.place));
+			else {
+				string ret1 = cb.next();
+				cb.emit("li $v0, 1");
+				vector<address_t> jumpToExit = cb.makelist(cb.emit("j "));
+				string ret0 = cb.next();
+				cb.emit("li $v0, 0");
+				cb.bpatch($2.trueList, ret1);
+				cb.bpatch($2.falseList, ret0);
+				cb.bpatch(jumpToExit, cb.next());
+			}
 			cb.emit(popVars());
 			cb.emit("jr $ra");
 		}
@@ -639,7 +654,17 @@ Exp : LPAREN Exp RPAREN {
 		$$.type = r->type;
 		$$.name = $1.name;
 		
-		$$.place = loadVar($1.name, &$$);
+		string Rdest = regsPool.allocate();
+		ostringstream offset;
+		offset << 4*(-*(r->offset));
+		cb.emit(getLw(Rdest, offset.str(), "$fp"));
+		if (isBool($$.name)) {
+			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+			regsPool.release(Rdest);
+		}	
+		
+		$$.place = Rdest;
 	}
 	| Call {}
 	| NUM {
@@ -650,10 +675,9 @@ Exp : LPAREN Exp RPAREN {
 	}
 	| STRING {
 		$$.type = TYPE_STRING;
-		//$$.place = emitLeaf($1.name);
 		ostringstream stringLabel;
-		stringLabel << "STR" << stringLabelIdx;
-		cb.emitData(stringLabel.str() + ": " + $1.name);
+		stringLabel << "aString" << stringLabelIdx;
+		cb.emitData(stringLabel.str() + ": .ascii " +  $1.name );
 		stringLabelIdx++;
 		string Rdest = regsPool.allocate();
 		cb.emit("la " + Rdest + ", " + stringLabel.str());
@@ -752,7 +776,6 @@ string getMulo (string Rdest, string Rsrc, string num2){
 }
 
 string getDivu (string Rdest, string Rsrc, string src2){
-	// TODO: implement division by zero exception
     return "divu " + Rdest + ", " + Rsrc + ", " + src2;
 }
 
@@ -778,7 +801,27 @@ string emitBinop(string binop, string R1, string R2) {
 		case '+': command += getAddu(R1, R1, R2); break;
 		case '-': command += getSubu(R1, R1, R2); break;
 		case '*': command += getMulo(R1, R1, R2); break;
-		case '/': command += getDivu(R1, R1, R2); break;
+		case '/': command += getDivu(R1, R1, R2);
+				  // push ra
+				  ostringstream divOk;
+				  divOk << "divOk" << divLabelIdx;
+				  cb.emit(getIf("bne", R2, "0", divOk.str()));
+				  cb.emit(getSubu("$sp", "$sp", "4"));
+				  cb.emit(getSw("$ra", "0", "$sp"));
+				  string Rdest = regsPool.allocate();
+				  cb.emit("la " + Rdest + ", aErrorZeroDivision");
+				  cb.emit(getSw(Rdest, "0", "$sp"));
+				  regsPool.release(Rdest);
+				  cb.emit("jal print");
+				  cb.emit("li $v0, 10");
+				  cb.emit("syscall");
+				  // pop ra
+    			  cb.emit(getLw("$ra", "0", "$sp"));
+				  cb.emit(getAddu("$sp", "$sp", "4"));
+				  
+				  cb.emit(divOk.str()+":");
+				  divLabelIdx++;
+				  break;
 	}
 	cb.emit(command);
 	return R1;
@@ -846,6 +889,7 @@ void storeVar(string name, string value) {
 }
 
 string popVars()  {
+	// not enough: block inside block. 
 	ostringstream tmp;	
 	tmp << 4*(tables->top()->rows->size());
 	return getAddu("$sp", "$sp", tmp.str());
@@ -853,17 +897,18 @@ string popVars()  {
 
 void emitPrint() {
 	cb.emit("print:");
-	cb.emit("lw $a0, 0($sp)");
-	cb.emit("li $v0, 1");
+	cb.emit("li $v0, 4");
 	cb.emit("syscall");
+	cb.emit(getAddu("$sp", "$sp", "4"));
 	cb.emit("jr $ra");
 }
 
 void emitPrinti() {
 	cb.emit("printi:");
 	cb.emit("lw $a0, 0($sp)");
-	cb.emit("li $v0, 4");
+	cb.emit("li $v0, 1");
 	cb.emit("syscall");
+	cb.emit(getAddu("$sp", "$sp", "4"));
 	cb.emit("jr $ra");
 }
 /* ********************************************************* */
