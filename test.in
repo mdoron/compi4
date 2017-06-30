@@ -1,16 +1,23 @@
-bool f()
+void f(int a)
 {
-    return true and not (1<0);
+    int k = 5;
+    while(k !=0)
+    {
+        a=a+2;
+        if(a>12)
+        {
+            a=a+5;
+            break;
+        }
+        k=k-1;
+    }
+    print("a=");
+    printi(a);
+    print("\n");
 }
 void main()
 {
-    if(f() or 5/0==1)
-    {
-        print("This should print\n");
-    }
-    byte t = 0b;
-    if(5/t==1 or f())
-    {
-        print("This shouldn't print");
-    }
+    f(0);
+    f(6);
+
 }

@@ -156,9 +156,9 @@
 
 %}
 
-%token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP BINOP ID NUM STRING
+%token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP MULTOP PLUSOP ID NUM STRING
 %right ELSE RPAREN ASSIGN NOT AND OR
-%left RELOP BINOP 
+%left RELOP MULTOP PLUSOP 
 
 %%
 
@@ -188,7 +188,7 @@ Init : {
 	emitPrinti();
 	ostringstream stringLabel;
 	stringLabel << "aErrorZeroDivision";
-	cb.emitData(stringLabel.str() + ": .ascii " + "\"Error division by zero\"");
+	cb.emitData(stringLabel.str() + ": .asciiz " + "\"Error division by zero\n\"");
 	
 	bottomTable = new Table();
 	// Add lib functions
@@ -532,6 +532,8 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// push ra
 		cb.emit(getSubu("$sp", "$sp", "4"));
 		cb.emit(getSw("$ra", "0", "$sp"));
+		cb.emit(getSubu("$sp", "$sp", "4"));
+		cb.emit(getSw("$fp", "0", "$sp"));
 		
 		// push params backwards
 		for( list<string>::reverse_iterator rit = $4.paramPlaceList.rbegin(); rit != $4.paramPlaceList.rend(); ++rit ) {
@@ -554,6 +556,8 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		}*/
 		
 		// pop ra
+		cb.emit(getLw("$fp", "0", "$sp"));
+		cb.emit(getAddu("$sp", "$sp", "4"));
 		cb.emit(getLw("$ra", "0", "$sp"));
 		cb.emit(getAddu("$sp", "$sp", "4"));		
 		
@@ -601,7 +605,8 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// push ra
 		cb.emit(getSubu("$sp", "$sp", "4"));
 		cb.emit(getSw("$ra", "0", "$sp"));
-
+		cb.emit(getSubu("$sp", "$sp", "4"));
+		cb.emit(getSw("$fp", "0", "$sp"));
 		// call
 		cb.emit("jal " + $1.name);
 		// get value
@@ -613,6 +618,8 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		}
 
 		// pop ra
+		cb.emit(getLw("$fp", "0", "$sp"));
+		cb.emit(getAddu("$sp", "$sp", "4"));
 		cb.emit(getLw("$ra", "0", "$sp"));
 		cb.emit(getAddu("$sp", "$sp", "4"));		
 		
@@ -654,7 +661,15 @@ Exp : LPAREN Exp RPAREN {
 			
 			$$.place = $2.place;
 		}
-	| Exp BINOP Exp {
+	| Exp MULTOP Exp {
+			assertNumber($1.type);
+			assertNumber($3.type);
+			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
+			$$.place = emitBinop($2.name, $1.place, $3.place);
+			//regsPool.release($1.place);
+			regsPool.release($3.place);
+		}
+	| Exp PLUSOP Exp {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
@@ -691,7 +706,7 @@ Exp : LPAREN Exp RPAREN {
 		$$.type = TYPE_STRING;
 		ostringstream stringLabel;
 		stringLabel << "aString" << stringLabelIdx;
-		cb.emitData(stringLabel.str() + ": .ascii " +  $1.name );
+		cb.emitData(stringLabel.str() + ": .asciiz " +  $1.name );
 		stringLabelIdx++;
 		string Rdest = regsPool.allocate();
 		cb.emit("la " + Rdest + ", " + stringLabel.str());
@@ -822,6 +837,8 @@ string emitBinop(string binop, string R1, string R2) {
 				  cb.emit(getIf("bne", R2, "0", divOk.str()));
 				  cb.emit(getSubu("$sp", "$sp", "4"));
 				  cb.emit(getSw("$ra", "0", "$sp"));
+				  cb.emit(getSubu("$sp", "$sp", "4"));
+				  cb.emit(getSw("$fp", "0", "$sp"));
 				  string Rdest = regsPool.allocate();
 				  cb.emit("la " + Rdest + ", aErrorZeroDivision");
 				  cb.emit(getSubu("$sp", "$sp", "4"));
@@ -831,6 +848,8 @@ string emitBinop(string binop, string R1, string R2) {
 				  cb.emit("li $v0, 10");
 				  cb.emit("syscall");
 				  // pop ra
+				  cb.emit(getLw("$fp", "0", "$sp"));
+				  cb.emit(getAddu("$sp", "$sp", "4"));
     			  cb.emit(getLw("$ra", "0", "$sp"));
 				  cb.emit(getAddu("$sp", "$sp", "4"));
 				  
@@ -899,7 +918,7 @@ string loadVar(string name, STYPE* S) {
 void storeVar(string name, string value) {
 	Row* r = findDef(name);
 	ostringstream offset;
-	offset << 4*(*(r->offset));
+	offset << 4*(-*(r->offset));
 	cb.emit(getSw(value, offset.str(), "$fp"));
 }
 
@@ -912,6 +931,7 @@ string popVars()  {
 
 void emitPrint() {
 	cb.emit("print:");
+	cb.emit("lw $a0, 0($sp)");
 	cb.emit("li $v0, 4");
 	cb.emit("syscall");
 	cb.emit(getAddu("$sp", "$sp", "4"));

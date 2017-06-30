@@ -42,7 +42,8 @@ break									return BREAK;
 \}										return RBRACE;
 [=]										return ASSIGN;
 (==|!=|<|>|<=|>=)		  				{ yylval.name = yytext; return RELOP; }
-[\+|\-|\*|/]			     			{ yylval.name=yytext; return BINOP; }
+[\\*|/]					     			{ yylval.name=yytext; return MULTOP; }
+[\+|\-]			   			  			{ yylval.name=yytext; return PLUSOP; }
 \"[^"]*\" 								{ yylval.name = yytext; return STRING; }
 [a-zA-Z][a-zA-Z0-9]*					{ saveyy=yytext; yylval.name=yytext; return ID; }
 (0|[1-9][0-9]*)      					{ yylval.type = TYPE_INT; yylval.name=yytext; return NUM; }

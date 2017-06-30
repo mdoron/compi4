@@ -24,7 +24,7 @@ for i in `ls | grep "in$"`;do
      j=${i%.*}
      printf "%-43s" "Running $j..."
     ../hw5 < $i > $j.s
-    timeout 2 ../spim read $j.s > $j.res
+    timeout 10 ../spim read $j.s > $j.res
     if (( $?==124 ));then
         printf "\e[1;31m[ TIMEOUT ]\n\e[0m"
         continue
@@ -39,6 +39,6 @@ for i in `ls | grep "in$"`;do
         diff $j.res $j.out
     fi
  done
- rm *.res
+ #rm *.res
  rm *.s
 echo "Testing done!"

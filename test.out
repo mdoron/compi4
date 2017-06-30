@@ -1,5 +1,6 @@
 .text
 print:
+lw $a0, 0($sp)
 li $v0, 4
 syscall
 addu $sp, $sp, 4
@@ -13,109 +14,116 @@ jr $ra
 f:
 move $fp, $sp
 subu $fp, $fp, 4
-j label_15
-label_15:
-li $s0, 1
-li $s1, 0
-blt $s0, $s1, label_23
-j label_20
-label_20:
-li $v0, 1
-j label_25
-label_23:
-li $v0, 0
-label_25:
-addu $sp, $sp, 0
-jr $ra
-addu $sp, $sp, 0
-f_end:
-.globl main
-main:
-move $fp, $sp
-subu $fp, $fp, 4
-subu $sp, $sp, 4
-sw $ra, 0($sp)
-jal f
-move $s0, $v0
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-beq $s0, 1, label_61
-beq $s0, 0, label_42
-label_42:
 li $s0, 5
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+label_18:
+label_19:
+lw $s0, 0($fp)
 li $s1, 0
-bne $s1, 0, divOk0
-subu $sp, $sp, 4
-sw $ra, 0($sp)
-la $s2, aErrorZeroDivision
-subu $sp, $sp, 4
-sw $s2, 0($sp)
-jal print
-li $v0, 10
-syscall
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-divOk0:
-divu $s0, $s0, $s1
+bne $s0, $s1, label_24
+j label_49
+label_24:
+lw $s0, 4($fp)
+li $s1, 2
+addu $s0, $s0, $s1
+sw $s0, 4($fp)
+label_29:
+lw $s0, 4($fp)
+li $s1, 12
+bgt $s0, $s1, label_34
+j label_42
+label_34:
+lw $s0, 4($fp)
+li $s1, 5
+addu $s0, $s0, $s1
+sw $s0, 4($fp)
+label_39:
+j label_49
+addu $sp, $sp, 0
+label_42:
+lw $s0, 0($fp)
 li $s1, 1
-beq $s0, $s1, label_61
-j label_71
-label_61:
+subu $s0, $s0, $s1
+sw $s0, 0($fp)
+addu $sp, $sp, 0
+j label_19
+label_49:
 la $s0, aString0
 subu $sp, $sp, 4
 sw $ra, 0($sp)
 subu $sp, $sp, 4
-sw $s0, 0($sp)
-jal print
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-addu $sp, $sp, 0
-label_71:
-li $s0, 0
+sw $fp, 0($sp)
 subu $sp, $sp, 4
 sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_62:
+lw $s0, 4($fp)
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+jal printi
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
 label_75:
-li $s0, 5
-lw $s1, 0($fp)
-bne $s1, 0, divOk1
-subu $sp, $sp, 4
-sw $ra, 0($sp)
-la $s2, aErrorZeroDivision
-subu $sp, $sp, 4
-sw $s2, 0($sp)
-jal print
-li $v0, 10
-syscall
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-divOk1:
-divu $s0, $s0, $s1
-li $s1, 1
-beq $s0, $s1, label_103
-j label_94
-label_94:
-subu $sp, $sp, 4
-sw $ra, 0($sp)
-jal f
-move $s0, $v0
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-beq $s0, 1, label_103
-beq $s0, 0, main_end
-label_103:
 la $s0, aString1
 subu $sp, $sp, 4
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $fp, 0($sp)
+subu $sp, $sp, 4
 sw $s0, 0($sp)
 jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 8
+f_end:
+jr $ra
+.globl main
+main:
+move $fp, $sp
+subu $fp, $fp, 4
+li $s0, 0
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+jal f
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_107:
+li $s0, 6
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+jal f
+lw $fp, 0($sp)
+addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
 addu $sp, $sp, 0
-addu $sp, $sp, 4
 main_end:
 jr $ra
 .data
-aErrorZeroDivision: .ascii "Error division by zero"
-aString0: .ascii "This should print\n"
-aString1: .ascii "This shouldn't print"
+aErrorZeroDivision: .asciiz "Error division by zero
+"
+aString0: .asciiz "a="
+aString1: .asciiz "\n"
