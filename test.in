@@ -1,10 +1,16 @@
-bool f() {
-	return false;
+bool f()
+{
+    return true and not (1<0);
 }
-
-void main() {
-	bool a = false;
-	if (a or not(a)) {
-		a = true;
-	}
+void main()
+{
+    if(f() or 5/0==1)
+    {
+        print("This should print\n");
+    }
+    byte t = 0b;
+    if(5/t==1 or f())
+    {
+        print("This shouldn't print");
+    }
 }

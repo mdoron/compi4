@@ -80,6 +80,7 @@
 	void handleReturn();
 	void emitPrint();
 	void emitPrinti();
+	bool isBoolFunction(string name);
 	
 	class Registers {
 		set<string> releasedRegs;
@@ -138,7 +139,7 @@
 		}
 		
 		void releaseAll() {
-			for(set<string>::iterator it = allocatedRegs.begin(); it != allocatedRegs.end(); ++it)
+			for(set<string>::iterator it = allocatedRegs.begin(); it != allocatedRegs.end() && !allocatedRegs.empty(); ++it)
 				release(*it);
 		}
 
@@ -540,8 +541,9 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// call
 		cb.emit("jal " + $1.name);
 		// get value
+		string Rdest = "";
 		if (findFunction($1.name)->type != TYPE_VOID) {
-			string Rdest = regsPool.allocate();
+			 Rdest = regsPool.allocate();
 			cb.emit(getMove(Rdest, "$v0"));
 			$$.place = Rdest;
 		}
@@ -565,6 +567,12 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
 			regsPool.release(*it);
 		}
+		
+		if (isBoolFunction($$.name) && Rdest != "") {
+			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+			regsPool.release(Rdest);
+		}	
 		
 	 }
 	 | IdBuilt LPAREN NewCall RPAREN {
@@ -597,8 +605,9 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// call
 		cb.emit("jal " + $1.name);
 		// get value
+		string Rdest = "";
 		if (findFunction($1.name)->type != TYPE_VOID) {
-			string Rdest = regsPool.allocate();
+			Rdest = regsPool.allocate();
 			cb.emit(getMove(Rdest, "$v0"));
 			$$.place = Rdest;
 		}
@@ -612,6 +621,11 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 			cb.emit(getLw(*rit, "0", "$sp"));
 			cb.emit(getAddu("$sp", "$sp", "4"));
 		}
+		if (isBoolFunction($$.name) && Rdest != "") {
+			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
+			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
+			regsPool.release(Rdest);
+		}	
 	 }
 NewCall : {
 	callParams = new list<type_t>();
@@ -663,7 +677,7 @@ Exp : LPAREN Exp RPAREN {
 			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
 			regsPool.release(Rdest);
 		}	
-		
+		// TODO: Check this out - why it's not in if !isBool($$.name) ? 
 		$$.place = Rdest;
 	}
 	| Call {}
@@ -810,6 +824,7 @@ string emitBinop(string binop, string R1, string R2) {
 				  cb.emit(getSw("$ra", "0", "$sp"));
 				  string Rdest = regsPool.allocate();
 				  cb.emit("la " + Rdest + ", aErrorZeroDivision");
+				  cb.emit(getSubu("$sp", "$sp", "4"));
 				  cb.emit(getSw(Rdest, "0", "$sp"));
 				  regsPool.release(Rdest);
 				  cb.emit("jal print");
@@ -980,6 +995,11 @@ bool isDef(string name) {
 bool isBool(string name) {
 	Row* r = findDef(name);
 	return isVar(r) && (r->type == TYPE_BOOL);
+}
+
+bool isBoolFunction(string name) {
+	Row* r = findFunction(name);
+	return (r->type == TYPE_BOOL);
 }
 
 void assertNotDef(string name) {

@@ -13,13 +13,18 @@ jr $ra
 f:
 move $fp, $sp
 subu $fp, $fp, 4
-j label_18
+j label_15
 label_15:
-li $v0, 1
+li $s0, 1
+li $s1, 0
+blt $s0, $s1, label_23
 j label_20
-label_18:
-li $v0, 0
 label_20:
+li $v0, 1
+j label_25
+label_23:
+li $v0, 0
+label_25:
 addu $sp, $sp, 0
 jr $ra
 addu $sp, $sp, 0
@@ -28,35 +33,89 @@ f_end:
 main:
 move $fp, $sp
 subu $fp, $fp, 4
-j label_33
-label_30:
-li $s0, 1
-j label_35
-label_33:
-li $s0, 0
-label_35:
 subu $sp, $sp, 4
-sw $s0, 0($sp)
-label_38:
-lw $s0, 0($fp)
-beq $s0, 1, label_46
+sw $ra, 0($sp)
+jal f
+move $s0, $v0
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_61
 beq $s0, 0, label_42
 label_42:
-lw $s0, 0($fp)
-beq $s0, 1, main_end
-beq $s0, 0, label_46
-label_46:
-j label_48
-label_48:
-li $s0, 1
-j label_53
-label_51:
+li $s0, 5
+li $s1, 0
+bne $s1, 0, divOk0
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+la $s2, aErrorZeroDivision
+subu $sp, $sp, 4
+sw $s2, 0($sp)
+jal print
+li $v0, 10
+syscall
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+divOk0:
+divu $s0, $s0, $s1
+li $s1, 1
+beq $s0, $s1, label_61
+j label_71
+label_61:
+la $s0, aString0
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+jal print
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 0
+label_71:
 li $s0, 0
-label_53:
-sw $s0, 0($fp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+label_75:
+li $s0, 5
+lw $s1, 0($fp)
+bne $s1, 0, divOk1
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+la $s2, aErrorZeroDivision
+subu $sp, $sp, 4
+sw $s2, 0($sp)
+jal print
+li $v0, 10
+syscall
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+divOk1:
+divu $s0, $s0, $s1
+li $s1, 1
+beq $s0, $s1, label_103
+j label_94
+label_94:
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+jal f
+move $s0, $v0
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_103
+beq $s0, 0, main_end
+label_103:
+la $s0, aString1
+subu $sp, $sp, 4
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $s0, 0($sp)
+jal print
+lw $ra, 0($sp)
+addu $sp, $sp, 4
 addu $sp, $sp, 0
 addu $sp, $sp, 4
 main_end:
 jr $ra
 .data
 aErrorZeroDivision: .ascii "Error division by zero"
+aString0: .ascii "This should print\n"
+aString1: .ascii "This shouldn't print"
