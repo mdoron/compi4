@@ -75,11 +75,14 @@
 	string emitLeaf(string name);
 	string getLw(string Rdest, string offset, string Rsrc);
 	string loadVar(string name, STYPE* S);
-	void storeVar(string name, string value);
+	void storeVar(string name, type_t t, string value);
 	string popVars();
 	void handleReturn();
 	void emitPrint();
 	void emitPrinti();
+	void emitPushZero();
+	void emitStoreTop(string Rdest, type_t t);
+	void emitPush(string Rdest, type_t t);
 	bool isBoolFunction(string name);
 	
 	class Registers {
@@ -158,7 +161,9 @@
 
 %token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP MULTOP PLUSOP ID NUM STRING
 %right ELSE RPAREN ASSIGN NOT AND OR
-%left RELOP MULTOP PLUSOP 
+%left RELOP 
+%left PLUSOP
+%left MULTOP  
 
 %%
 
@@ -324,7 +329,7 @@ VarDefStmt : Type IdBuilt SC {
 			offsets->pop();
 			offsets->push(*(r->offset) + 1);
 			
-			cb.emit(getSubu("$sp", "$sp", "4"));
+			emitPushZero();
 			
 			//$$.nextList = NULL;
 		}
@@ -342,8 +347,7 @@ VarDefStmt : Type IdBuilt SC {
 			else
 				Rdest = $4.place;
 				
-			cb.emit(getSubu("$sp", "$sp", "4"));
-			cb.emit(getSw(Rdest, "0",  "$sp"));
+			emitPush(Rdest, $1.type);
 			regsPool.release(Rdest);
 			
 			Row* r = new Row($1.type, $2.name, &(offsets->top()));
@@ -388,8 +392,8 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				Rdest = emitBooleanAssignment($3.trueList, $3.falseList);
 			else
 				Rdest = $3.place;
-				
-			storeVar($1.name, Rdest);
+			
+			storeVar($1.name, $3.type, Rdest);
 			//cb.emit(getSubu("$sp", "$sp", "4"));
 			//cb.emit(getSw(Rdest, "0", "$sp"));
 			regsPool.release(Rdest);
@@ -525,20 +529,16 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
 		
 		// push allocated registers
-		for( list<string>::iterator it = $$.allocatedRegsList.begin(); it != $$.allocatedRegsList.end(); ++it ) {
-			cb.emit(getSubu("$sp", "$sp", "4"));
-			cb.emit(getSw(*it, "0", "$sp"));
+		for( list<string>::iterator it = $3.allocatedRegsList.begin(); it != $3.allocatedRegsList.end(); ++it ) {
+			emitPush(*it, TYPE_INT);
 		}
 		// push ra
-		cb.emit(getSubu("$sp", "$sp", "4"));
-		cb.emit(getSw("$ra", "0", "$sp"));
-		cb.emit(getSubu("$sp", "$sp", "4"));
-		cb.emit(getSw("$fp", "0", "$sp"));
+		emitPush("$ra", TYPE_INT);
+		emitPush("$fp", TYPE_INT);
 		
 		// push params backwards
 		for( list<string>::reverse_iterator rit = $4.paramPlaceList.rbegin(); rit != $4.paramPlaceList.rend(); ++rit ) {
-			cb.emit(getSubu("$sp", "$sp", "4"));
-			cb.emit(getSw(*rit, "0", "$sp"));
+			emitPush(*rit, TYPE_INT);
 		}
 		// call
 		cb.emit("jal " + $1.name);
@@ -562,7 +562,7 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		cb.emit(getAddu("$sp", "$sp", "4"));		
 		
 		// pop allocated registers
-		for( list<string>::reverse_iterator rit = $$.allocatedRegsList.rbegin(); rit != $$.allocatedRegsList.rend(); ++rit ) {
+		for( list<string>::reverse_iterator rit = $3.allocatedRegsList.rbegin(); rit != $3.allocatedRegsList.rend(); ++rit ) {
 			cb.emit(getLw(*rit, "0", "$sp"));
 			cb.emit(getAddu("$sp", "$sp", "4"));
 		}
@@ -598,15 +598,12 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		callParams = callsStack.size() > 0 ? callsStack.top(): new list<type_t>();
 		
 		// push allocated registers
-		for( list<string>::iterator it = $$.allocatedRegsList.begin(); it != $$.allocatedRegsList.end(); ++it ) {
-			cb.emit(getSubu("$sp", "$sp", "4"));
-			cb.emit(getSw(*it, "0", "$sp"));
+		for( list<string>::iterator it = $3.allocatedRegsList.begin(); it != $3.allocatedRegsList.end(); ++it ) {
+			emitPush(*it, TYPE_INT);
 		}
 		// push ra
-		cb.emit(getSubu("$sp", "$sp", "4"));
-		cb.emit(getSw("$ra", "0", "$sp"));
-		cb.emit(getSubu("$sp", "$sp", "4"));
-		cb.emit(getSw("$fp", "0", "$sp"));
+		emitPush("$ra", TYPE_INT);
+		emitPush("$fp", TYPE_INT);
 		// call
 		cb.emit("jal " + $1.name);
 		// get value
@@ -624,7 +621,7 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		cb.emit(getAddu("$sp", "$sp", "4"));		
 		
 		// pop allocated registers
-		for( list<string>::reverse_iterator rit = $$.allocatedRegsList.rbegin(); rit != $$.allocatedRegsList.rend(); ++rit ) {
+		for( list<string>::reverse_iterator rit = $3.allocatedRegsList.rbegin(); rit != $3.allocatedRegsList.rend(); ++rit ) {
 			cb.emit(getLw(*rit, "0", "$sp"));
 			cb.emit(getAddu("$sp", "$sp", "4"));
 		}
@@ -661,7 +658,7 @@ Exp : LPAREN Exp RPAREN {
 			
 			$$.place = $2.place;
 		}
-	| Exp MULTOP Exp {
+	| Exp PLUSOP Exp {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
@@ -669,7 +666,7 @@ Exp : LPAREN Exp RPAREN {
 			//regsPool.release($1.place);
 			regsPool.release($3.place);
 		}
-	| Exp PLUSOP Exp {
+	| Exp MULTOP Exp {
 			assertNumber($1.type);
 			assertNumber($3.type);
 			$$.type = ($1.type == TYPE_INT || $3.type == TYPE_INT) ? TYPE_INT : TYPE_BYTE;
@@ -775,6 +772,7 @@ NumByte : NUM B {
 				exit(0);
 			}
 			$$.type = TYPE_BYTE;
+			$$.name = $1.name;
 		}
 %%
 
@@ -820,6 +818,10 @@ string getSw(string Rsrc, string offset, string Rdest) {
 	return "sw " + Rsrc + ", " + offset + "(" + Rdest + ")";
 }
 
+string getSb(string Rsrc, string offset, string Rdest) {
+	return "sb " + Rsrc + ", " + offset + "(" + Rdest + ")";
+}
+
 string getLw(string Rdest, string offset, string Rsrc) {
 	return "lw " + Rdest + ", " + offset + "(" + Rsrc + ")";
 }
@@ -835,14 +837,11 @@ string emitBinop(string binop, string R1, string R2) {
 				  ostringstream divOk;
 				  divOk << "divOk" << divLabelIdx;
 				  cb.emit(getIf("bne", R2, "0", divOk.str()));
-				  cb.emit(getSubu("$sp", "$sp", "4"));
-				  cb.emit(getSw("$ra", "0", "$sp"));
-				  cb.emit(getSubu("$sp", "$sp", "4"));
-				  cb.emit(getSw("$fp", "0", "$sp"));
+				  emitPush("$ra", TYPE_INT);
+				  emitPush("$fp", TYPE_INT);
 				  string Rdest = regsPool.allocate();
 				  cb.emit("la " + Rdest + ", aErrorZeroDivision");
-				  cb.emit(getSubu("$sp", "$sp", "4"));
-				  cb.emit(getSw(Rdest, "0", "$sp"));
+				  emitPush(Rdest, TYPE_INT);
 				  regsPool.release(Rdest);
 				  cb.emit("jal print");
 				  cb.emit("li $v0, 10");
@@ -873,6 +872,23 @@ string emitBooleanAssignment(vector<address_t> trueList, vector<address_t> false
 	string saveToStackLabel = cb.next();
 	cb.bpatch(saveToStackList, saveToStackLabel);
 	return Rdest;
+}
+
+void emitPushZero() {
+	cb.emit(getSubu("$sp", "$sp", "4"));
+	cb.emit(getSw("$0", "0", "$sp"));
+}
+
+void emitStoreTop(string Rdest, type_t t) {
+	if (t != TYPE_BYTE)
+		cb.emit(getSw(Rdest, "0", "$sp"));
+	else
+		cb.emit(getSb(Rdest, "0", "$sp"));
+}
+
+void emitPush(string Rdest, type_t t){ 
+	emitPushZero();
+	emitStoreTop(Rdest, t);
 }
 
 string getIf(string relop, string reg, string val, string label) {
@@ -915,16 +931,20 @@ string loadVar(string name, STYPE* S) {
 	return Rdest;
 }
 
-void storeVar(string name, string value) {
+void storeVar(string name, type_t t, string value) {
 	Row* r = findDef(name);
 	ostringstream offset;
 	offset << 4*(-*(r->offset));
-	cb.emit(getSw(value, offset.str(), "$fp"));
+	if (t == TYPE_BYTE) {
+		//cb.emit("nop"); 
+		cb.emit(getSb(value, offset.str(), "$fp"));
+	} else 
+		cb.emit(getSw(value, offset.str(), "$fp"));
 }
 
 string popVars()  {
 	// not enough: block inside block. 
-	ostringstream tmp;	
+	ostringstream tmp;
 	tmp << 4*(tables->top()->rows->size());
 	return getAddu("$sp", "$sp", tmp.str());
 }
@@ -1092,5 +1112,4 @@ std::vector<const char*> castToStringVector(list<type_t>* l) {
 	}
 	
 	return vec;
-	
 }

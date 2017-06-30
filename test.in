@@ -1,23 +1,27 @@
-void f(int a)
+void printer(int a)
 {
-    int k = 5;
-    while(k !=0)
-    {
-        a=a+2;
-        if(a>12)
-        {
-            a=a+5;
-            break;
-        }
-        k=k-1;
-    }
-    print("a=");
-    printi(a);
-    print("\n");
+	print("Printing number from 0 to ");
+	printi(a);
+	print("\n");
+	while(a>=0){
+		int dummyvar;
+		bool dummybool;
+		printi(a);
+		print("\n");
+		a = a - 1;
+	}
+	print("Printing done!\n");
 }
+
 void main()
 {
-    f(0);
-    f(6);
-
+	printer(5);
+	printer(10);
+	print("Byte test - testing addition and multiplication\n");
+	byte numb = 150b+150b;
+	printi(numb);
+	print("\n");
+	numb = 130b*2b;
+	printi(numb);
+	print("\n");
 }

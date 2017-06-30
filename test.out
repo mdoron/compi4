@@ -11,50 +11,50 @@ li $v0, 1
 syscall
 addu $sp, $sp, 4
 jr $ra
-f:
+printer:
 move $fp, $sp
 subu $fp, $fp, 4
-li $s0, 5
-subu $sp, $sp, 4
-sw $s0, 0($sp)
-label_18:
-label_19:
-lw $s0, 0($fp)
-li $s1, 0
-bne $s0, $s1, label_24
-j label_49
-label_24:
-lw $s0, 4($fp)
-li $s1, 2
-addu $s0, $s0, $s1
-sw $s0, 4($fp)
-label_29:
-lw $s0, 4($fp)
-li $s1, 12
-bgt $s0, $s1, label_34
-j label_42
-label_34:
-lw $s0, 4($fp)
-li $s1, 5
-addu $s0, $s0, $s1
-sw $s0, 4($fp)
-label_39:
-j label_49
-addu $sp, $sp, 0
-label_42:
-lw $s0, 0($fp)
-li $s1, 1
-subu $s0, $s0, $s1
-sw $s0, 0($fp)
-addu $sp, $sp, 0
-j label_19
-label_49:
 la $s0, aString0
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $fp, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_30:
+lw $s0, 4($fp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal printi
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_46:
+la $s0, aString1
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $s0, 0($sp)
 jal print
 lw $fp, 0($sp)
@@ -62,68 +62,212 @@ addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
 label_62:
+label_63:
+lw $s0, 4($fp)
+li $s1, 0
+bge $s0, $s1, label_68
+j label_113
+label_68:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+label_71:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+label_74:
 lw $s0, 4($fp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $fp, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $s0, 0($sp)
 jal printi
 lw $fp, 0($sp)
 addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
-label_75:
-la $s0, aString1
+label_90:
+la $s0, aString2
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $fp, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $s0, 0($sp)
 jal print
 lw $fp, 0($sp)
 addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
+label_106:
+lw $s0, 4($fp)
+li $s1, 1
+subu $s0, $s0, $s1
+sw $s0, 4($fp)
 addu $sp, $sp, 8
-f_end:
+j label_63
+label_113:
+la $s0, aString3
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+printer_end:
 jr $ra
 .globl main
 main:
 move $fp, $sp
 subu $fp, $fp, 4
-li $s0, 0
+li $s0, 5
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $fp, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $s0, 0($sp)
-jal f
+jal printer
 lw $fp, 0($sp)
 addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
-label_107:
-li $s0, 6
+label_151:
+li $s0, 10
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $ra, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $fp, 0($sp)
 subu $sp, $sp, 4
+sw $0, 0($sp)
 sw $s0, 0($sp)
-jal f
+jal printer
 lw $fp, 0($sp)
 addu $sp, $sp, 4
 lw $ra, 0($sp)
 addu $sp, $sp, 4
-addu $sp, $sp, 0
+label_167:
+la $s0, aString4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_183:
+li $s0, 150
+li $s1, 150
+addu $s0, $s0, $s1
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sb $s0, 0($sp)
+label_190:
+lw $s0, 0($fp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal printi
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_206:
+la $s0, aString5
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_222:
+li $s0, 130
+li $s1, 2
+mulo $s0, $s0, $s1
+sb $s0, 0($fp)
+label_227:
+lw $s0, 0($fp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal printi
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+label_243:
+la $s0, aString6
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
 main_end:
 jr $ra
 .data
 aErrorZeroDivision: .asciiz "Error division by zero
 "
-aString0: .asciiz "a="
+aString0: .asciiz "Printing number from 0 to "
 aString1: .asciiz "\n"
+aString2: .asciiz "\n"
+aString3: .asciiz "Printing done!\n"
+aString4: .asciiz "Byte test - testing addition and multiplication\n"
+aString5: .asciiz "\n"
+aString6: .asciiz "\n"
