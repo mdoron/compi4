@@ -308,7 +308,7 @@ FormalDecl : Type IdBuilt {
 				formalNames->push_back($2.name);
 			}
 Stmts : Stmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
-  	  | Stmts M Stmt {
+  	  | Stmts M Stmt { 
 		  cb.bpatch($1.nextList, $2.quad);
 		  $$.nextList = $3.nextList;
 		  $$.breakList = cb.merge($1.breakList, $3.breakList); 
@@ -441,8 +441,9 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 	 | M WhileStmt RPAREN M Wlparen StmtOfControlFlow Wrparen {
 		cb.bpatch($6.nextList, $1.quad);
 		cb.bpatch($2.trueList, $4.quad);
+		cb.bpatch($6.breakList, $1.quad);
 		$$.nextList = cb.merge($6.breakList, $2.falseList);
-		$$.breakList = $6.breakList; 
+		//$$.breakList = $6.breakList; 
 		cb.emit("j " + $1.quad);
 	 }
      | BREAK SC {
@@ -450,7 +451,9 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
-			$$.breakList = cb.makelist(cb.emit("j "));
+			cb.emit("nop");
+			//$$.breakList = cb.makelist(cb.emit("j "));
+			$$.nextList = cb.makelist(cb.emit("j "));
 		}
 	 | SwitchStmt N RPAREN LBRACE CaseList RBRACE SC {
 			cb.bpatch($2.nextList, cb.next());
@@ -466,6 +469,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			}
 			cb.next();
 			$$.nextList = cb.merge($5.nextList, cb.makelist(cb.emit("j ")));
+			$$.breakList = $5.breakList;
 
 	 }
 SwitchStmt : SWITCH LPAREN Exp {
