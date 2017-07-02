@@ -1,23 +1,14 @@
-int Int(){
-	print("set!\n");
-	return 500;
-}
-
-void WasHere(){
-	print("was here\n");
-}
-
 void main(){
-
-	while(true) 
+	bool a;
+	while(a) 
 		if (true) {
 			break;
 		}
-
-	while(true)  
+	
+	while(a)  
 		if (false) 
 			int x; 
-	while(true)  
+	while(a)  
 		if (false) 
 			int x; 
 	

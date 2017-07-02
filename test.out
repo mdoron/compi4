@@ -9,84 +9,47 @@ lw $a0, 0($sp)
 li $v0, 1
 syscall
 jr $ra
-Int:
-move $fp, $sp
-subu $fp, $fp, 4
-la $s0, aString0
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $ra, 0($sp)
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $fp, 0($sp)
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $s0, 0($sp)
-jal print
-addu $sp, $sp, 4
-lw $fp, 0($sp)
-addu $sp, $sp, 4
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-label_29:
-li $s0, 500
-move $v0, $s0
-move $sp, $fp
-addu $sp, $sp, 4
-jr $ra
-Int_end:
-WasHere:
-move $fp, $sp
-subu $fp, $fp, 4
-la $s0, aString1
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $ra, 0($sp)
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $fp, 0($sp)
-subu $sp, $sp, 4
-sw $0, 0($sp)
-sw $s0, 0($sp)
-jal print
-addu $sp, $sp, 4
-lw $fp, 0($sp)
-addu $sp, $sp, 4
-lw $ra, 0($sp)
-addu $sp, $sp, 4
-WasHere_end:
-move $sp, $fp
-addu $sp, $sp, 4
-jr $ra
 .globl main
 main:
 move $fp, $sp
 subu $fp, $fp, 4
-label_63:
-j label_65
-label_65:
-j label_67
-label_67:
-j label_70label_79main_end
-j label_63
-label_70:
-label_71:
-j label_73
-label_73:
-j label_71
-label_75:
 subu $sp, $sp, 4
 sw $0, 0($sp)
-j label_71
-label_79:
-label_80:
-j label_82
-label_82:
-j label_80
-label_84:
+label_16:
+label_17:
+lw $s0, 0($fp)
+beq $s0, 1, label_21
+beq $s0, 0, label_27
+label_21:
+j label_23
+label_23:
+j label_26label_38label_50
+j label_17
+label_26:
+label_27:
+label_28:
+lw $s0, 0($fp)
+beq $s0, 1, label_32
+beq $s0, 0, label_39
+label_32:
+j label_28
+label_34:
 subu $sp, $sp, 4
 sw $0, 0($sp)
-j label_80
+j label_28
+label_38:
+label_39:
+label_40:
+lw $s0, 0($fp)
+beq $s0, 1, label_44
+beq $s0, 0, main_end
+label_44:
+j label_40
+label_46:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+j label_40
+label_50:
 main_end:
 move $sp, $fp
 addu $sp, $sp, 4
@@ -94,5 +57,3 @@ jr $ra
 .data
 aErrorZeroDivision: .asciiz "Error division by zero
 "
-aString0: .asciiz "set!\n"
-aString1: .asciiz "was here\n"

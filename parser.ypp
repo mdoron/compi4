@@ -311,18 +311,26 @@ FormalDecl : Type IdBuilt {
 				formalTypes->push_back($1.type);
 				formalNames->push_back($2.name);
 			}
-Stmts : Stmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
+Stmts : Stmt {
+				$$.nextList = $1.nextList; 
+				$$.breakList = $1.breakList; 
+			}
   	  | Stmts M Stmt { 
 		  cb.bpatch($1.nextList, $2.quad);
 		  $$.nextList = $3.nextList;
 		  $$.breakList = cb.merge($1.breakList, $3.breakList); 
 		}
 
-Stmt : SingleStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; } | BlockStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
+Stmt : SingleStmt {
+		 $$.nextList = $1.nextList; 
+		 $$.breakList = $1.breakList; 
+		} 
+	 | BlockStmt {
+		 $$.nextList = $1.nextList; 
+		 $$.breakList = $1.breakList; 
+		}
 
 BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {
-	//$$.falseList = $3.falseList;
-	//$$.trueList = $3.trueList; // Maybe will work...
 	$$.nextList = $3.nextList;
 	$$.breakList = $3.breakList; 
 }
@@ -371,7 +379,10 @@ SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace {
 							  }
 
 SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow {$$.nextList = $1.nextList;} 
-						| ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
+						| ControlFlowStmt {
+							$$.nextList = $1.nextList; 
+							$$.breakList = $1.breakList; 
+						}
 
 StmtOfControlFlow : SingleStmtOfControlFlow {
 						$$.nextList = $1.nextList; 
@@ -382,8 +393,13 @@ StmtOfControlFlow : SingleStmtOfControlFlow {
 					  $$.breakList = $1.breakList;
 					}
 
-SingleStmt : VarDefStmt {$$.nextList = $1.nextList;} 
-		   | ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
+SingleStmt : VarDefStmt {
+				$$.nextList = $1.nextList;
+			} 
+		   | ControlFlowStmt {
+				$$.nextList = $1.nextList; 
+				$$.breakList = $1.breakList; 
+		   }
 
 ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			assertDef($1.name);
@@ -456,8 +472,10 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 	 | M WhileStmt RPAREN M Wlparen StmtOfControlFlow Wrparen {
 		cb.bpatch($6.nextList, $1.quad);
 		cb.bpatch($2.trueList, $4.quad);
-		$$.nextList = cb.merge($6.breakList, $2.falseList);
+		//$$.nextList = cb.merge($6.breakList, $2.falseList);
 		cb.emit("j " + $1.quad);
+		$$.nextList = $2.falseList;
+		cb.bpatch($6.breakList, cb.next());
 	 }
      | BREAK SC {
 			if(whileCounter == 0) {
