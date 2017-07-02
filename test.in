@@ -1,29 +1,25 @@
-int f(int a1)
-{
-    while(a1 != 0)
-    {
-        switch(a1)
-        {
-            case 5:
-            break;
-            break;
-            case 8:
-                return 0;
-            break;
-            
-        };
-        a1 = a1 - 1;
-    }
-    return 1;
+int Int(){
+	print("set!\n");
+	return 500;
 }
-void printNum(int a)
-{
-    printi(a);
-    print("\n");
+
+void WasHere(){
+	print("was here\n");
 }
-void main()
-{
-    printNum(f(6));
-    printNum(f(9));
-    printNum(f(7));
+
+void main(){
+
+	while(true) 
+		if (true) {
+			break;
+		}
+
+	while(true)  
+		if (false) 
+			int x; 
+	while(true)  
+		if (false) 
+			int x; 
+	
+
 }

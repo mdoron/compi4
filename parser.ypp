@@ -76,7 +76,8 @@
 	string getLw(string Rdest, string offset, string Rsrc);
 	string loadVar(string name, STYPE* S);
 	void storeVar(string name, type_t t, string value);
-	string popVars();
+	void emitPopLocals();
+	string popAllVars();
 	void handleReturn();
 	void emitPrint();
 	void emitPrinti();
@@ -84,6 +85,7 @@
 	void emitStoreTop(string Rdest, type_t t);
 	void emitPush(string Rdest, type_t t);
 	bool isBoolFunction(string name);
+	int countLocals();
 	
 	class Registers {
 		set<string> releasedRegs;
@@ -160,10 +162,12 @@
 %}
 
 %token VOID INT BYTE B BOOL AND OR NOT TRUE FALSE RETURN IF ELSE WHILE SWITCH CASE BREAK COLON SC COMMA LPAREN RPAREN LBRACE RBRACE ASSIGN RELOP MULTOP PLUSOP ID NUM STRING
-%right ELSE RPAREN ASSIGN NOT AND OR
+
+%left AND OR
+%right ELSE RPAREN ASSIGN NOT 
 %left RELOP 
 %left PLUSOP
-%left MULTOP  
+%left MULTOP
 
 %%
 
@@ -227,6 +231,7 @@ FuncDecl : RetType FuncName LPAREN Formals RPAREN LBRACE DoneSignature Slbrace I
 				cb.emit($2.name + "_end:");
 				cb.bpatch($10.nextList, $2.name+"_end");
 				if($1.type == TYPE_VOID) { 
+					emitPopLocals();
 					cb.emit("jr $ra");
 				}
 				functionType = TYPE_NON;
@@ -279,7 +284,6 @@ Srbrace : {
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
 	*/
-	cb.emit(popVars());
 	tables->pop();
 	offsets->pop();
 	
@@ -317,6 +321,8 @@ Stmts : Stmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 Stmt : SingleStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; } | BlockStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
 BlockStmt : LBRACE Slbrace Stmts Srbrace RBRACE {
+	//$$.falseList = $3.falseList;
+	//$$.trueList = $3.trueList; // Maybe will work...
 	$$.nextList = $3.nextList;
 	$$.breakList = $3.breakList; 
 }
@@ -361,14 +367,20 @@ VarDefStmt : Type IdBuilt SC {
 		}
 		
 SingleVarDefStmtOfControlFlow : Slbrace VarDefStmt Srbrace {
-	$$.nextList = $2.nextList;
-}
+								  $$.nextList = $2.nextList;
+							  }
 
 SingleStmtOfControlFlow : SingleVarDefStmtOfControlFlow {$$.nextList = $1.nextList;} 
 						| ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
 
-StmtOfControlFlow : SingleStmtOfControlFlow {$$.nextList = $1.nextList; $$.breakList = $1.breakList; } 
-				  | BlockStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
+StmtOfControlFlow : SingleStmtOfControlFlow {
+						$$.nextList = $1.nextList; 
+						$$.breakList = $1.breakList; 
+				  } 
+				  | BlockStmt {
+					  $$.nextList = $1.nextList; 
+					  $$.breakList = $1.breakList;
+					}
 
 SingleStmt : VarDefStmt {$$.nextList = $1.nextList;} 
 		   | ControlFlowStmt {$$.nextList = $1.nextList; $$.breakList = $1.breakList; }
@@ -400,10 +412,13 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			
 			//$$.nextList = NULL;
 		}
-     | Call SC { }
+     | Call SC {
+		 if ($1.type == TYPE_BOOL)
+			$$.nextList = cb.merge($1.trueList, $1.falseList);
+	 }
      | RETURN SC { 
 			assertType(functionType, TYPE_VOID); 
-			cb.emit(popVars());
+			emitPopLocals();
 			cb.emit("jr $ra");
 		}
      | RETURN Exp SC { 
@@ -424,7 +439,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				cb.bpatch($2.falseList, ret0);
 				cb.bpatch(jumpToExit, cb.next());
 			}
-			cb.emit(popVars());
+			emitPopLocals();
 			cb.emit("jr $ra");
 		}
      | IfStmt M RPAREN StmtOfControlFlow {
@@ -441,9 +456,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 	 | M WhileStmt RPAREN M Wlparen StmtOfControlFlow Wrparen {
 		cb.bpatch($6.nextList, $1.quad);
 		cb.bpatch($2.trueList, $4.quad);
-		cb.bpatch($6.breakList, $1.quad);
 		$$.nextList = cb.merge($6.breakList, $2.falseList);
-		//$$.breakList = $6.breakList; 
 		cb.emit("j " + $1.quad);
 	 }
      | BREAK SC {
@@ -451,9 +464,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
-			cb.emit("nop");
-			//$$.breakList = cb.makelist(cb.emit("j "));
-			$$.nextList = cb.makelist(cb.emit("j "));
+			$$.breakList = cb.makelist(cb.emit("j "));
 		}
 	 | SwitchStmt N RPAREN LBRACE CaseList RBRACE SC {
 			cb.bpatch($2.nextList, cb.next());
@@ -496,21 +507,25 @@ CaseList : CaseStat CaseList {
 			$$.valueList = $2.valueList;
 			$$.valueList.push($1.value);
 			$$.nextList = cb.merge($2.nextList,$1.nextList);
+			$$.breakList = cb.merge($1.breakList, $2.breakList);
 }
 		 | CaseStat {
 			 $$.quadList.push($1.quad);
 			 $$.valueList.push($1.value);
 			 $$.nextList = $1.nextList; 
+			 $$.breakList = $1.breakList;
 		 }
 CaseStat : CASE NUM COLON M StmtOfControlFlow BREAK SC {
 			$$.quad = $4.quad;
 			$$.value = atoi(($2.name).c_str());
 			$$.nextList = cb.merge($5.nextList, cb.makelist(cb.emit("j "))) ;
+			$$.breakList = $5.breakList;
 		}
 		 | CASE NUM B COLON M StmtOfControlFlow BREAK SC {
 			$$.quad = $5.quad;
 			$$.value = atoi(($2.name).c_str());
 			$$.nextList = cb.merge($6.nextList, cb.makelist(cb.emit("j "))) ;
+			$$.breakList = $6.breakList;
 		 }
 Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		Row* r = findFunction($1.name);
@@ -549,15 +564,18 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 		// get value
 		string Rdest = "";
 		if (findFunction($1.name)->type != TYPE_VOID) {
-			 Rdest = regsPool.allocate();
+			Rdest = regsPool.allocate();
 			cb.emit(getMove(Rdest, "$v0"));
 			$$.place = Rdest;
 		}
-		// pop params - I decided that the function will remove the locals
-		/*for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
-			cb.emit(getLw(*it, "0", "$sp"));
-			cb.emit(getAddu("$sp", "$sp", "4"));
-		}*/
+		// pop params
+		int paramSize = 4*(($4.paramPlaceList).size());
+		ostringstream paramSizeText;
+		paramSizeText << paramSize;
+		//for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
+		//cb.emit(getLw(*it, "0", "$sp"));
+		cb.emit(getAddu("$sp", "$sp", paramSizeText.str()));
+		//}
 		
 		// pop ra
 		cb.emit(getLw("$fp", "0", "$sp"));
@@ -580,7 +598,7 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 			$$.trueList = cb.makelist(cb.emit(getIf("beq", Rdest, "1", "")));
 			$$.falseList = cb.makelist(cb.emit(getIf("beq", Rdest, "0", "")));
 			regsPool.release(Rdest);
-		}	
+		}
 		
 	 }
 	 | IdBuilt LPAREN NewCall RPAREN {
@@ -645,12 +663,20 @@ NewCall : {
 }
 ExpList : Exp {
 			callParams->push_front($1.type);
+			
+			if ($1.type == TYPE_BOOL) 
+				$1.place = emitBooleanAssignment($1.trueList, $1.falseList);
+			
 			$$.paramPlaceList.push_front($1.place);
+			
 		}
 		| Exp COMMA ExpList {
 			callParams->push_front($1.type);
-			$$.paramPlaceList = $3.paramPlaceList;
+			$$.paramPlaceList = $3.paramPlaceList;			
+			if ($1.type == TYPE_BOOL) 
+				$1.place = emitBooleanAssignment($1.trueList, $1.falseList);
 			$$.paramPlaceList.push_front($1.place);
+
 		}
 Type : INT {$$.type = TYPE_INT;}
 	 | BYTE {$$.type = TYPE_BYTE;}
@@ -946,11 +972,13 @@ void storeVar(string name, type_t t, string value) {
 		cb.emit(getSw(value, offset.str(), "$fp"));
 }
 
-string popVars()  {
+void emitPopLocals()  {
 	// not enough: block inside block. 
-	ostringstream tmp;
-	tmp << 4*(tables->top()->rows->size());
-	return getAddu("$sp", "$sp", tmp.str());
+	//ostringstream tmp;
+	//tmp << 4*(tables->top()->rows->size());
+	cb.emit(getMove("$sp", "$fp"));
+	cb.emit(getAddu("$sp", "$sp", "4"));
+	//return ;//getAddu("$sp", "$sp", tmp.str());
 }
 
 void emitPrint() {
@@ -958,7 +986,6 @@ void emitPrint() {
 	cb.emit("lw $a0, 0($sp)");
 	cb.emit("li $v0, 4");
 	cb.emit("syscall");
-	cb.emit(getAddu("$sp", "$sp", "4"));
 	cb.emit("jr $ra");
 }
 
@@ -967,8 +994,26 @@ void emitPrinti() {
 	cb.emit("lw $a0, 0($sp)");
 	cb.emit("li $v0, 1");
 	cb.emit("syscall");
-	cb.emit(getAddu("$sp", "$sp", "4"));
 	cb.emit("jr $ra");
+}
+
+
+string popAllVars()  {
+	// not enough: block inside block. 
+	ostringstream tmp;
+	tmp << countLocals(); //4*(tables->top()->rows->size());
+	return getAddu("$sp", "$sp", tmp.str());
+}
+
+
+int countLocals() {
+	Table* p = tables->top();
+	int count = 0;
+	while(p != bottomTable) {
+		count += p->rows->size();
+		p = p->parent;
+	}
+	return 4*count;
 }
 /* ********************************************************* */
 
