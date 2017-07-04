@@ -209,12 +209,12 @@
 		}
 
 		void release(string reg){
+			//cout<< "release: " << reg <<" "<< yylineno <<endl;
 			if (reg == "")
 				return;
 			assert(releasedRegs.find(reg)==releasedRegs.end());
 			releasedRegs.insert(reg);
 			allocatedRegs.erase(reg);	
-			//cout<< "release: " << reg <<" "<< yylineno <<endl;
 		}
 		
 		void releaseAll() {
@@ -1811,7 +1811,7 @@ yyreduce:
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
 	*/
-				emitPopVarDefsInBlock();
+	emitPopVarDefsInBlock();
 	
 	tables->pop();
 	offsets->pop();
@@ -2090,7 +2090,7 @@ yyreduce:
     {
 		if ((yyvsp[(1) - (2)]).type == TYPE_BOOL)
 			(yyval).nextList = cb.merge((yyvsp[(1) - (2)]).trueList, (yyvsp[(1) - (2)]).falseList);
-		if ((yyvsp[(1) - (2)]).type != TYPE_VOID) 
+		if ((yyvsp[(1) - (2)]).type != TYPE_VOID && (yyvsp[(1) - (2)]).type != TYPE_BOOL) 
 			regsPool.release((yyvsp[(1) - (2)]).place);
 	 ;}
     break;

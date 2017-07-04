@@ -138,12 +138,12 @@
 		}
 
 		void release(string reg){
+			//cout<< "release: " << reg <<" "<< yylineno <<endl;
 			if (reg == "")
 				return;
 			assert(releasedRegs.find(reg)==releasedRegs.end());
 			releasedRegs.insert(reg);
 			allocatedRegs.erase(reg);	
-			//cout<< "release: " << reg <<" "<< yylineno <<endl;
 		}
 		
 		void releaseAll() {
@@ -287,7 +287,7 @@ Srbrace : {
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
 	*/
-				emitPopVarDefsInBlock();
+	emitPopVarDefsInBlock();
 	
 	tables->pop();
 	offsets->pop();
@@ -436,7 +436,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
      | Call SC {
 		if ($1.type == TYPE_BOOL)
 			$$.nextList = cb.merge($1.trueList, $1.falseList);
-		if ($1.type != TYPE_VOID) 
+		if ($1.type != TYPE_VOID && $1.type != TYPE_BOOL) 
 			regsPool.release($1.place);
 	 }
      | RETURN SC { 
