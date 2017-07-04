@@ -131,7 +131,7 @@
 			set<string>::iterator it = releasedRegs.begin();
 			string reg = *it;
 			allocatedRegs.insert(reg);
-			cout<< "alloc: "<< reg <<" " <<yylineno <<endl;
+			//cout<< "alloc: "<< reg <<" " <<yylineno <<endl;
 			releasedRegs.erase(reg);
 			return reg;
 		}
@@ -142,7 +142,7 @@
 			assert(releasedRegs.find(reg)==releasedRegs.end());
 			releasedRegs.insert(reg);
 			allocatedRegs.erase(reg);	
-			cout<< "release: " << reg <<" "<< yylineno <<endl;
+			//cout<< "release: " << reg <<" "<< yylineno <<endl;
 		}
 		
 		void releaseAll() {
@@ -431,8 +431,10 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 			//$$.nextList = NULL;
 		}
      | Call SC {
-		 if ($1.type == TYPE_BOOL)
+		if ($1.type == TYPE_BOOL)
 			$$.nextList = cb.merge($1.trueList, $1.falseList);
+		if ($1.type != TYPE_VOID) 
+			regsPool.release($1.place);
 	 }
      | RETURN SC { 
 			assertType(functionType, TYPE_VOID); 
