@@ -240,7 +240,7 @@ Running OR_testRecursion...                [1;32m[ PASS ]
 [0mDiff output:
 2,4d1
 < The following symbols are undefined:
-< label_359label_384
+< label_365label_391
 < 
 15a13,16
 > was here

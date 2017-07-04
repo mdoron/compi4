@@ -131,6 +131,7 @@
 			set<string>::iterator it = releasedRegs.begin();
 			string reg = *it;
 			allocatedRegs.insert(reg);
+			cout<< "alloc: "<< reg <<" " <<yylineno <<endl;
 			releasedRegs.erase(reg);
 			return reg;
 		}
@@ -141,6 +142,7 @@
 			assert(releasedRegs.find(reg)==releasedRegs.end());
 			releasedRegs.insert(reg);
 			allocatedRegs.erase(reg);	
+			cout<< "release: " << reg <<" "<< yylineno <<endl;
 		}
 		
 		void releaseAll() {
@@ -928,10 +930,12 @@ void emitPushZero() {
 }
 
 void emitStoreTop(string Rdest, type_t t) {
-	if (t != TYPE_BYTE)
-		cb.emit(getSw(Rdest, "0", "$sp"));
-	else
-		cb.emit(getSb(Rdest, "0", "$sp"));
+	if (t != TYPE_BYTE){
+			cb.emit(getSw(Rdest, "0", "$sp"));
+		}
+	else{
+			cb.emit(getSb(Rdest, "0", "$sp"));
+		}
 }
 
 void emitPush(string Rdest, type_t t){ 
@@ -985,9 +989,11 @@ void storeVar(string name, type_t t, string value) {
 	offset << 4*(-*(r->offset));
 	if (t == TYPE_BYTE) {
 		//cb.emit("nop"); 
+		cb.emit(getSw("$0",offset.str(),"$fp"));
 		cb.emit(getSb(value, offset.str(), "$fp"));
-	} else 
-		cb.emit(getSw(value, offset.str(), "$fp"));
+	} else {
+			cb.emit(getSw(value, offset.str(), "$fp"));
+		}
 }
 
 void emitPopLocals()  {
