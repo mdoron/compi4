@@ -1,3 +1,557 @@
+alloc: $s0 4
+release: $s0 4
+alloc: $s0 8
+release: $s0 8
+alloc: $s0 13
+release: $s0 13
+alloc: $s0 17
+release: $s0 17
+alloc: $s0 21
+release: $s0 21
+alloc: $s0 25
+release: $s0 25
+alloc: $s0 29
+release: $s0 29
+alloc: $s0 30
+release: $s0 30
+alloc: $s0 33
+release: $s0 33
+alloc: $s0 38
+release: $s0 38
+alloc: $s0 39
+release: $s0 39
+alloc: $s0 42
+release: $s0 42
+alloc: $s0 44
+release: $s0 44
+alloc: $s0 45
+release: $s0 45
+alloc: $s0 48
+release: $s0 48
+alloc: $s0 54
+release: $s0 54
+alloc: $s0 56
+release: $s0 56
+alloc: $s0 56
+release: $s0 56
+alloc: $s0 57
+release: $s0 57
+alloc: $s0 58
+release: $s0 58
+alloc: $s0 61
+release: $s0 61
+alloc: $s0 63
+release: $s0 63
+alloc: $s0 63
+release: $s0 63
+alloc: $s0 64
+release: $s0 64
+alloc: $s0 65
+release: $s0 65
+alloc: $s0 68
+release: $s0 68
+alloc: $s0 72
+release: $s0 72
+alloc: $s0 72
+release: $s0 72
+alloc: $s0 73
+release: $s0 73
+alloc: $s0 74
+release: $s0 74
+alloc: $s0 77
+release: $s0 77
+alloc: $s0 79
+release: $s0 79
+alloc: $s0 79
+release: $s0 79
+alloc: $s0 80
+release: $s0 80
+alloc: $s0 81
+release: $s0 81
+alloc: $s0 84
+release: $s0 84
+alloc: $s0 88
+release: $s0 88
+alloc: $s0 88
+release: $s0 88
+alloc: $s0 89
+release: $s0 89
+alloc: $s0 90
+release: $s0 90
+alloc: $s0 93
+release: $s0 93
+alloc: $s0 95
+release: $s0 95
+alloc: $s0 95
+release: $s0 95
+alloc: $s0 96
+release: $s0 96
+alloc: $s0 97
+release: $s0 97
+alloc: $s0 100
+release: $s0 100
+alloc: $s0 103
+release: $s0 103
+alloc: $s0 103
+release: $s0 103
+alloc: $s0 104
+release: $s0 104
+alloc: $s0 105
+release: $s0 105
+alloc: $s0 108
+release: $s0 108
+alloc: $s0 110
+release: $s0 110
+alloc: $s0 110
+release: $s0 110
+alloc: $s0 111
+release: $s0 111
+alloc: $s0 112
+release: $s0 112
+alloc: $s0 115
+release: $s0 115
+alloc: $s0 118
+release: $s0 118
+alloc: $s0 119
+release: $s0 119
+alloc: $s0 120
+release: $s0 120
+alloc: $s0 123
+release: $s0 123
+alloc: $s0 123
+release: $s0 123
+alloc: $s0 124
+release: $s0 124
+alloc: $s0 125
+release: $s0 125
+alloc: $s0 128
+release: $s0 128
+alloc: $s0 131
+release: $s0 131
+alloc: $s0 131
+release: $s0 131
+alloc: $s0 132
+release: $s0 132
+alloc: $s0 133
+release: $s0 133
+alloc: $s0 136
+release: $s0 136
+alloc: $s0 140
+release: $s0 140
+alloc: $s0 140
+release: $s0 140
+alloc: $s0 141
+release: $s0 141
+alloc: $s0 142
+release: $s0 142
+alloc: $s0 145
+release: $s0 145
+alloc: $s0 148
+release: $s0 148
+alloc: $s0 148
+release: $s0 148
+alloc: $s0 149
+release: $s0 149
+alloc: $s0 150
+release: $s0 150
+alloc: $s0 153
+release: $s0 153
+alloc: $s0 156
+release: $s0 156
+alloc: $s0 156
+release: $s0 156
+alloc: $s0 157
+release: $s0 157
+alloc: $s0 158
+release: $s0 158
+alloc: $s0 158
+release: $s0 158
+alloc: $s0 159
+release: $s0 159
+alloc: $s0 160
+release: $s0 160
+alloc: $s0 160
+release: $s0 160
+alloc: $s0 161
+release: $s0 161
+alloc: $s0 162
+release: $s0 162
+alloc: $s0 162
+release: $s0 162
+alloc: $s0 163
+release: $s0 163
+alloc: $s0 164
+release: $s0 164
+alloc: $s0 165
+release: $s0 165
+alloc: $s0 166
+release: $s0 166
+alloc: $s0 167
+release: $s0 167
+alloc: $s0 169
+release: $s0 169
+alloc: $s0 169
+release: $s0 169
+alloc: $s0 169
+release: $s0 169
+alloc: $s0 170
+release: $s0 170
+alloc: $s0 171
+release: $s0 171
+alloc: $s0 171
+release: $s0 171
+alloc: $s0 171
+release: $s0 171
+alloc: $s0 172
+release: $s0 172
+alloc: $s0 173
+release: $s0 173
+alloc: $s0 173
+release: $s0 173
+alloc: $s0 173
+release: $s0 173
+alloc: $s0 174
+release: $s0 174
+alloc: $s0 175
+release: $s0 175
+alloc: $s0 175
+release: $s0 175
+alloc: $s0 175
+release: $s0 175
+alloc: $s0 176
+release: $s0 176
+alloc: $s0 177
+release: $s0 177
+alloc: $s0 178
+release: $s0 178
+alloc: $s0 179
+release: $s0 179
+alloc: $s0 180
+release: $s0 180
+alloc: $s0 183
+release: $s0 183
+alloc: $s0 183
+release: $s0 183
+alloc: $s0 184
+release: $s0 184
+alloc: $s0 185
+release: $s0 185
+alloc: $s0 185
+release: $s0 185
+alloc: $s0 186
+release: $s0 186
+alloc: $s0 187
+release: $s0 187
+alloc: $s0 187
+release: $s0 187
+alloc: $s0 188
+release: $s0 188
+alloc: $s0 189
+release: $s0 189
+alloc: $s0 189
+release: $s0 189
+alloc: $s0 190
+release: $s0 190
+alloc: $s0 192
+release: $s0 192
+alloc: $s0 193
+release: $s0 193
+alloc: $s0 195
+release: $s0 195
+alloc: $s0 196
+alloc: $s1 196
+release: $s1 196
+alloc: $s1 197
+release: $s1 197
+alloc: $s1 198
+alloc: $s2 198
+release: $s2 198
+alloc: $s2 199
+release: $s2 199
+alloc: $s2 201
+alloc: $s3 201
+release: $s3 201
+alloc: $s3 202
+release: $s3 202
+alloc: $s3 203
+alloc: $s4 203
+release: $s4 203
+alloc: $s4 204
+release: $s4 204
+alloc: $s4 206
+release: $s4 206
+alloc: $s4 207
+alloc: $s5 207
+release: $s5 207
+alloc: $s5 208
+release: $s5 208
+alloc: $s5 209
+alloc: $s6 209
+release: $s6 209
+alloc: $s6 210
+release: $s6 210
+alloc: $s6 212
+alloc: $s7 212
+release: $s7 212
+alloc: $s7 213
+release: $s7 213
+alloc: $s7 214
+alloc: $t0 214
+release: $t0 214
+alloc: $t0 215
+release: $t0 215
+alloc: $t0 217
+release: $t0 217
+alloc: $t0 217
+alloc: $t1 218
+release: $t1 218
+alloc: $t1 218
+release: $t1 218
+alloc: $t1 218
+alloc: $t2 218
+release: $t2 218
+alloc: $t2 220
+release: $t2 220
+alloc: $t2 220
+alloc: $t3 221
+release: $t3 221
+alloc: $t3 221
+release: $t3 221
+alloc: $t3 221
+alloc: $t4 221
+release: $t4 221
+alloc: $t4 234
+release: $t4 234
+alloc: $t4 234
+release: $t4 234
+alloc: $t4 234
+release: $t4 234
+alloc: $t4 234
+release: $t4 234
+alloc: $t4 234
+release: $t4 234
+alloc: $t4 235
+release: $t4 235
+alloc: $t4 235
+release: $t4 235
+alloc: $t4 235
+release: $t4 235
+alloc: $t4 235
+release: $t4 235
+alloc: $t4 235
+release: $t4 235
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 237
+release: $t4 237
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 238
+release: $t4 238
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 240
+release: $t4 240
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 241
+release: $t4 241
+alloc: $t4 244
+release: $t4 244
+alloc: $t4 244
+release: $t4 244
+alloc: $t4 244
+release: $t4 244
+alloc: $t4 244
+release: $t4 244
+alloc: $t4 244
+release: $t4 244
+alloc: $t4 245
+release: $t4 245
+alloc: $t4 245
+release: $t4 245
+alloc: $t4 245
+release: $t4 245
+alloc: $t4 245
+release: $t4 245
+alloc: $t4 245
+release: $t4 245
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 247
+release: $t4 247
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 248
+release: $t4 248
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 250
+release: $t4 250
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 251
+release: $t4 251
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 255
+release: $t4 255
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 256
+release: $t4 256
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 258
+release: $t4 258
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 259
+release: $t4 259
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 263
+release: $t4 263
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 264
+release: $t4 264
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 266
+release: $t4 266
+alloc: $t4 267
+release: $t4 267
+alloc: $t4 267
+release: $t4 267
+alloc: $t4 267
+release: $t4 267
+alloc: $t4 267
+release: $t4 267
+alloc: $t4 267
+release: $t4 267
+alloc: $t4 267
+release: $t4 267
 .text
 print:
 lw $a0, 0($sp)
@@ -9,47 +563,10466 @@ lw $a0, 0($sp)
 li $v0, 1
 syscall
 jr $ra
+funcByteTrue:
+move $fp, $sp
+subu $fp, $fp, 4
+la $s0, aString0
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_29:
+j label_31
+label_31:
+li $v0, 1
+j label_36
+label_34:
+li $v0, 0
+label_36:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+funcByteTrue_end:
+funcByteFalse:
+move $fp, $sp
+subu $fp, $fp, 4
+la $s0, aString1
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_60:
+j label_65
+label_62:
+li $v0, 1
+j label_67
+label_65:
+li $v0, 0
+label_67:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+funcByteFalse_end:
+helperFunc1True:
+move $fp, $sp
+subu $fp, $fp, 4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_89
+beq $s0, 0, label_92
+label_89:
+li $v0, 1
+j label_94
+label_92:
+li $v0, 0
+label_94:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+helperFunc1True_end:
+helperFunc1False:
+move $fp, $sp
+subu $fp, $fp, 4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_116
+beq $s0, 0, label_119
+label_116:
+li $v0, 1
+j label_121
+label_119:
+li $v0, 0
+label_121:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+helperFunc1False_end:
+helperFunc2True:
+move $fp, $sp
+subu $fp, $fp, 4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_143
+beq $s0, 0, label_146
+label_143:
+li $v0, 1
+j label_148
+label_146:
+li $v0, 0
+label_148:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+helperFunc2True_end:
+helperFunc2False:
+move $fp, $sp
+subu $fp, $fp, 4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_170
+beq $s0, 0, label_173
+label_170:
+li $v0, 1
+j label_175
+label_173:
+li $v0, 0
+label_175:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+helperFunc2False_end:
+funcHelper1:
+move $fp, $sp
+subu $fp, $fp, 4
+lw $s0, 4($fp)
+beq $s0, 1, label_186
+beq $s0, 0, label_205
+label_186:
+la $s0, aString2
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_203:
+j funcHelper1_end
+label_205:
+la $s0, aString3
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+funcHelper1_end:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
+funcHelper2:
+move $fp, $sp
+subu $fp, $fp, 4
+lw $s0, 4($fp)
+beq $s0, 1, label_232
+beq $s0, 0, label_251
+label_232:
+la $s0, aString4
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_249:
+j label_268
+label_251:
+la $s0, aString5
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_268:
+lw $s0, 8($fp)
+beq $s0, 1, label_272
+beq $s0, 0, label_291
+label_272:
+la $s0, aString6
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_289:
+j funcHelper2_end
+label_291:
+la $s0, aString7
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+funcHelper2_end:
+move $sp, $fp
+addu $sp, $sp, 4
+jr $ra
 .globl main
 main:
 move $fp, $sp
 subu $fp, $fp, 4
 subu $sp, $sp, 4
 sw $0, 0($sp)
-label_16:
-label_17:
-lw $s0, 0($fp)
-beq $s0, 1, label_21
-beq $s0, 0, label_27
-label_21:
-j label_23
-label_23:
-j label_26label_38label_50
-j label_17
-label_26:
-label_27:
-label_28:
-lw $s0, 0($fp)
-beq $s0, 1, label_32
-beq $s0, 0, label_39
-label_32:
-j label_28
-label_34:
+sw $ra, 0($sp)
 subu $sp, $sp, 4
 sw $0, 0($sp)
-j label_28
-label_38:
-label_39:
-label_40:
-lw $s0, 0($fp)
-beq $s0, 1, label_44
-beq $s0, 0, main_end
-label_44:
-j label_40
-label_46:
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_330
+beq $s0, 0, label_330
+label_330:
 subu $sp, $sp, 4
 sw $0, 0($sp)
-j label_40
-label_50:
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_345
+beq $s0, 0, label_348
+label_345:
+li $s0, 1
+j label_350
+label_348:
+li $s0, 0
+label_350:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_354:
+lw $s0, 0($fp)
+beq $s0, 1, label_358
+beq $s0, 0, label_377
+label_358:
+la $s0, aString8
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_375:
+j label_394
+label_377:
+la $s0, aString9
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_394:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_409
+beq $s0, 0, label_412
+label_409:
+li $s0, 1
+j label_414
+label_412:
+li $s0, 0
+label_414:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_418:
+lw $s0, -4($fp)
+beq $s0, 1, label_422
+beq $s0, 0, label_441
+label_422:
+la $s0, aString10
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_439:
+j label_458
+label_441:
+la $s0, aString11
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_458:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_473
+beq $s0, 0, label_476
+label_473:
+li $s0, 1
+j label_478
+label_476:
+li $s0, 0
+label_478:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_482:
+lw $s0, -8($fp)
+beq $s0, 1, label_486
+beq $s0, 0, label_505
+label_486:
+la $s0, aString12
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_503:
+j label_522
+label_505:
+la $s0, aString13
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_522:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_537
+beq $s0, 0, label_540
+label_537:
+li $s0, 1
+j label_542
+label_540:
+li $s0, 0
+label_542:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_546:
+lw $s0, -12($fp)
+beq $s0, 1, label_550
+beq $s0, 0, label_569
+label_550:
+la $s0, aString14
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_567:
+j label_586
+label_569:
+la $s0, aString15
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_586:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+label_589:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_604
+beq $s0, 0, label_607
+label_604:
+li $s0, 1
+j label_609
+label_607:
+li $s0, 0
+label_609:
+sw $s0, -16($fp)
+label_611:
+lw $s0, -16($fp)
+beq $s0, 1, label_615
+beq $s0, 0, label_634
+label_615:
+la $s0, aString16
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_632:
+j label_651
+label_634:
+la $s0, aString17
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_651:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_666
+beq $s0, 0, label_669
+label_666:
+li $s0, 1
+j label_671
+label_669:
+li $s0, 0
+label_671:
+sw $s0, -16($fp)
+label_673:
+lw $s0, -16($fp)
+beq $s0, 1, label_677
+beq $s0, 0, label_696
+label_677:
+la $s0, aString18
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_694:
+j label_713
+label_696:
+la $s0, aString19
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_713:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_728
+beq $s0, 0, label_731
+label_728:
+li $s0, 1
+j label_733
+label_731:
+li $s0, 0
+label_733:
+sw $s0, -16($fp)
+label_735:
+lw $s0, -16($fp)
+beq $s0, 1, label_739
+beq $s0, 0, label_758
+label_739:
+la $s0, aString20
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_756:
+j label_775
+label_758:
+la $s0, aString21
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_775:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_790
+beq $s0, 0, label_793
+label_790:
+li $s0, 1
+j label_795
+label_793:
+li $s0, 0
+label_795:
+sw $s0, -16($fp)
+label_797:
+lw $s0, -16($fp)
+beq $s0, 1, label_801
+beq $s0, 0, label_820
+label_801:
+la $s0, aString22
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_818:
+j label_837
+label_820:
+la $s0, aString23
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_837:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_852
+beq $s0, 0, label_852
+label_852:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_867
+beq $s0, 0, label_867
+label_867:
+la $s0, aString24
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_884:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal helperFunc1True
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_899
+beq $s0, 0, label_902
+label_899:
+li $s0, 1
+j label_904
+label_902:
+li $s0, 0
+label_904:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_908:
+lw $s0, -20($fp)
+beq $s0, 1, label_912
+beq $s0, 0, label_931
+label_912:
+la $s0, aString25
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_929:
+j label_948
+label_931:
+la $s0, aString26
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_948:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal helperFunc1False
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_963
+beq $s0, 0, label_966
+label_963:
+li $s0, 1
+j label_968
+label_966:
+li $s0, 0
+label_968:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_972:
+lw $s0, -24($fp)
+beq $s0, 1, label_976
+beq $s0, 0, label_995
+label_976:
+la $s0, aString27
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_993:
+j label_1012
+label_995:
+la $s0, aString28
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1012:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal helperFunc2True
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1027
+beq $s0, 0, label_1030
+label_1027:
+li $s0, 1
+j label_1032
+label_1030:
+li $s0, 0
+label_1032:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_1036:
+lw $s0, -28($fp)
+beq $s0, 1, label_1040
+beq $s0, 0, label_1059
+label_1040:
+la $s0, aString29
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1057:
+j label_1076
+label_1059:
+la $s0, aString30
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1076:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal helperFunc2False
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1091
+beq $s0, 0, label_1094
+label_1091:
+li $s0, 1
+j label_1096
+label_1094:
+li $s0, 0
+label_1096:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+label_1100:
+lw $s0, -32($fp)
+beq $s0, 1, label_1104
+beq $s0, 0, label_1123
+label_1104:
+la $s0, aString31
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1121:
+j label_1140
+label_1123:
+la $s0, aString32
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1140:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1155
+beq $s0, 0, label_1172
+label_1155:
+la $s0, aString33
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1172:
+la $s0, aString34
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1189:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1221
+beq $s0, 0, label_1204
+label_1204:
+la $s0, aString35
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1221:
+la $s0, aString36
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1238:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1253
+beq $s0, 0, label_1270
+label_1253:
+la $s0, aString37
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1270:
+la $s0, aString38
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1287:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1319
+beq $s0, 0, label_1302
+label_1302:
+la $s0, aString39
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1319:
+la $s0, aString40
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1336:
+j label_1338
+label_1338:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1353
+beq $s0, 0, label_1353
+label_1353:
+la $s0, aString41
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1370:
+j label_1372
+label_1372:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1387
+beq $s0, 0, label_1387
+label_1387:
+la $s0, aString42
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1404:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1419
+beq $s0, 0, label_1438
+label_1419:
+la $s0, aString43
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1436:
+j label_1455
+label_1438:
+la $s0, aString44
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1455:
+la $s0, aString45
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1472:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1506
+beq $s0, 0, label_1487
+label_1487:
+la $s0, aString46
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1504:
+j label_1523
+label_1506:
+la $s0, aString47
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1523:
+la $s0, aString48
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1540:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1555
+beq $s0, 0, label_1574
+label_1555:
+la $s0, aString49
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1572:
+j label_1591
+label_1574:
+la $s0, aString50
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1591:
+la $s0, aString51
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1608:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1642
+beq $s0, 0, label_1623
+label_1623:
+la $s0, aString52
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1640:
+j label_1659
+label_1642:
+la $s0, aString53
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1659:
+la $s0, aString54
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1676:
+j label_1678
+label_1678:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1693
+beq $s0, 0, label_1693
+label_1693:
+la $s0, aString55
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1710:
+j label_1712
+label_1712:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1727
+beq $s0, 0, label_1727
+label_1727:
+la $s0, aString56
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1744:
+label_1745:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1760
+beq $s0, 0, label_1781
+label_1760:
+la $s0, aString57
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1777:
+j label_1780
+j label_1745
+label_1780:
+label_1781:
+la $s0, aString58
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1798:
+label_1799:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1835
+beq $s0, 0, label_1814
+label_1814:
+la $s0, aString59
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1831:
+j label_1834
+j label_1799
+label_1834:
+label_1835:
+la $s0, aString60
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1852:
+label_1853:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1868
+beq $s0, 0, label_1889
+label_1868:
+la $s0, aString61
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1885:
+j label_1888
+j label_1853
+label_1888:
+label_1889:
+la $s0, aString62
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1906:
+label_1907:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1943
+beq $s0, 0, label_1922
+label_1922:
+la $s0, aString63
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1939:
+j label_1942
+j label_1907
+label_1942:
+label_1943:
+la $s0, aString64
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1960:
+label_1961:
+j label_1963
+label_1963:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+beq $s0, 1, label_1978
+beq $s0, 0, label_1978
+label_1978:
+j label_1981
+j label_1961
+label_1981:
+label_1982:
+la $s0, aString65
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_1999:
+li $s0, 2
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sb $s0, 0($sp)
+label_2004:
+lw $s0, -36($fp)
+label_2006:
+j label_2029
+label_2008:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s1, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s1, 1, label_2033
+beq $s1, 0, label_2033
+j label_2033
+label_2029:
+beq $s0, 2, label_2008
+label_2031:
+j label_2033
+label_2033:
+la $s1, aString66
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2055:
+lw $s1, -36($fp)
+label_2057:
+j label_2085
+label_2059:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s2, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s2, 1, label_2089
+beq $s2, 0, label_2089
+j label_2089
+label_2085:
+beq $s1, 2, label_2059
+label_2087:
+j label_2089
+label_2089:
+la $s2, aString67
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2116:
+lw $s2, -36($fp)
+label_2118:
+j label_2151
+label_2120:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s3, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s3, 1, label_2155
+beq $s3, 0, label_2155
+j label_2155
+label_2151:
+beq $s2, 2, label_2120
+label_2153:
+j label_2155
+label_2155:
+la $s3, aString68
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2187:
+lw $s3, -36($fp)
+label_2189:
+j label_2227
+label_2191:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s4, 1, label_2231
+beq $s4, 0, label_2231
+j label_2231
+label_2227:
+beq $s3, 2, label_2191
+label_2229:
+j label_2231
+label_2231:
+la $s4, aString69
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2268:
+li $s4, 2
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sb $s4, 0($sp)
+label_2273:
+lw $s4, -40($fp)
+label_2275:
+j label_2318
+label_2277:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s5, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s5, 1, label_2322
+beq $s5, 0, label_2322
+j label_2322
+label_2318:
+beq $s4, 2, label_2277
+label_2320:
+j label_2322
+label_2322:
+la $s5, aString70
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2364:
+lw $s5, -40($fp)
+label_2366:
+j label_2414
+label_2368:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $s6, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s6, 1, label_2418
+beq $s6, 0, label_2418
+j label_2418
+label_2414:
+beq $s5, 2, label_2368
+label_2416:
+j label_2418
+label_2418:
+la $s6, aString71
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2465:
+lw $s6, -40($fp)
+label_2467:
+j label_2520
+label_2469:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $s7, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $s7, 1, label_2524
+beq $s7, 0, label_2524
+j label_2524
+label_2520:
+beq $s6, 2, label_2469
+label_2522:
+j label_2524
+label_2524:
+la $s7, aString72
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2576:
+lw $s7, -40($fp)
+label_2578:
+j label_2636
+label_2580:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t0, 1, label_2640
+beq $t0, 0, label_2640
+j label_2640
+label_2636:
+beq $s7, 2, label_2580
+label_2638:
+j label_2640
+label_2640:
+la $t0, aString73
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2697:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t0, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t0, 1, label_2752
+beq $t0, 0, label_2755
+label_2752:
+li $t0, 1
+j label_2757
+label_2755:
+li $t0, 0
+label_2757:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcHelper1
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_2850:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t1, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t1, 1, label_3015
+beq $t1, 0, label_3018
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t1, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t1, 1, label_3009
+beq $t1, 0, label_3012
+label_3009:
+li $t1, 1
+j label_3014
+label_3012:
+li $t1, 0
+label_3014:
+label_3015:
+li $t2, 1
+j label_3020
+label_3018:
+li $t2, 0
+label_3020:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcHelper2
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 8
+label_3161:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t2, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t2, 1, label_3226
+beq $t2, 0, label_3229
+label_3226:
+li $t2, 1
+j label_3231
+label_3229:
+li $t2, 0
+label_3231:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcHelper1
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_3419:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t3, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t3, 1, label_3659
+beq $t3, 0, label_3662
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t3, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t3, 1, label_3653
+beq $t3, 0, label_3656
+label_3653:
+li $t3, 1
+j label_3658
+label_3656:
+li $t3, 0
+label_3658:
+label_3659:
+li $t4, 1
+j label_3664
+label_3662:
+li $t4, 0
+label_3664:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcHelper2
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 8
+label_3910:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_3988
+beq $t4, 0, label_3985
+label_3985:
+li $t4, 1
+j label_3990
+label_3988:
+li $t4, 0
+label_3990:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_3994:
+lw $t4, -44($fp)
+beq $t4, 1, label_3998
+beq $t4, 0, label_4077
+label_3998:
+la $t4, aString74
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4075:
+j label_4154
+label_4077:
+la $t4, aString75
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4154:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_4229
+beq $t4, 0, label_4232
+label_4229:
+li $t4, 1
+j label_4234
+label_4232:
+li $t4, 0
+label_4234:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_4238:
+lw $t4, -48($fp)
+beq $t4, 1, label_4242
+beq $t4, 0, label_4321
+label_4242:
+la $t4, aString76
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4319:
+j label_4398
+label_4321:
+la $t4, aString77
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4398:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_4473
+beq $t4, 0, label_4551
+label_4473:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_4548
+beq $t4, 0, label_4551
+label_4548:
+li $t4, 1
+j label_4553
+label_4551:
+li $t4, 0
+label_4553:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_4557:
+lw $t4, -52($fp)
+beq $t4, 1, label_4561
+beq $t4, 0, label_4640
+label_4561:
+la $t4, aString78
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4638:
+j label_4717
+label_4640:
+la $t4, aString79
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_4717:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_4792
+beq $t4, 0, label_4867
+label_4792:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_4870
+beq $t4, 0, label_4867
+label_4867:
+li $t4, 1
+j label_4872
+label_4870:
+li $t4, 0
+label_4872:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_4876:
+lw $t4, -56($fp)
+beq $t4, 1, label_4880
+beq $t4, 0, label_5019
+label_4880:
+la $t4, aString80
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5017:
+j label_5096
+label_5019:
+la $t4, aString81
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5096:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_5246
+beq $t4, 0, label_5171
+label_5171:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_5246
+beq $t4, 0, label_5249
+label_5246:
+li $t4, 1
+j label_5251
+label_5249:
+li $t4, 0
+label_5251:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_5255:
+lw $t4, -60($fp)
+beq $t4, 1, label_5259
+beq $t4, 0, label_5338
+label_5259:
+la $t4, aString82
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5336:
+j label_5415
+label_5338:
+la $t4, aString83
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5415:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_5568
+beq $t4, 0, label_5490
+label_5490:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_5568
+beq $t4, 0, label_5565
+label_5565:
+li $t4, 1
+j label_5570
+label_5568:
+li $t4, 0
+label_5570:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_5574:
+lw $t4, -64($fp)
+beq $t4, 1, label_5578
+beq $t4, 0, label_5717
+label_5578:
+la $t4, aString84
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5715:
+j label_5794
+label_5717:
+la $t4, aString85
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5794:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_5872
+beq $t4, 0, label_5869
+label_5869:
+li $t4, 1
+j label_5874
+label_5872:
+li $t4, 0
+label_5874:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_5878:
+lw $t4, -68($fp)
+beq $t4, 1, label_5882
+beq $t4, 0, label_5961
+label_5882:
+la $t4, aString86
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_5959:
+j label_6038
+label_5961:
+la $t4, aString87
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6038:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_6113
+beq $t4, 0, label_6116
+label_6113:
+li $t4, 1
+j label_6118
+label_6116:
+li $t4, 0
+label_6118:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_6122:
+lw $t4, -72($fp)
+beq $t4, 1, label_6126
+beq $t4, 0, label_6205
+label_6126:
+la $t4, aString88
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6203:
+j label_6282
+label_6205:
+la $t4, aString89
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6282:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_6357
+beq $t4, 0, label_6435
+label_6357:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_6432
+beq $t4, 0, label_6435
+label_6432:
+li $t4, 1
+j label_6437
+label_6435:
+li $t4, 0
+label_6437:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_6441:
+lw $t4, -76($fp)
+beq $t4, 1, label_6445
+beq $t4, 0, label_6524
+label_6445:
+la $t4, aString90
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6522:
+j label_6601
+label_6524:
+la $t4, aString91
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6601:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_6676
+beq $t4, 0, label_6751
+label_6676:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_6754
+beq $t4, 0, label_6751
+label_6751:
+li $t4, 1
+j label_6756
+label_6754:
+li $t4, 0
+label_6756:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_6760:
+lw $t4, -80($fp)
+beq $t4, 1, label_6764
+beq $t4, 0, label_6903
+label_6764:
+la $t4, aString92
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6901:
+j label_6980
+label_6903:
+la $t4, aString93
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_6980:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7130
+beq $t4, 0, label_7055
+label_7055:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7130
+beq $t4, 0, label_7133
+label_7130:
+li $t4, 1
+j label_7135
+label_7133:
+li $t4, 0
+label_7135:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_7139:
+lw $t4, -84($fp)
+beq $t4, 1, label_7143
+beq $t4, 0, label_7222
+label_7143:
+la $t4, aString94
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7220:
+j label_7299
+label_7222:
+la $t4, aString95
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7299:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7452
+beq $t4, 0, label_7374
+label_7374:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7452
+beq $t4, 0, label_7449
+label_7449:
+li $t4, 1
+j label_7454
+label_7452:
+li $t4, 0
+label_7454:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_7458:
+lw $t4, -88($fp)
+beq $t4, 1, label_7462
+beq $t4, 0, label_7601
+label_7462:
+la $t4, aString96
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7599:
+j label_7678
+label_7601:
+la $t4, aString97
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7678:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7753
+beq $t4, 0, label_7831
+label_7753:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_7828
+beq $t4, 0, label_7831
+label_7828:
+li $t4, 1
+j label_7833
+label_7831:
+li $t4, 0
+label_7833:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_7837:
+lw $t4, -92($fp)
+beq $t4, 1, label_7841
+beq $t4, 0, label_7920
+label_7841:
+la $t4, aString98
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7918:
+j label_7997
+label_7920:
+la $t4, aString99
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_7997:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8072
+beq $t4, 0, label_8147
+label_8072:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8150
+beq $t4, 0, label_8147
+label_8147:
+li $t4, 1
+j label_8152
+label_8150:
+li $t4, 0
+label_8152:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_8156:
+lw $t4, -96($fp)
+beq $t4, 1, label_8160
+beq $t4, 0, label_8299
+label_8160:
+la $t4, aString100
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_8297:
+j label_8376
+label_8299:
+la $t4, aString101
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_8376:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8526
+beq $t4, 0, label_8451
+label_8451:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8526
+beq $t4, 0, label_8529
+label_8526:
+li $t4, 1
+j label_8531
+label_8529:
+li $t4, 0
+label_8531:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_8535:
+lw $t4, -100($fp)
+beq $t4, 1, label_8539
+beq $t4, 0, label_8618
+label_8539:
+la $t4, aString102
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_8616:
+j label_8695
+label_8618:
+la $t4, aString103
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_8695:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8848
+beq $t4, 0, label_8770
+label_8770:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_8848
+beq $t4, 0, label_8845
+label_8845:
+li $t4, 1
+j label_8850
+label_8848:
+li $t4, 0
+label_8850:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_8854:
+lw $t4, -104($fp)
+beq $t4, 1, label_8858
+beq $t4, 0, label_8997
+label_8858:
+la $t4, aString104
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_8995:
+j label_9074
+label_8997:
+la $t4, aString105
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_9074:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9149
+beq $t4, 0, label_9227
+label_9149:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9224
+beq $t4, 0, label_9227
+label_9224:
+li $t4, 1
+j label_9229
+label_9227:
+li $t4, 0
+label_9229:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_9233:
+lw $t4, -108($fp)
+beq $t4, 1, label_9237
+beq $t4, 0, label_9316
+label_9237:
+la $t4, aString106
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_9314:
+j label_9393
+label_9316:
+la $t4, aString107
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_9393:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9468
+beq $t4, 0, label_9543
+label_9468:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9546
+beq $t4, 0, label_9543
+label_9543:
+li $t4, 1
+j label_9548
+label_9546:
+li $t4, 0
+label_9548:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_9552:
+lw $t4, -112($fp)
+beq $t4, 1, label_9556
+beq $t4, 0, label_9695
+label_9556:
+la $t4, aString108
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_9693:
+j label_9772
+label_9695:
+la $t4, aString109
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_9772:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9922
+beq $t4, 0, label_9847
+label_9847:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_9922
+beq $t4, 0, label_9925
+label_9922:
+li $t4, 1
+j label_9927
+label_9925:
+li $t4, 0
+label_9927:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_9931:
+lw $t4, -116($fp)
+beq $t4, 1, label_9935
+beq $t4, 0, label_10014
+label_9935:
+la $t4, aString110
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_10012:
+j label_10091
+label_10014:
+la $t4, aString111
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_10091:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteFalse
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_10244
+beq $t4, 0, label_10166
+label_10166:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal funcByteTrue
+move $t4, $v0
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+beq $t4, 1, label_10244
+beq $t4, 0, label_10241
+label_10241:
+li $t4, 1
+j label_10246
+label_10244:
+li $t4, 0
+label_10246:
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+label_10250:
+lw $t4, -120($fp)
+beq $t4, 1, label_10254
+beq $t4, 0, label_10393
+label_10254:
+la $t4, aString112
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
+label_10391:
+j main_end
+label_10393:
+la $t4, aString113
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s4, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s5, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s6, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $s7, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t0, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t1, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t2, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $t3, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $ra, 0($sp)
+subu $sp, $sp, 4
+sw $0, 0($sp)
+sw $fp, 0($sp)
+jal print
+lw $fp, 0($sp)
+addu $sp, $sp, 4
+lw $ra, 0($sp)
+addu $sp, $sp, 4
+lw $t3, 0($sp)
+addu $sp, $sp, 4
+lw $t2, 0($sp)
+addu $sp, $sp, 4
+lw $t1, 0($sp)
+addu $sp, $sp, 4
+lw $t0, 0($sp)
+addu $sp, $sp, 4
+lw $s7, 0($sp)
+addu $sp, $sp, 4
+lw $s6, 0($sp)
+addu $sp, $sp, 4
+lw $s5, 0($sp)
+addu $sp, $sp, 4
+lw $s4, 0($sp)
+addu $sp, $sp, 4
+lw $s3, 0($sp)
+addu $sp, $sp, 4
+lw $s2, 0($sp)
+addu $sp, $sp, 4
+lw $s1, 0($sp)
+addu $sp, $sp, 4
+lw $s0, 0($sp)
+addu $sp, $sp, 4
+addu $sp, $sp, 4
 main_end:
 move $sp, $fp
 addu $sp, $sp, 4
@@ -57,3 +11030,117 @@ jr $ra
 .data
 aErrorZeroDivision: .asciiz "Error division by zero
 "
+aString0: .asciiz "funcByteTrue\n"
+aString1: .asciiz "funcByteFalse\n"
+aString2: .asciiz "funcHelper1-1\n"
+aString3: .asciiz "funcHelper1-2\n"
+aString4: .asciiz "funcHelper2-1\n"
+aString5: .asciiz "funcHelper2-2\n"
+aString6: .asciiz "funcHelper2-3\n"
+aString7: .asciiz "funcHelper2-4\n"
+aString8: .asciiz "true1\n"
+aString9: .asciiz "false1\n"
+aString10: .asciiz "true2\n"
+aString11: .asciiz "false2\n"
+aString12: .asciiz "true3\n"
+aString13: .asciiz "false3\n"
+aString14: .asciiz "true4\n"
+aString15: .asciiz "false4\n"
+aString16: .asciiz "true5\n"
+aString17: .asciiz "false5\n"
+aString18: .asciiz "true6\n"
+aString19: .asciiz "false6\n"
+aString20: .asciiz "true7\n"
+aString21: .asciiz "false7\n"
+aString22: .asciiz "true8\n"
+aString23: .asciiz "false8\n"
+aString24: .asciiz "delimiter5\n"
+aString25: .asciiz "true9\n"
+aString26: .asciiz "false9\n"
+aString27: .asciiz "true10\n"
+aString28: .asciiz "false10\n"
+aString29: .asciiz "true9\n"
+aString30: .asciiz "false9\n"
+aString31: .asciiz "true10\n"
+aString32: .asciiz "false10\n"
+aString33: .asciiz "insideIf1\n"
+aString34: .asciiz "delimiter9\n"
+aString35: .asciiz "insideIf2\n"
+aString36: .asciiz "delimiter10\n"
+aString37: .asciiz "insideIf3\n"
+aString38: .asciiz "delimiter11\n"
+aString39: .asciiz "insideIf4\n"
+aString40: .asciiz "delimiter12\n"
+aString41: .asciiz "delimiter13\n"
+aString42: .asciiz "delimiter14\n"
+aString43: .asciiz "insideIf1\n"
+aString44: .asciiz "insideElse1\n"
+aString45: .asciiz "delimiter9\n"
+aString46: .asciiz "insideIf2\n"
+aString47: .asciiz "insideElse2\n"
+aString48: .asciiz "delimiter10\n"
+aString49: .asciiz "insideIf3\n"
+aString50: .asciiz "insideElse3\n"
+aString51: .asciiz "delimiter11\n"
+aString52: .asciiz "insideIf4\n"
+aString53: .asciiz "insideElse4\n"
+aString54: .asciiz "delimiter12\n"
+aString55: .asciiz "delimiter13\n"
+aString56: .asciiz "delimiter14\n"
+aString57: .asciiz "insideWhile1"
+aString58: .asciiz "delimiter15\n"
+aString59: .asciiz "insideWhile2"
+aString60: .asciiz "delimiter16\n"
+aString61: .asciiz "insideWhile3"
+aString62: .asciiz "delimiter17\n"
+aString63: .asciiz "insideWhile4"
+aString64: .asciiz "delimiter18\n"
+aString65: .asciiz "delimiter19\n"
+aString66: .asciiz "delimiter23\n"
+aString67: .asciiz "delimiter24\n"
+aString68: .asciiz "delimiter23\n"
+aString69: .asciiz "delimiter24\n"
+aString70: .asciiz "delimiter25\n"
+aString71: .asciiz "delimiter26\n"
+aString72: .asciiz "delimiter25\n"
+aString73: .asciiz "delimiter26\n"
+aString74: .asciiz "true1\n"
+aString75: .asciiz "false1\n"
+aString76: .asciiz "true2\n"
+aString77: .asciiz "false\n"
+aString78: .asciiz "true3\n"
+aString79: .asciiz "false3\n"
+aString80: .asciiz "true4\n"
+aString81: .asciiz "false4\n"
+aString82: .asciiz "true5\n"
+aString83: .asciiz "false5\n"
+aString84: .asciiz "true6\n"
+aString85: .asciiz "false6\n"
+aString86: .asciiz "true7\n"
+aString87: .asciiz "false7\n"
+aString88: .asciiz "true8\n"
+aString89: .asciiz "false8\n"
+aString90: .asciiz "true9\n"
+aString91: .asciiz "false9\n"
+aString92: .asciiz "true10\n"
+aString93: .asciiz "false10\n"
+aString94: .asciiz "true11\n"
+aString95: .asciiz "false11\n"
+aString96: .asciiz "true12\n"
+aString97: .asciiz "false12\n"
+aString98: .asciiz "true9\n"
+aString99: .asciiz "false9\n"
+aString100: .asciiz "true10\n"
+aString101: .asciiz "false10\n"
+aString102: .asciiz "true11\n"
+aString103: .asciiz "false11\n"
+aString104: .asciiz "true12\n"
+aString105: .asciiz "false12\n"
+aString106: .asciiz "true9\n"
+aString107: .asciiz "false9\n"
+aString108: .asciiz "true10\n"
+aString109: .asciiz "false10\n"
+aString110: .asciiz "true11\n"
+aString111: .asciiz "false11\n"
+aString112: .asciiz "true12\n"
+aString113: .asciiz "false12\n"

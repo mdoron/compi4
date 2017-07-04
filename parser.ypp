@@ -86,6 +86,7 @@
 	void emitPush(string Rdest, type_t t);
 	bool isBoolFunction(string name);
 	int countLocals();
+	void emitPopVarDefsInBlock();
 	
 	class Registers {
 		set<string> releasedRegs;
@@ -486,6 +487,7 @@ ControlFlowStmt : IdBuilt ASSIGN Exp SC {
 				output::errorUnexpectedBreak(yylineno);
 				exit(0);
 			}
+			emitPopVarDefsInBlock();
 			$$.breakList = cb.makelist(cb.emit("j "));
 		}
 	 | SwitchStmt N RPAREN LBRACE CaseList RBRACE SC {
@@ -565,6 +567,7 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 			output::errorPrototypeMismatch(yylineno, ($1.name).c_str(), castToStringVector(r->params));
 			exit(0);
 		}
+		int paramsNum = callParams->size();
 		callParams->clear();		
 		callsStack.pop();
 		callParams = callsStack.size() > 0 ? callsStack.top() : NULL;
@@ -591,7 +594,7 @@ Call : IdBuilt LPAREN NewCall ExpList RPAREN {
 			$$.place = Rdest;
 		}
 		// pop params
-		int paramSize = 4*(($4.paramPlaceList).size());
+		int paramSize = 4*(paramsNum);
 		ostringstream paramSizeText;
 		paramSizeText << paramSize;
 		//for( list<string>::iterator it = $4.paramPlaceList.begin(); it != $4.paramPlaceList.end(); ++it ) {
@@ -1005,6 +1008,12 @@ void emitPopLocals()  {
 	cb.emit(getMove("$sp", "$fp"));
 	cb.emit(getAddu("$sp", "$sp", "4"));
 	//return ;//getAddu("$sp", "$sp", tmp.str());
+}
+
+void emitPopVarDefsInBlock() {
+	ostringstream tmp;
+	tmp << 4*(tables->top()->rows->size());
+	cb.emit(getAddu("$sp", "$sp", tmp.str()));
 }
 
 void emitPrint() {

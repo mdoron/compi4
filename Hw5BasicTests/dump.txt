@@ -181,7 +181,9 @@ Running CallingFunctionsFromDifferentPlacesByteFunc...[1;32m[ PASS ]
 [0mRunning facebook_while_test...             [1;32m[ PASS ]
 [0mRunning ifElse_all...                      [1;31m[ FAIL ]
 [0mDiff output:
-10c10
+6a7
+> if->switch
+9c10
 < 7
 ---
 > 6
@@ -452,7 +454,7 @@ Running OR_testRecursion...                [1;32m[ PASS ]
 [0mDiff output:
 2,4d1
 < The following symbols are undefined:
-< label_365label_391
+< label_370label_397
 < 
 15a13,16
 > was here

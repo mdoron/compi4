@@ -1,6 +1,6 @@
 Loaded: ./exceptions.s
 The following symbols are undefined:
-label_365label_391
+label_370label_397
 
 set!
 500

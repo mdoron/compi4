@@ -4,7 +4,6 @@ if->if
 if->else
 if->while
 if->break
-if->switch
 if->return exp sc
 if->type ID assign Exp sc
 7
