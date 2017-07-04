@@ -4,9 +4,10 @@ if->if
 if->else
 if->while
 if->break
+if->switch
 if->return exp sc
 if->type ID assign Exp sc
-7
+6
 if->ID assign Exp sc
 8
 if->type ID sc

@@ -179,15 +179,8 @@ Running CallingFunctionsFromDifferentPlacesByteFunc...[1;32m[ PASS ]
 [0mRunning facebook_switch_test...            [1;32m[ PASS ]
 [0mRunning facebook_tak...                    [1;32m[ PASS ]
 [0mRunning facebook_while_test...             [1;32m[ PASS ]
-[0mRunning ifElse_all...                      [1;31m[ FAIL ]
-[0mDiff output:
-6a7
-> if->switch
-9c10
-< 7
----
-> 6
-Running if...                              [1;32m[ PASS ]
+[0mRunning ifElse_all...                      [1;32m[ PASS ]
+[0mRunning if...                              [1;32m[ PASS ]
 [0mRunning if_in_while...                     [1;32m[ PASS ]
 [0mRunning if_test...                         [1;32m[ PASS ]
 [0mRunning notTest...                         [1;32m[ PASS ]
@@ -435,17 +428,12 @@ Running OR_testBoolInAssign...             [1;32m[ PASS ]
 [0mRunning OR_testBoolInVariable...           [1;32m[ PASS ]
 [0mRunning OR_testBoolInWhile...              [1;32m[ PASS ]
 [0mRunning OR_testBreakAndSwitch...           [1;32m[ PASS ]
-[0mRunning OR_testBreakInnerWhile...          [1;31m[ TIMEOUT ]
+[0mRunning OR_testBreakInnerWhile...          [1;32m[ PASS ]
 [0mRunning OR_testCallArgsOrder...            [1;32m[ PASS ]
 [0mRunning OR_testFunctionCallInControlFlow...[1;32m[ PASS ]
 [0mRunning OR_testLazyEval...                 [1;32m[ PASS ]
-[0mRunning OR_testLonelyIf...                 [1;31m[ FAIL ]
-[0mDiff output:
-7c7
-< 0
----
-> 500
-Running OR_testRecursion...                [1;32m[ PASS ]
+[0mRunning OR_testLonelyIf...                 [1;32m[ PASS ]
+[0mRunning OR_testRecursion...                [1;32m[ PASS ]
 [0mRunning OR_testReturnFromControlFlow...    [1;32m[ PASS ]
 [0mRunning OR_testReturnFromIf...             [1;32m[ PASS ]
 [0mRunning OR_testReturnFromWhile...          [1;32m[ PASS ]
@@ -454,7 +442,7 @@ Running OR_testRecursion...                [1;32m[ PASS ]
 [0mDiff output:
 2,4d1
 < The following symbols are undefined:
-< label_370label_397
+< label_379label_408
 < 
 15a13,16
 > was here

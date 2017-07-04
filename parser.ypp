@@ -287,6 +287,8 @@ Srbrace : {
 	for(; ir!=(tables->top()->rows)->end();ir++)
 		output::printID(((*ir)->name).c_str(),*((*ir)->offset),(typeNames[(*ir)->type]));
 	*/
+				emitPopVarDefsInBlock();
+	
 	tables->pop();
 	offsets->pop();
 	
